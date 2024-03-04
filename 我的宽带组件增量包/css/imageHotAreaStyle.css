@@ -1,0 +1,60 @@
+.map_position .map_position_bg {
+    background-color: rgba(117, 213, 244, 0.487);
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+}
+/* 
+.map_selected_position .map_position_bg {
+    background-color: #fff;
+} */
+
+.position_container {
+    position: absolute;
+}
+.map_position {
+    border: 1px solid rgb(48 150 244);
+    position: absolute;
+    cursor: move;
+    z-index: 1;
+}
+.map_selected_position {
+    /* border: 1px solid #868686; */
+    z-index: 2;
+}
+.map_position .link_number_text {
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(48 150 244);
+    /* border: 1px solid rgb(48 150 244); */
+    padding: 0 2px;
+    font-size: 12px;
+}
+.map-selected-position .link-number-text {
+    background-color: #c00;
+    border: 1px solid #c00;
+}
+.map_position .resize {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 5px;
+    height: 5px;
+    border: 1px solid rgba(48, 150, 244, 1);
+    background: rgba(48, 150, 244, 1);
+    filter: alpha(opacity=90);
+    opacity: 0.9;
+    cursor: nw-resize;
+}
+.map_position .delete {
+    background: url(../images/btnsprite.png) no-repeat right -158px;
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
