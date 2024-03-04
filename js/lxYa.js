@@ -1,0 +1,10 @@
+$(document).on('click','.noCheckStar',function(e){
+    $(this).addClass('none')
+    $(this).next().removeClass('none')
+    $(this).parents('.swiper-slide.kdli').siblings().find('.yesCheckStar').addClass('none').prev().removeClass('none')
+});
+$(document).on('click','.lcwx',function(e){
+    e.stopPropagation(); 
+    $(this).parent().next().find('.yesCheckStar').removeClass('none').prev().addClass('none')
+    $(this).parents('.swiper-slide.kdli').siblings().find('.yesCheckStar').addClass('none').prev().removeClass('none')
+});

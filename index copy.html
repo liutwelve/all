@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片懒加载</title>
+    <style>
+        img {
+            display: block;
+            width: 100%;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <img data-src="./images/ad_btn2.png" alt="" >
+    <img data-src="./images/ad_btn2.png" alt="">
+    <img data-src="./images/ad_btn2.png" alt="">
+    <img data-src="./images/ad_btn2.png" alt="">
+    <img data-src="./images/ad_btn2.png" alt="">
+    <img data-src="./images/ad_btn2.png" alt="">
+    <img data-src="./images/ad_btn2.png" alt="">
+    <img data-src="./images/ad_btn2.png" alt="">
+    <img data-src="./images/ad_btn2.png" alt="">
+    <img data-src="./images/ad_btn2.png" alt="">
+    <img data-src="./images/ad_btn2.png" alt="">
+    <img data-src="./images/ad_btn2.png" alt="">
+</body>
+<script>
+       var imgs = document.querySelectorAll('img');
+    /**
+     * 这个遍历img标签根本无法判断出是否是tab楼层里面的图片。
+     * 原因他只会识别img标签；
+     * 解决方案：除非遍历每个楼层下的img标签这样可以识别出tab楼层并对tab楼层做特殊处理；
+     * 检测非当前tab楼层下图片：做图片懒加载的一系列处理。
+     * 点击tab后去给要显示的tab模块赋值src属性
+     * 但是判断楼层去处理img要比整体img处理要慢些。
+     * 其次就是代码改动要大一些，风险就会增加。
+     * */
+
+//用来判断bound.top<=clientHeight的函数，返回一个bool值
+function isIn(el) {
+    var bound = el.getBoundingClientRect();
+    var clientHeight = window.innerHeight;
+    return bound.top <= clientHeight;
+} 
+//检查图片是否在可视区内，如果不在，则加载
+function check() {
+    Array.from(imgs).forEach(function(el){
+        if(isIn(el)){
+            loadImg(el);
+        }
+    })
+}
+function loadImg(el) {
+    if(!el.src){
+        var source = el.dataset.src;
+        console.log(el);
+        el.src = source;
+    }
+}
+window.onload = window.onscroll = function () { //onscroll()在滚动条滚动的时候触发
+    check();
+}
+
+</script>
+</html>

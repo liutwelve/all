@@ -1,0 +1,2611 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1, maximum-scale=1, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="format-detection" content="email=no" />
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="yes" name="apple-touch-fullscreen"/>
+<meta content="telephone=no,email=no" name="format-detection"/>
+<meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes"/>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<title>页面装修</title>
+<link rel="stylesheet" type="text/css" href="css/default.css" >
+
+<link rel="stylesheet" type="text/css" href="css/layout.css" >
+<!-- <link rel="stylesheet" type="text/css" href="css/jquery-ui.css" > -->
+<link rel="stylesheet" type="text/css" href="css/jquery-gallery.css"/>
+<link rel="stylesheet" type="text/css" href="css/jquery.bigcolorpicker.css"/>
+<link rel="stylesheet" type="text/css" href="css/swiper.min.gyy.css"/>
+<link rel="stylesheet" type="text/css" href="css/index.css"/>
+<link rel="stylesheet" type="text/css" href="css/lxYa.css"/>
+<!-- 富文本编辑器 -->
+<link href="js/kindeditor/themes/default/default.css" rel="stylesheet">
+<style type="text/css" id="css-wrap"></style>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<!-- 富文本编辑器 -->
+<script type="text/javascript" src="js/kindeditor/kindeditor-all.js"></script>
+<script type="text/javascript" src="js/kindeditor/lang/zh-CN.js"></script>
+<script type="text/javascript" src="js/kindeditor/kindeditor-all-min.js"></script>
+ 
+<script type="text/javascript" src="js/jquery.bigcolorpicker.js"></script>
+<script type="text/javascript" src="js/widgets.js"></script>
+<script type="text/javascript" src="js/swiper.min.gyy.js"></script>
+<script language="javascript" type="text/javascript" src="js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="js/bases.js"></script>
+<script type="text/javascript" src="js/flexible.js"></script>
+<script type="text/javascript" src="js/lxYa.js"></script>
+
+<style> 
+	.swiper-lnbusiness .swiper-wrapper{display:block;}
+	.swiper-lnbusiness .swiper-wrapper .swiper-slide{width: 20%;float: left;padding: 5px 0;}
+	.swiper-lnbusiness{padding-bottom: 0;}
+	.video_div { width:415px; height:auto!important; line-height:normal!important; margin-top:15px; display:none;}
+	.play_btn { width:60px; height:60px; cursor:pointer; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);}
+	.play_btn .pimg { width:100%; height:100%; background:url(images/ico_play.png) no-repeat center / 100% 100%;}
+	a.back_btn { width:30px; height:30px; cursor:pointer; position:absolute; top:5%; right:10px;
+		/*opacity:0.3;
+		-webkit-transition: opacity 0.4s ease-in-out;
+		-moz-transition: opacity 0.4s ease-in-out;
+		-o-transition: opacity 0.4s ease-in-out;
+		transition: opacity 0.4s ease-in-out;*/}
+	a.back_btn .bimg { width:100%; height:100%; background:url(images/ico_back.png) no-repeat center / 100% 100%;}
+	a:hover.back_btn { opacity:1;}
+	#htmlCon .ydicon { height:auto; line-height:normal; padding:5px;}
+	.zs_checked{background:url(css/images/rchecked.png) no-repeat center center!important;}
+</style>
+</head>
+
+<body>
+<div id="vueDemos">
+	<!--顶部按钮-->
+	<div class="file-btns">
+		<div class="logo-sec"><a href="javascript:void(0)">页面装修</a></div>
+		<ul>
+			<li><a href="javascript:;" id="edit" class="active">编辑</a></li>
+			<li><a href="javascript:;" id="preview">预览</a></li>
+			<li><a href="javascript:;" id="append">追加</a></li>
+			<li><a href="javascript:;" id="clean-up">清空</a></li>
+			<li><a href="javascript:;" id="save">保存</a></li>
+		</ul>
+	</div>
+	<!--end-->
+	
+	<!--拖拽元素-->
+	<div class="side-bar">
+		<div class="logo">
+			<a href="javascript:void(0)">页面装修</a>
+		</div>
+		<div class="sidebar-nav" id="sidebar-nav1">
+			<ul class="top-nav">
+				<li>
+					<a href="javascript:;" class="kuangjia"><span>大框架</span></a>
+					<ul class="sub-nav">
+						<li>
+							<div class="bigFloor ln-index-cont" bind='floorAttr_1' data-type="row">
+								<span class="preview">楼层</span>
+								<div class="ctrl-btns ctrl-btns-floor">
+									<span class="drag">拖拽楼层</span>
+									<span class="remove">删除楼层</span>
+									<span class="spanBtn getfloorId">获取id</span>
+								</div>
+								<div class="view bigViewBox">
+									<div class="row">
+										<div class="col"></div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="bigFloor ln-index-cont" bind='floorAttr_2' data-type="row">
+								<span class="preview">IOP推荐楼层</span>
+								<div class="ctrl-btns ctrl-btns-floor">
+									<span class="drag">拖拽IOP推荐楼层</span>
+									<span class="remove">删除IOP推荐楼层</span>
+									<span class="cspz">参数配置</span>
+									<span class="spanBtn getfloorId">获取id</span>
+								</div>
+								<div class="view bigViewBox">
+									<div class="row">
+										<div class="col"></div>
+									</div>
+									 
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<div class="bigFloor tbbigFloor" bind='floorAttr_3' data-type="row">
+								<span class="preview">TAB楼层</span>
+								<div class="ctrl-btns ctrl-btns-floor ctrl-btnstb">
+									<span class="drag">拖拽Tab楼层</span>
+									<span class="remove">删除Tab楼层</span>
+									<span class="spanBtn editLc">编辑Tab楼层</span>
+								</div>
+								<div class="view bigViewBox tbx">
+									<div class="row">
+										<div id="tabslc"  class=" tablcs tabslc" >
+											<div class="swiper-container swiper-tabHd" style="font-size: 12px;">
+												<ul class="swiper-wrapper tab_ul">
+													<li class="swiper-slide kdli ">
+														<a href="#" class="kda">
+															<!-- 未选中图片liactive -->
+															<img src="images/wx_01.png" alt="" class="lcwx ndis">
+															<!-- 已选中图片 -->
+															<img src="images/xz_01.png" alt="" class="lcxz disb">
+														</a>
+														<div class="tabslc_tool_container">
+															<img src="images/gbs.png" alt="" class="opimg deltb">
+															<img src="images/bj.png" alt="" class="opimg edittb">
+															<img src="images/left-icon.png" alt="" class="opimg lefttb">
+															<img src="images/right-icon.png" alt="" class="opimg righttb">
+															<img src="images/left-icon.png" alt="" class="opimg noCheckStar">
+															<img src="images/gbs.png" title="rrrrrrrrr" class="opimg none yesCheckStar">
+														</div>
+														 
+													</li>
+													<li class="swiper-slide kdli ">
+														<a href="#" class="kda">
+															<!-- 未选中图片liactive -->
+															<img src="images/wx_02.png" alt="" class="lcwx disb">
+															<!-- 已选中图片 -->
+															<img src="images/xz_02.png" alt="" class="lcxz ndis">
+														</a>
+														<div class="tabslc_tool_container">
+															<img src="images/gbs.png" alt="" class="opimg deltb">
+															<img src="images/bj.png" alt="" class="opimg edittb">
+															<img src="images/left-icon.png" alt="" class="opimg lefttb">
+															<img src="images/right-icon.png" alt="" class="opimg righttb">
+															<img src="images/left-icon.png" alt="" class="opimg noCheckStar">
+															<img src="images/gbs.png" alt="" class="opimg none yesCheckStar">
+														</div>
+												 	</li>
+													<li class="swiper-slide kdli ">
+														<a href="#" class="kda">
+															<!-- 未选中图片liactive -->
+															<img src="images/wx_03.png" alt="" class="lcwx disb">
+															<!-- 已选中图片 -->
+															<img src="images/xz_03.png" alt="" class="lcxz ndis">
+														</a>
+														<div class="tabslc_tool_container">
+															<img src="images/gbs.png" alt="" class="opimg deltb">
+															<img src="images/bj.png" alt="" class="opimg edittb">
+															<img src="images/left-icon.png" alt="" class="opimg lefttb">
+															<img src="images/right-icon.png" alt="" class="opimg righttb">
+															<img src="images/left-icon.png" alt="" class="opimg noCheckStar">
+															<img src="images/gbs.png" alt="" class="opimg none yesCheckStar">
+														</div>
+													 </li>
+													<li class="zjLi swiper-slide ">
+														<a href="javascript:;">
+															<img src="images/zj.png" alt="" class=" zjimg addtb">
+														</a>
+													</li>
+												</ul>
+											</div>
+											 
+												
+												
+											 
+											<div class="smtb bydiv"  >
+												<div class="col"></div>
+											</div>
+											<div class="smtb bydiv"  >
+												<div class="col"></div>
+											</div>
+											<div class="smtb bydiv"  >
+												<div class="col"></div>
+											</div>  
+										</div>
+									</div>
+									 
+										
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="bigFloor hydjFloor" bind='floorAttr_4' data-type="row">
+								<span class="preview">会员等级楼层</span>
+								<div class="ctrl-btns ctrl-btns-floor">
+									<span class="spanBtn hyLczd " onClick="sqzklc(this)">收起</span>
+									<span class="drag">拖拽楼层</span>
+									<span class="remove">删除楼层</span>
+									<span class="spanBtn getfloorId">获取id</span>
+									<span class="spanBtn edithyLc">编辑楼层</span>
+								</div>
+								<div class="view bigViewBox">
+									<div class="row">
+										<div class="col"><input type="hidden" class="hylcin"/></div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="layout"><span>布局</span></a>
+					<ul class="sub-nav">
+						
+						<li>
+							<div class="lyrow" data-type="row">
+								<span class="preview">一栏</span>
+								<div class="ctrl-btns">
+									
+									<span class="drag">拖拽整栏</span>
+									<span class="remove">删除整栏</span>
+								</div>
+								<div class="view">
+									<div class="row">
+										<div class="col col-100"></div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="lyrow">
+								<span class="preview">两栏</span>
+								<div class="ctrl-btns">
+									
+									<span class="drag">拖拽整栏</span>
+									<span class="remove">删除整栏</span>
+								</div>
+								<div class="view">
+									<div class="row">
+										<div class="col col-50"></div>
+										<div class="col col-50"></div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="lyrow">
+								<span class="preview">三栏</span>
+								<div class="ctrl-btns">
+									
+									<span class="drag">拖拽整栏</span>
+									<span class="remove">删除整栏</span>
+								</div>
+								<div class="view">
+									<div class="row">
+										<div class="col col-33"></div>
+										<div class="col col-33"></div>
+										<div class="col col-33"></div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="">
+							<div class="lyrow">
+								<span class="preview">四栏</span>
+								<div class="ctrl-btns">
+									
+									<span class="drag">拖拽整栏</span>
+									<span class="remove">删除整栏</span>
+								</div>
+								<div class="view">
+									<div class="row">
+										<div class="col col-25"></div>
+										<div class="col col-25"></div>
+										<div class="col col-25"></div>
+										<div class="col col-25"></div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="last">
+							<div class="lyrow">
+								<span class="preview">五栏</span>
+								<div class="ctrl-btns">
+									
+									<span class="drag">拖拽整栏</span>
+									<span class="remove">删除整栏</span>
+								</div>
+								<div class="view">
+									<div class="row">
+										<div class="col col-20"></div>
+										<div class="col col-20"></div>
+										<div class="col col-20"></div>
+										<div class="col col-20"></div>
+										<div class="col col-20"></div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="elements"><span>元素</span></a>
+					<ul class="sub-nav" id="menuBox">
+                        <!-- 2023-06-02自然人名片 -->
+                        <li>
+							<!-- wdg是个特殊的样式，用来标识特殊组件的,所以去掉了 20230607-->
+							<div class="box ui-draggable" data-type="personalCard">
+								<span class="preview">自然人名片</span>
+								<div class="ctrl-btns">
+									<span class="edit sellerUpdateYa" id="">编辑</span>
+									<span class="drag">拖拽</span>
+									<span class="remove">删除</span>
+								</div>
+								<div class="view contanierShareTopYa" style="background: url(../images/faceToface/2.png) no-repeat;background-size: 100% 100%;">
+									<div class="leftShareUserMsg">
+										<img src="images/faceToface/1.png" alt="">
+										<span>立即登录</span>
+									</div>
+									<div class="rightShareImg">
+										<span>面对面分享</span>
+										<img src="images/faceToface/3.png" alt="">
+									</div>
+								</div>
+							</div>
+						</li>
+                        <!-- 2023-05-24买家卡片信息新增开始 -->
+                        <li>
+							<!-- wdg是个特殊的样式，用来标识特殊组件的,所以去掉了 20230607-->
+							<div class="box ui-draggable" data-type="buyerCard">
+								<span class="preview">买家信息卡片</span>
+								<div class="ctrl-btns">
+									<span class="drag">拖拽</span>
+									<span class="remove">删除</span>
+								</div>
+								<div class="view buyerCard">
+									<image src="images/buyerCard.png" alt="" class="buyerImage" />
+                                    <div class="infos">
+                                        <p>尊敬的150****2234用户，您好！</p>
+                                        <p class="limit2">刘小鹏为您推荐精选产品</p>
+                                    </div>
+								</div>
+							</div>
+						</li>
+                        <!-- 2023-05-24买家卡片信息新增结束 -->
+						<!-- 20230508卖家信息组件 -->
+						<li>
+							<!-- wdg是个特殊的样式，用来标识特殊组件的,所以去掉了 20230607-->
+							<div class="box ui-draggable" data-type="userMsgInfo">
+								<span class="preview">卖家信息组件</span>
+								<div class="ctrl-btns">
+									<span class="edit sellerUpdateYa" id="">编辑</span>
+									<span class="drag">拖拽</span>
+									<span class="remove">删除</span>
+								</div>
+								<div class="view userMsgInfo">
+									<div class="contanierUserYa" style="background: url(./images/headPon/6.png) no-repeat;background-size: 100% 100%;">
+										<div class="topPart">
+											<div class="topLeftImg">
+												<img src="images/headPon/1.png" alt="">
+											</div>
+											<div class="topRightMsg">
+												<div class="nameMsgYa"><span>卖家姓名</span><i></i><span class="tagStyleYa">职位名称</span></div>
+												<div class="greytagYa">卖家工号</div>
+												<div class="greytagYa">组织名称</div>
+											</div>
+										</div>
+										<div class="bottomPart">
+											<div>
+												<img src="images/headPon/5.png" alt="">
+												<span>加微信</span>
+											</div>
+											<div>
+												<img src="images/headPon/2.png" alt="">
+												<span>打电话</span>
+											</div>
+											<div>
+												<img src="images/headPon/3.png" alt="">
+												<span>卖家码</span>
+											</div>
+											<div>
+												<img src="images/headPon/4.png" alt="">
+												<span>去分享</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<!-- 20230203转盘抽奖活动 -->
+						<li>
+							<!-- wdg是个特殊的样式，用来标识特殊组件的,所以去掉了 20230607-->
+							<div class="box ui-draggable" data-type="zhuancj">
+								<span class="preview">转盘抽奖活动</span>
+								<div class="ctrl-btns">
+									<span class="edit" id="editzpcjhd">编辑</span>
+									<span class="drag">拖拽</span>
+									<span class="remove">删除</span>
+								</div>
+								<div class="view cjview">
+
+									<div class="turntable">
+										<div class="turnplateTitle">下单抽好礼</div>
+										<div class="turnplateRule">
+											<img src="./images/cj/cj_rule.png" alt="" onclick="showid('winRule')">
+										</div>
+										<!-- 转盘 -->
+										<div class="turnplate" id="zhuanpan" dataset-target="ValBjt" data-mytype="bgimgSrc">
+											<ul>
+												<li class="i0 active" dataset-target="ValXzbjt" data-mytype="bgimgSrc" id="wheelPrizes">
+													<img class="recommend-img01" src="./images/cj/1.png">
+												</li>
+												<li class="i1" dataset-target="ValJpbjt">
+													<img class="recommend-img03" src="./images/cj/3.png">
+												</li>
+												<li class="i2" dataset-target="ValJpbjt">
+													<img class="recommend-img04" src="./images/cj/4.png">
+												</li>
+												<li class="i3" dataset-target="ValJpbjt">
+													<img class="recommend-img05" src="./images/cj/5.png">
+												</li>
+												<li class="i4" dataset-target="ValJpbjt">
+													<img class="recommend-img02" src="./images/cj/2.png">
+												</li>
+												<li class="i5" dataset-target="ValJpbjt">
+													<img class="recommend-img06" src="./images/cj/6.png">
+												</li>
+												<li class="i6" dataset-target="ValJpbjt">
+													<img class="recommend-img08" src="./images/cj/8.png">
+												</li>
+												<li class="i7" dataset-target="ValJpbjt">
+													<img class="recommend-img07" src="./images/cj/7.png">
+												</li>
+											</ul>
+											<div class="game-start start_btn">
+												<img src="images/cj/btn_cj.png" alt="">
+											</div>
+										</div>
+										<!-- 结果 -->
+										<div class="resultDiv">
+											<div class="desc">恭喜您，抽中优惠券奖励！</div>
+											<div class="resbox">
+												<img class="resimg" src="./images/cj/1.png" alt="">
+											</div>
+											<div class="btn_lq">立即查看</div>
+										</div>
+										<div class="botTip">注：请180分钟内参与抽奖，逾期或退出当前页面不再支持参与。</div>
+									</div>
+									<div id="winRule" class="wincj">
+										<div class="winclose" onclick="hideid('winRule')">
+											<img src="./images/cj/winclose.png" alt="">
+										</div>
+										<div class="winTitle">活动规则</div>
+										<div class="winCont">
+											1.活动期间，用户通过手机京东APP(APP版本需在8.0.0及以上)购买符合要求的普通实物商品(具体实物商品以实际活动为准)，下单并支付成功后将有机会获得一次抽取机会，活动期间未抽取或中奖后不领取视为放弃，后续不可补选。部分商品不参与活动。<br />
+											2.抽中奖品后不代表用户实际获得奖品，用户实际获得奖品需以下述条件同时达成为前提:
+											①用户获得抽奖机会的订单完成确认收货且未发生退款;<br />
+											2当用户获得抽奖机会的订单发起退款，且退款成功的，视为用户不再符合奖品获取条件，用户就该笔订单所获得的奖品将不予发放或被要求退回。
+										</div>
+									</div>
+								
+
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="box wdg" data-type="wdggallery">
+								<span class="preview">轮播图</span>
+								<div class="ctrl-btns">
+									<!-- <span class="edit">编辑</span> -->
+									<span class="drag">拖拽</span>
+									<span class="remove">删除</span>
+								</div>
+								<div class="view">
+									<div class="slider">
+										<div>
+											<ul>
+												<li><a href=""><img src="images/demo.jpg" alt="1" /></a></li>
+												<li><a href=""><img src="images/demo.jpg" alt="2" /></a></li>
+												<li><a href=""><img src="images/demo.jpg" alt="3" /></a></li>
+												<li><a href=""><img src="images/demo.jpg" alt="4" /></a></li>
+												<li><a href=""><img src="images/demo.jpg" alt="5" /></a></li>
+												<li><a href=""><img src="images/demo.jpg" alt="6" /></a></li>
+											</ul>
+										</div>
+									</div>	
+								</div>
+							</div>
+						</li>
+
+						<!-- 新轮播图开始 -->
+						<li>
+							<div class="box wdgN" data-type="wdglbt">
+								<span class="preview">新轮播图</span>
+								<div class="ctrl-btns">
+									<span class="spanBtn editlbt">编辑</span>
+									<span class="drag">拖拽</span>
+									<span class="remove">删除</span>
+								</div>
+								<div class="view lbtdiv">
+									<div class="slider">
+										<div class="">
+											<ul>
+												<li>
+													<a href="">
+														<img src="images/demo.jpg" alt="1" width="400" height="200"/>
+														<!-- 名字：轮播图1 -->
+														<input type="hidden" value="轮播图1" class="lbtName"/>
+														<!-- 是否关联广告 0不关联，1关联-->
+														<input type="hidden" value="0" class="lbtifglgg">
+													</a>
+												</li>
+												<li>
+													<a href="">
+														<img src="images/demo.jpg" alt="2"  width="400" height="200"/><!-- 轮播图2 -->
+														<input type="hidden" value="轮播图2"  class="lbtName"/>
+														<!-- 是否关联广告 0不关联，1关联-->
+														<input type="hidden" value="0" class="lbtifglgg">
+													</a>
+												</li>
+												<li>
+													<a href="">
+														<img src="images/demo.jpg" alt="3"  width="400" height="200"/><!-- 轮播图3 -->
+														<input type="hidden" value="轮播图3"  class="lbtName"/>
+														<!-- 是否关联广告 0不关联，1关联-->
+														<input type="hidden" value="0" class="lbtifglgg">
+													</a>
+												</li>
+												<li>
+													<a href="">
+														<img src="images/demo.jpg" alt="4"  width="400" height="200"/><!-- 轮播图4 -->
+														<input type="hidden" value="轮播图4"  class="lbtName"/>
+														<!-- 是否关联广告 0不关联，1关联-->
+														<input type="hidden" value="0" class="lbtifglgg">
+													</a>
+												</li>
+												<li>
+													<a href="">
+														<img src="images/demo.jpg" alt="5"  width="400" height="200"/><!-- 轮播图5-->
+														<input type="hidden" value="轮播图5"  class="lbtName"/>
+														<!-- 是否关联广告 0不关联，1关联-->
+														<input type="hidden" value="1" class="lbtifglgg">
+													</a>
+												</li>
+												<li>
+													<a href="">
+														<img src="images/demo.jpg" alt="6" width="400" height="200"/><!-- 轮播图6 -->
+														<input type="hidden" value="轮播图6"  class="lbtName"/>
+														<!-- 是否关联广告 0不关联，1关联-->
+														<input type="hidden" value="0" class="lbtifglgg">
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>	
+								</div>
+							</div>
+						</li>
+						<!-- 新轮播图结束 -->
+						<li>
+							<div class="box myswiper" data-type="gallery">
+								<span class="preview">菜单滑动</span>
+								<div class="ctrl-btns ctrl-btns-ele">
+									<span class="edit swiperEdit">编辑</span>
+									<span class="drag">拖拽</span>
+									<span class="remove">删除</span>
+								</div>
+								<div class="view myview">
+									<!-- 全部业务开始 -->     
+									<section class="lnbusiness">
+										<div class="swiper-container swiper-lnbusiness">
+										<div class="swiper-wrapper">
+									
+											<div class="swiper-slide">
+												<a href="#" class="bind" bind="swiper_id110_href">
+													<img src="images/newindeximg/rrico_5.png" alt="" class="bind" bind="swiper_id110_src">
+													<p>热销</p>
+												</a>
+											</div>
+											
+											<div class="swiper-slide">
+												<a href="#" class="bind" bind="swiper_id110_href">
+													<img src="images/newindeximg/rrico_1.png" alt="" class="bind" bind="swiper_id110_src">
+													<p>流量</p>
+												</a>
+											</div>
+											<div class="swiper-slide">
+												<a href="#" class="bind" bind="swiper_id110_href">
+													<img src="images/newindeximg/rrico_2.png" alt="" class="bind" bind="swiper_id110_src">
+													<p>数字化</p>
+												</a>
+											</div>
+											
+											<div class="swiper-slide">
+												<a href="#" class="bind" bind="swiper_id110_href">
+													<img src="images/newindeximg/rrico_3.png" alt="" class="bind" bind="swiper_id110_src">
+													<p>校园</p>
+												</a>
+											</div>
+											
+											<div class="swiper-slide">
+												<a href="#" class="bind" bind="swiper_id110_href">
+													<img src="images/newindeximg/rrico_4.png" alt="" class="bind" bind="swiper_id110_src">
+													<p>应用下载</p>
+												</a>
+											</div>
+											<div class="swiper-slide">
+												<a href="#" class="bind" bind="swiper_id110_href">
+													<img src="images/newindeximg/rrico_6.png" alt="" class="bind" bind="swiper_id110_src">
+													<p>终端</p>
+												</a>
+											</div>
+											<div class="swiper-slide">
+													<a href="#" class="bind" bind="swiper_id110_href">
+														<img src="images/newindeximg/rrico_2.png" alt="" class="bind" bind="swiper_id110_src">
+														<p>数字化</p>
+													</a>
+												</div>
+												
+												<div class="swiper-slide">
+													<a href="#" class="bind" bind="swiper_id110_href">
+														<img src="images/newindeximg/rrico_3.png" alt="" class="bind" bind="swiper_id110_src">
+														<p>校园</p>
+													</a>
+												</div>
+												
+												<div class="swiper-slide">
+													<a href="#" class="bind" bind="swiper_id110_href">
+														<img src="images/newindeximg/rrico_4.png" alt="" class="bind" bind="swiper_id110_src">
+														<p>应用下载</p>
+													</a>
+												</div>
+												<div class="swiper-slide">
+													<a href="#" class="bind" bind="swiper_id110_href">
+														<img src="images/newindeximg/rrico_6.png" alt="" class="bind" bind="swiper_id110_src">
+														<p>终端</p>
+													</a>
+												</div>
+										</div>
+										<!-- Add Pagination -->
+										<!-- <div class="swiper-pagination swiper-pagination2 swiper-pagination-black"></div>
+										</div> -->
+									</section>
+									<!-- 全部业务结束 -->
+									</div>
+									
+							</div>
+						</li>
+						
+						<li>
+							<div class="box" data-type="head" >
+								<span class="preview">标题</span>
+								<div class="ctrl-btns ctrl-btns-ele">
+									<!-- <span class="edit2">编辑2</span> -->
+									<span class="edit">编辑</span>
+									<span class="drag">拖拽</span>
+									<span class="remove">删除</span>
+								</div>
+								<div class="view myview">
+									<div class="ln-title-box">
+										<img src="images/newindeximg/title_1.png">
+										<a class="more" href="javascript:void(0)" bindType="data1">&nbsp;</a>
+									</div>
+								</div>
+							</div>
+							
+						</li>
+						<li>
+							<div class="box" data-type="goodsLR">
+								<span class="preview">动态广告（左右）</span>
+								<div class="ctrl-btns ctrl-btns-ele">
+									<span class="edit">编辑</span>
+									<span class="drag">拖拽</span>
+									<span class="remove">删除</span>
+								</div>
+								<div class="view myview">
+									<div class="goodsL-R" bind="type1">
+										<a href="ad/ad_sqll.html" class="bind" bind="p_id123_href">
+											<p class="tit limit1 bind" bind="p_id123_desc">动态广告位</p>
+											<dl class="oh">
+												<dt>
+													<img src="images/newindeximg/ywico_3.png" class="bind" bind="p_id123_img">
+												</dt>
+												<dd>							
+													<p class="des limit2 bind" bind="p_id123_desc">基础流量充值业务</p>
+													<p class="price bind" bind="p_id123_price">￥60.00</p>
+												</dd>
+											</dl>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="box" data-type="goodsTB" bind="type1">
+								<span class="preview">动态广告（上下）</span>
+								<div class="ctrl-btns ctrl-btns-ele">
+									<span class="edit">编辑</span>
+									<span class="drag">拖拽</span>
+									<span class="remove">删除</span>
+								</div>
+								<div class="view myview">
+									<div class="goodsT-B">
+										<a href="#" class="bind" bind="p_id123_href">
+											<img src="images/newindeximg/ywico_3.png" alt="">
+											<p class="ln-phone-name limit1 bind" bind="p_id123_desc">动态广告位</p>
+											<p class="ln-phone-text limit2 ln-phone-text2  bind" bind="p_id123_desc">6GB流量，180天有效期</p>
+											<p class="ln-phone-price">￥<span class=" bind" bind="p_id123_price">1.80</span></p>
+										</a>
+										
+									</div>
+								</div>
+							</div>
+						</li>
+						 
+						<li>
+							<div class="box" data-type="image">
+								<span class="preview">静态广告</span>
+								<div class="ctrl-btns ctrl-btns-ele">
+									<span class="edit">编辑</span>
+									
+									<span class="drag">拖拽</span>
+									<span class="remove">删除</span>
+								</div>
+								<div class="view myview">
+									<div class="goodsImage flex-content">
+										<!-- 音频图标展示 -->
+										<input type="hidden" class="ifsad" value="1"/><!-- 1展示音频图片 2不展示音频图片 -->
+										<input type="hidden" class="zysj" value="2"/><!-- 1左上角 2右上角 -->
+										<section class="audio_btn play_yinfu" style="display: block;z-index:999;">
+											<div class="rotate yinfu"></div>
+											<audio preload="auto" class='media' src="images/ga.mp3"  ></audio>
+										</section>
+										
+										<!-- 2020-11-6 新增 开始 -->
+										<section class="video_btn" style=" display:none;z-index:999;">
+											<video class="video_src" preload="auto" controls="controls" src="" style="width:100%;" accept='video/mp4'></video>
+										</section>
+										
+										<div class="play_btn" style="display:none; z-index:999;"><p class="pimg"></p></div>
+										<a class="back_btn" style="display:none; z-index:999;"><p class="bimg"></p></a>
+										<!-- 2020-11-6 新增 结束 -->
+										
+										<ul class="img_demo">
+											<li><a href="#"  class="bind"  bind="img_id110_href"><img class="bind"  bind="img_id110_src" src="images/demo.jpg" alt="" /></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="box" data-type="bottomNav">
+								<span class="preview">底部导航</span>
+								<div class="ctrl-btns ctrl-btns-ele">
+									<span class="edit">编辑</span>
+									<span class="drag">拖拽</span>
+									<span class="remove">删除</span>
+								</div>
+								<div class="view myview">
+									<section class="sectionHeight"></section>
+									<section class="navbottom-box">
+										<ul>
+											<li class="active sy"><a href="javascript:void(0)">首页</a></li>
+											<li class="zd"><a href="javascript:void(0)">分类</a></li>
+											<li class="fjdd"><a href="javascript:void(0)">附近的店</a></li>
+											<li class="wd"><a href="javascript:void(0)">我的</a></li>
+										</ul>
+										
+									</section>
+								</div>
+									
+							</div>
+						</li>
+						<!-- 滑动元素开始 -->
+						<li>
+							<div class="box hdBox hdysBox" data-type="hdys">
+								<span class="preview">滑动元素</span>
+								<div class="ctrl-btns ctrl-btns-ele">
+									<span class="spanBtn hdysEdit">编辑</span>
+									<span class="drag">拖拽</span>
+									<span class="remove">删除</span>
+								</div>
+								<div class="view hdview">
+									<!-- 每页组数 默认5组 和是否显示分页0不显示1显示 -->
+									<input type="hidden" class="hdyspageNum" value="5">
+									<input type="hidden" class='hdysifsfy' value="1">
+									<div class="swiper-container swiper-hdcs swiper-hdys">
+										<div class="swiper-wrapper hdyswrap">
+											<div class="swiper-slide">
+												<a href="#" class=""  >
+													<img src="images/newindeximg/rrico_2.png" alt="" class="" > 
+												</a>
+												<a href="#" class=""  >
+													<img src="images/newindeximg/rrico_2.png" alt="" class="" > 
+												</a>
+												<a href="#" class=""  >
+													<img src="images/newindeximg/rrico_2.png" alt="" class="" > 
+												</a>
+											</div>
+											<div class="swiper-slide">
+												<a href="#" class=""  >
+													<img src="images/newindeximg/rrico_5.png" alt="" class="" > 
+												</a>
+												<a href="#" class=""  >
+													<img src="images/newindeximg/rrico_5.png" alt="" class="" > 
+												</a>
+												<a href="#" class=""  >
+													<img src="images/newindeximg/rrico_5.png" alt="" class="" > 
+												</a>
+											</div>
+											<div class="swiper-slide">
+												<a href="#" class=""  >
+													<img src="images/newindeximg/rrico_5.png" alt="" class="" > 
+												</a>
+												<a href="#" class=""  >
+													<img src="images/newindeximg/rrico_5.png" alt="" class="" > 
+												</a>
+												<a href="#" class=""  >
+													<img src="images/newindeximg/rrico_5.png" alt="" class="" > 
+												</a>
+											</div>
+											<div class="swiper-slide">
+												<a href="#" class=""  >
+													<img src="images/newindeximg/rrico_1.png" alt="" class="" > 
+												</a>
+												<a href="#" class=""  >
+													<img src="images/newindeximg/rrico_1.png" alt="" class="" > 
+												</a>
+												<a href="#" class=""  >
+													<img src="images/newindeximg/rrico_1.png" alt="" class="" > 
+												</a>
+											</div>
+											<div class="swiper-slide">
+												<a href="#" class=""  >
+													<img src="images/newindeximg/rrico_1.png" alt="" class="" > 
+												</a>
+												<a href="#" class=""  >
+													<img src="images/newindeximg/rrico_1.png" alt="" class="" > 
+												</a>
+												<a href="#" class=""  >
+													<img src="images/newindeximg/rrico_1.png" alt="" class="" > 
+												</a>
+											</div>
+										</div>
+										<!-- 分页器 -->
+										<div class="swiper-scrollbar hdys-scrollbar"></div>
+									</div>
+									 
+								</div>
+									
+							</div>
+						</li>
+						<!-- 滑动元素结束 -->
+						<li>
+							<div class="box" data-type="hyNav">
+								<span class="preview">新底部导航</span>
+								<div class="ctrl-btns ctrl-btns-ele">
+									<span class="spanBtn hyEdit ">编辑</span>
+									<span class="drag">拖拽</span>
+									<span class="remove">删除</span>
+									
+								</div>
+								<div class="view whyview">
+									
+									<section class="hyNav-box">
+										<ul>
+											<li class="whyli">
+												<a href="wwww.baidu.com">
+													<!-- xzactive展示选中后图片 -->
+													<div class="xzactive"><img src="images/xnn_1.png" alt=""></div>
+													<div class="ndis"><img src="images/nn_1.png" alt=""></div>
+													<!-- <p>自定义1</p> -->
+												</a>
+											 
+												
+											</li>
+											<li class="whyli">
+												<a href="1wwww.baidu.com">
+													<div class="ndis"><img src="images/xnn_2.png" alt=""></div>
+													<div class=""><img src="images/nn_2.png" alt=""></div> 
+												</a> 
+											</li>
+											<li class="whyli">
+												<a href="2wwww.baidu.com">
+													<div class="ndis"><img src="images/xnn_3.png" alt=""></div>
+													<div class=""><img src="images/nn_2.png" alt=""></div> 
+												</a> 
+											</li>
+											<li class="whyli">
+												<a href="3wwww.baidu.com">
+													<div class="ndis"><img src="images/xnn_3.png" alt=""></div>
+													<div class=""><img src="images/nn_2.png" alt=""></div> 
+													 
+												</a> 
+											</li>
+											<li class="whyli">
+												<a href="4wwww.baidu.com">
+													<div class="ndis"><img src="images/xnn_4.png" alt=""></div>
+													<div class=""><img src="images/nn_4.png" alt=""></div> 
+												</a>
+												<!-- <input type="hidden" value="5" name="hymenuName">
+												<input type="hidden" value="1" name="whyggdz"> -->
+											</li>
+										</ul>
+										
+									</section>
+								</div>
+									
+							</div>
+						</li>
+						<li>
+							<div class="box hxmenu" data-type="hxcdhd">
+								<span class="preview">横向菜单滑动</span>
+								<div class="ctrl-btns ctrl-btns-ele">
+									<span class="spanBtn qyxqEdit qyxqBtn">编辑</span>
+									<span class="drag">拖拽</span>
+									<span class="remove">删除</span>
+								</div>
+								<div class="view hxmenuView">
+									 
+									<section class="hxsec">
+										<div class="swiper-container swiper-hx"> 
+											<div class="swiper-wrapper">
+												<div class="swiper-slide">
+													<div class="img_div">
+														<a href="https://wwww.baidu.com"><img src="images/l_01.png" alt=""></a>
+														<a href="wwww1.baidu.com"><img src="images/btn.png" alt=""></a>
+														<input type="hidden" class="jumphxc" value="" name="jumphx">
+													</div>
+													 
+													
+												</div>
+												<div class="swiper-slide">
+													<div class="img_div"> 
+														<a href="wwww.baidu.com"><img src="images/l_02.png" alt=""></a>
+														<a href="wwww1.baidu.com"><img src="images/btn.png" alt=""></a>
+														<input type="hidden" class="jumphxc" value="" name="jumphx">
+													</div>
+													 
+													
+												</div>
+												 
+												<div class="swiper-slide">
+													<div class="img_div"> 
+														<a href="wwww.baidu.com"><img src="images/l_03.png" alt=""></a>
+														<a href="wwww.baidu.com"><img src="images/btn.png" alt=""></a>
+														<input type="hidden" class="jumphxc" value="1" name="jumphx">
+													</div>
+													 
+												</div>
+												 
+												<div class="swiper-slide">
+													<div class="img_div">
+														<a href="wwww.baidu.com"><img src="images/l_01.png" alt=""></a>
+														<a href="wwww.baidu.com"><img src="images/btn.png" alt=""></a>
+														<input type="hidden" class="jumphxc" value="0" name="jumphx">
+													</div>
+													 
+													
+												</div>
+												
+											</div>
+											<!-- 分页器 -->
+											<div class="swiper-pagination"></div>
+										</div>
+									</section> 
+								</div>
+									
+							</div>
+						</li>
+						<li>
+							<div class="box msgpmdbox" data-type="msgpmd">
+								<span class="preview">消息跑马灯</span>
+								<div class="ctrl-btns ctrl-btns-ele">
+									<span class="spanBtn pmdEdit">编辑</span>
+									<span class="drag">拖拽</span>
+									<span class="remove">删除</span>
+								</div>
+								<div class="view xxpmd"> 
+									<section class="index-message-list flex1 pl10 pr10">
+										<div class="swiper-container swiper-container-meseage">
+											<div class="swiper-wrapper msgwrap">
+												<div class="swiper-slide">
+													<input type="hidden" name="xxtzlx1" value="1"/><!-- 类型 -->
+													<input type="hidden" name="btname1" value="测试链接1"/>
+													<input type="hidden" name="jumpadres1"/><!-- 跳转地址 -->
+													<input type="hidden" name="destxt1"/><!-- 描述 -->
+													<a href="www.baidu.com">
+														<span class="index-message-text limit1 c333">1新iPhoneXR 曝光全面屏，制霸性价比！</span>
+													</a>
+												</div>
+												<div class="swiper-slide">
+													<input type="hidden" name="xxtzlx2" value="2"/><!-- 类型 -->
+													<input type="hidden" name="btname2" value=""/>
+													<input type="hidden" name="jumpadres2"/><!-- 跳转地址 -->
+													<input type="hidden" name="destxt2"/><!-- 描述 -->
+													<a href="#">   
+														<span class="index-message-text limit1 c333">2双11来了！合约机优惠放大价，绝对实惠！</span>
+													</a>
+												</div>
+												<div class="swiper-slide">
+													<input type="hidden" name="xxtzlx3" value="3"/><!-- 类型 -->
+													<input type="hidden" name="btname3" value="测试链接有"/>
+													<input type="hidden" name="jumpadres3"/><!-- 跳转地址 -->
+													<input type="hidden" name="destxt3"/><!-- 描述 -->
+													<a href="#"> 
+														<span class="index-message-text limit1 c333">3新iPhoneXR 曝光全面屏，制霸性价比！</span>
+													</a>
+												</div>
+												 
+											</div>
+										</div>
+									</section>
+								</div>
+									
+							</div>
+						</li>
+						 <!-- 搜索元素新增 -->
+						 <li>
+							<div class="box searchbox" data-type="search">
+								<span class="preview">搜索</span>
+								<div class="ctrl-btns ctrl-btns-ele">
+									<span class="spanBtn searchEdit">编辑</span>
+									<span class="drag">拖拽</span>
+									<span class="remove">删除</span>
+								</div>
+								<div class="view search"> 
+									<div class="searchdiv">
+										<img src="images/seach.png" alt="">
+										<input type="search" class="searInput" value="" placeholder="请输入搜索内容">
+										<input type="hidden" class="hidselect" value="1" >
+									</div>
+								</div>
+									
+							</div>
+						</li>
+						 <!-- 20211129套餐话费展示元素新增 -->
+						 <li>
+							<div class="box showFeeBox jbmgnBox" data-type="showFee">
+								<span class="preview">便民功能模块</span>
+								<div class="ctrl-btns ctrl-btns-ele">
+									<span class="spanBtn showFeeEdit feebtn">编辑</span>
+									<span class="drag">拖拽</span>
+									<span class="remove">删除</span>
+								</div>
+								<div class="view bmgnView"> 
+									<section class="swiper-container showFeediv jbmgnswip" >
+										<ul class="swiper-wrapper showFeeUl">
+											<li class="swiper-slide slidebm jbmgnslide"  >
+												<div class="inclass my_bjgn">
+													<input type="hidden" class="hidetit" value="bmtyll">
+													<p class="md_des ">通用流量剩余</p>
+													<p class="md_txt_bd"><span>12.9</span><span>GB</span> </p>
+													<!-- 有背景图就显示a标签。没有就不显示 -->
+													<div class="bmzwbtn bmbtna hidefee"><a href="www.baidu.com"></a></div>
+												</div>
+											</li>
+											<li class="swiper-slide slidebm jbmgnslide" >
+												<div class="inclass my_bjgn ">
+													<input type="hidden" class="hidetit"  value="bmhfye">
+													<p class="md_des">话费余额</p>
+													<p class="md_txt_bd"><span>164.06</span><span>元</span> </p>
+													<div class="bmzwbtn bmbtna hidefee"><a href="javascript:;"></a></div>
+												</div>
+											</li>
+											<li class="swiper-slide slidebm jbmgnslide" >
+												<div class="inclass my_bjgn  ">
+													<input type="hidden"  class="hidetit"  value="bmyyth">
+													<p class="md_des">语音通话</p>
+													<p class="md_txt_bd"><span>194</span><span>分钟</span> </p>
+													<div class="bmzwbtn bmbtna hidefee"><a href="javascript:;"></a></div>
+												</div>
+											</li>
+											<li class="swiper-slide slidebm jbmgnslide" >
+												<div class="inclass my_bjgn">
+													<input type="hidden"  class="hidetit"  value="bmjf">
+													<p class="md_des">积分</p>
+													<p class="md_txt_bd"><span>428</span><span>分</span> </p>
+													<div class="bmzwbtn bmbtna hidefee"><a href="javascript:;"></a></div>
+												</div>
+											</li>
+										</ul>
+									</section>
+								</div>
+									
+							</div>
+						</li>
+
+						<!-- 20211130协议元素新增 -->
+						<li>
+							<div class="box wdxybox" data-type="wdxy">
+								<span class="preview">协议元素</span>
+								<div class="ctrl-btns ctrl-btns-ele">
+									<span class="spanBtn wdxyEdit">编辑</span>
+									<span class="drag">拖拽</span>
+									<span class="remove">删除</span>
+								</div>
+								<div class="view dbysView"> 
+									<section>
+										<div class="xieyi_btn_container">
+											<p>
+												<a class="xieyi_btn" href="">《服务协议》</a>
+												<a class="yinsi_btn" href="">《隐私保护政策》</a>
+											</p>
+										</div>
+									</section>
+								</div>
+							</div>
+						</li>
+
+						<!-- 20220108悬浮元素 -->
+						<li>
+							<div class="box wdxybox" data-type="wdxy">
+								<span class="preview">顶部悬浮标签</span>
+								<div class="ctrl-btns ctrl-btns-ele">
+									<span class="spanBtn wdxyEdit">编辑</span>
+									<span class="drag">拖拽</span>
+									<span class="remove">删除</span>
+								</div>
+								<div class="view dbysView"> 
+									<section>
+										<!-- 顶部悬浮标签-->
+										<div class="float_ele_container"> 
+											<div class="img_phone_container" >
+												<div class="person_img_cir">
+													<img src="./images/dingbuxuanfu_card/mobile-cir.png" alt="">
+												</div>
+												<span>150****1329 <img src="./images/dingbuxuanfu_card/yelvip-icon.png" alt="" class="ip_vip_icon"></span>   
+												<span style="display: none;">未登录</span>   <!-- 切换登录状态 -->
+												
+												
+											</div>
+											<div class="coupon_container">
+												<a href="">
+													<img src="./images/dingbuxuanfu_card/TagsFilled.png" alt="">
+													<p style="color: #fff;">优惠券</p>
+												</a>
+											</div>
+										</div>
+									</section>
+								</div>
+							</div>
+						</li>
+						<!-- 20220108店铺会员卡片 -->
+						<li>
+							<div class="box wdxybox" data-type="wdxy">
+								<span class="preview">店铺会员卡片</span>
+								<div class="ctrl-btns ctrl-btns-ele">
+									<span class="spanBtn wdxyEdit">编辑</span>
+									<span class="drag">拖拽</span>
+									<span class="remove">删除</span>
+								</div>
+								<div class="view dbysView"> 
+									<section>
+										<!-- 在线看店 -->
+										<div class="onlinecard_container">
+							
+											<!-- 加入vip请通过display：none控制显示隐藏，隐藏时请设置onlinecard_container的margin-top为0 -->
+											<div class="onlinecard_vip">
+												<div class="onlinecard_vip_intro_text"><span><img src="./images/dingbuxuanfu_card/join_vip.png" alt=""> 加入vip会员 畅享特权</span></div>
+												<div class="onlinecard_join_btn"><a href="">加入会员</a></div>
+											</div>
+							
+											<div class="onlinecard_text_box">
+												<div class="onlincard_logo">
+												   <a href="#">
+													<img src="./images/dingbuxuanfu_card/mobile-icon.png" alt="">
+													<p>在线看店</p>
+												   </a>
+												</div>
+												<div class="onlinecard_center">
+													<p class="onlinecard_tit">XXX的小店</p>
+													<p class="onlinecard_txt">
+															<img src="./images/dingbuxuanfu_card/phone-img.png" alt="" onclick="showid('call_phone')">
+															<img src="./images/dingbuxuanfu_card/yelposition-img.png" alt="">
+															地址:xxxxxxxxxxxxxxxx
+													</p>
+												</div>
+												<div class="onlinecard_btn">
+													<a href="#" ><img src="./images/dingbuxuanfu_card/vip-fill.png" alt="">  VIP会员</a>
+													<a href="javascript:;" onclick="showid('get_wx')"><img src="./images/dingbuxuanfu_card/wx-icon.png" alt="">  微信客服</a>
+												</div>
+											</div>
+										</div>
+									</section>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;"  style="background:#2e343b;padding-left:0;" class="elements" id="addMenu"><span>增加元素</span></a>
+				</li>
+			</ul>
+			
+		</div>
+		
+	</div>
+	<!--end-->
+	<div id="vuedemo">
+		
+		<!--预览区域-->
+		<div class="doc-wrap" id="doc-wrap">
+			<div class="leftlableYa none"></div>
+			<div class="demo"> 
+			</div>
+		</div>
+		<div class="doc-wrap" id="doc-wrap2" style="display:none">
+			<div class="demo">
+				
+			</div>
+		</div>
+		<div class="savehtml" id="savehtml" style="display: none;"></div>
+		<!--end-->
+	</div>
+	<!-- 20220208 add 家庭宽带 家庭魔百和-->
+	<select class="form-control form-control-select input-sm bmcs" id="bmcs" style="display: none;">
+		<option value="bmtyll" selected>通用流量剩余</option>
+		<option value="bmhfye">话费余额</option>
+		<option value="bmyyth">语音通话</option>
+		<option value="bmdqld">当前辽豆</option>
+		<option value="bmjf">积分</option>
+		<option value="jtkd">家庭宽带</option>
+		<option value="jtmbh">家庭魔百和</option>
+	</select>
+	
+
+	<!-- coMmodals 截止1122后公共蒙版使用 -->
+	<div class="coMmodals"></div>
+	<div id="copyHtml" style="display:none;">
+		<input type="hidden" value="">
+		<p></p>
+	</div>
+
+	<!-- 获取楼层id弹窗 开始 -->
+	<div class="csFloormodals">
+			
+			<div class="csFloorId" >
+				<a href="javascript:;" class="closeGB" onClick="closeC('.csFloormodals')">×</a>
+				<p>当前楼层id：<input id="floorId" type="text" readonly/> </p>
+				<button class="coopybtn" type="button" onClick="copy()">复制</button>
+			</div>
+		 
+	</div> 
+	<!-- 获取楼层id弹窗 结束 -->
+
+	<!-- tab楼层增加弹窗 开始-->
+	<div class="modalsCms tabModals">
+		<div class=" cmsDiv tabsDiv tabsDiv1 tablcDiv" >
+			<ul class="cmslectLi">
+				<li class="cur">默认</li>
+			</ul> 
+			<a href="javascript:;" class="closeGB" onClick="closeC('.tabModals')">×</a>
+			<div class="mxdiv">
+				<span class='redzs' style="height: auto; padding-top: 6px;">注：1.请先编辑tab数量，再编辑tab图片；<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.每个tab下图片宽高必须一致；</span>
+				<p>标题栏背景：<input type="text" id="btlbj" placeholder="请输入色号如#666666"></p>
+				
+			</div>
+			<div class="mxdiv">
+				<p style="float: left;">选择需要的展示的图标数：</p> 
+				<select id="tabtupian" style="margin-top: 16px;">
+					<option value="2">2</option> 
+					<option value="2.5">2.5</option> 
+					<option value="3" >3</option> 
+					<option value="3.5" selected="selected">3.5</option> 
+					<option value="4"> 4</option> 
+					<option value="4.5" >4.5</option> 
+					<option value="5">5</option> 
+					<option value="5.5">5.5</option></select>
+				</div>
+				
+			<div class="tbbtn_div">
+				<button type="button" onClick="closeC('.tabModals')" class="cmsqx">取消</button><button type="button" class="saveTablc">保存</button>
+			</div>
+		</div>
+	</div>
+	<!-- tab楼层编辑弹窗 结束-->
+
+	<!-- 会员等级弹窗 开始-->
+	<div class="modalsCms hyModals">
+		<div class=" cmsDiv tabsDiv tabsDiv1 hylcDiv" >
+			<ul class="cmslectLi">
+				<li class="cur">默认</li>
+			</ul> 
+			<a href="javascript:;" class="closeGB" onClick="closeC('.hyModals')">×</a>
+			<div class="mxdiv">
+				<p> 
+					选择等级：<input type="radio" class="nninput"  name="hyra" id="hyra1" value="0" checked><label for="hyra1">无会员</label>
+					<input type="radio"  class="nninput" name="hyra" id="hyra2" value="1" ><label for="hyra2">月会员</label>
+					<input type="radio"  class="nninput" name="hyra" id="hyra3" value="2" ><label for="hyra3">年会员</label>
+				</p>
+			</div>
+				
+			<div class="tbbtn_div">
+				<button type="button" onClick="closeC('.hyModals')" class="cmsqx">取消</button><button type="button" class="saveTabhy">保存</button>
+			</div>
+		</div>
+	</div>
+	<!-- 会员等级弹窗 结束-->
+
+	<!-- tab楼层添加tabs标题 开始-->
+	<div class="modalsCms cnmenu tabBTModals"> 
+		<div class="cmsDiv  tabsDiv tabsDiv2 tabBtdiv" >
+			<ul class="cmslectLi">
+				<li class="cur">默认</li>
+			</ul> 
+			<a href="javascript:;" class="closeGB" onClick="closeC('.tabBTModals')">×</a>
+			<div class="wxzdiv">
+				<span class='redzs' style="height: auto; padding-top: 6px;">注：请先编辑tab数量，再编辑tab图片；</span>
+				<div class="nmxdiv wxpic">
+					<p>&nbsp;未选中图片：</p>
+					<div class="uploadImg normalData" style="float: left;">
+						<img src="images/images.png" alt="" class="imagesZw" >
+						<img src="" alt="" class="imgPerview">
+						<p class="opacityP">上传图片</p>
+						<input type="file" class="imgInput">
+					</div>
+					<span class='redzs' id="tbts_id1">注：建议圆形图片大小200*120px，文字图片大小150*55px </span>
+				</div>
+				<div class="nmxdiv xzpic">
+					<p>&nbsp;&nbsp;&nbsp;&nbsp;选中图片：</p>
+					<div class="uploadImg normalData" style="float: left;">
+						<img src="images/images.png" alt="" class="imagesZw">
+						<img src="" alt="" class="imgPerview">
+						<p class="opacityP">上传图片</p>
+						<input type="file" class="imgInput">
+					</div>
+					<span class='redzs'>注：建议建议和未选中图片宽高大小一致</span>
+				</div>
+			</div>
+			 
+			<div class="tbbtn_div">
+				<button  type="button" onClick="closeC('.tabBTModals')" class="cmsqx">取消</button><button type="button" class="saveTAbs">保存</button>
+			</div>
+		</div>
+	</div>
+	<!-- tab楼层添加tabs标题 结束-->
+
+	<!-- tab楼层编辑tabs标题 开始-->
+	<div class="modalsCms cnmenu tabBTModals1"> 
+		<div class="cmsDiv tabsDiv tabsDiv2 tabBtdiv1" >
+			<ul class="cmslectLi">
+				<li class="cur">默认</li>
+			</ul> 
+			<a href="javascript:;" class="closeGB" onClick="closeC('.tabBTModals1')">x</a>
+			<div class="wxzdiv ewxzdiv">
+				<span class='redzs' style="height: auto; padding-top: 6px;">注：请先编辑tab数量，再编辑tab图片；</span>
+				<div class="nmxdiv ewxpic">
+					<p>&nbsp;未选中图片：</p>
+					<div class="uploadImg normalData" style="float: left;">
+						<img src="images/images.png" alt="" class="imagesZw" style="display: none;">
+						<img src="" alt="" class="imgPerview">
+						<p class="opacityP">上传图片</p>
+						<input type="file" class="imgInput">
+					</div>
+					<span class='redzs' id="tbts_id2">注：建议圆形图片大小200*120px，文字图片大小150*55px </span>
+				</div>
+				<div class="nmxdiv exzpic">
+					<p>&nbsp;&nbsp;&nbsp;&nbsp;选中图片：</p>
+					<div class="uploadImg normalData" style="float: left;">
+						<img src="images/images.png" alt="" class="imagesZw" style="display: none;">
+						<img src="" alt="" class="imgPerview">
+						<p class="opacityP">上传图片</p>
+						<input type="file" class="imgInput">
+					</div>
+					<span class='redzs'>注：建议建议和未选中图片宽高大小一致</span>
+				</div>
+			</div>
+			<div class="tbbtn_div">
+				<button  type="button" onClick="closeC('.tabBTModals1')" class="cmsqx">取消</button><button type="button" class="saveTAbs1">保存</button>
+			</div>
+		</div>
+	</div>
+	<!-- tab楼层编辑tabs标题 结束-->
+
+	<!--弹窗区域 商品房间-->
+	
+	<div class="modals_cspz modals_cspz1"><!--楼层参数配置弹窗 --> 
+		<div class="cspzedit-layer cspzedit-layeriop tabs" id="cspzedit-layer">
+			<a href="javascript:;" class="close close1">&times;</a>
+			<ul class="selectLiCspz">
+				<li class="cur">IOP推荐</li>
+				<li>补位广告</li>
+			</ul>
+			 
+				 
+			<div class="cspzmain-content main-content1" id="htmlConCspz"  style="display:none">
+				<div class='cont_box'> 
+					<p>
+						<span class='zsp'>无任何推荐信息时，是否隐藏楼层：</span> 
+						<span class='sf'> <input type='radio' name='ifyc' id='ifyc1'/><label for='ifyc1'>是</label> 
+						<input type='radio' name='ifyc' id='ifyc2' checked/><label for='ifyc2'>否</label></span> 
+						<span class='lsp'>注：推荐策略信息最多可配100条。</span>
+					</p>
+					<table class='ch_tips'>
+						<thead>
+							<tr>
+								<th><input type='checkbox' class='allCheckbox'></th>
+								<th>序号</th>
+								<th>策略配置</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody class='mytablebox'>
+							<tr class='clxqq'>
+								<td><input type='checkbox'></td>
+								<td>1</td>
+								<td>
+									<div>
+										<dl>
+											<dt>策划ID:</dt>
+											<dd>
+												<input type='text' placeholder='请输入策划ID'>
+												<span>注：输入ID请用英文,分隔</span>
+											</dd>
+										</dl>
+									</div>
+									<div>
+										<dl>
+											<dt>图片:</dt>
+											<dd>
+												<div style="overflow:hidden;">
+													<div class='uploadImg normalData fl'>
+														<img src='images/images.png' alt='' class='imagesZw'>
+														<img src='' alt='' class='imgPerview' id="imgId">
+														<p class='opacityP'>上传图片</p>
+														<input type='file' class='imgInput' style="width:100%;" id="file1" onChange="assignment()">
+													</div>
+													<a class="llbtn c3c9be1bb fl" style="margin-top:70px; margin-left:20px;"  onClick="showid('ts_ljzs')" title="图片">预览</a>
+												</div>
+												<span>注：请上传350*350像素，大小不超过100k，格式为jpg，png的图片。</span>
+											</dd>
+										</dl>
+									</div>
+									<div>
+										<dl>
+											<dt>图片:</dt>
+											<dd>
+												<input type='text' class='jhinp' placeholder='请输入跳转地址或选择跳转广告'>
+												<span class='jhsp'  >选择广告/聚合页</span>
+											</dd>
+										</dl>
+									</div>
+									<div>
+										<dl>
+											<dt>展示权重:</dt>
+											<dd>
+												<input type='text' placeholder='请输入所占权重1~100，数值越小排位越靠前'>
+															
+											</dd>
+										</dl>
+									</div>
+									<div>
+										<dl>
+											<dt>有效时间:</dt>
+											<dd class='yxsjdd'>
+												<input id='startTime' name='startTime' readonly='readonly' class='Wdate w150'  onclick="WdatePicker({maxDate:'#F{$dp.$D(\'endTime\')}',dateFmt:'yyyy-MM-dd'})" value='' /> ~ <input id='endTime' name='endTime' readonly='readonly' class='Wdate w150' onClick="WdatePicker({minDate:'#F{$dp.$D(\'startTime\')}',dateFmt:'yyyy-MM-dd'})" value='' />
+											</dd>
+										</dl>
+									</div>
+									<div>
+										<dl>
+											<dt>是否显示下一步按钮:</dt>
+											<dd>
+												<div id="anwzF">
+													<input type='radio' name='xyban' value="y" class='anwz'/><label for='anwz1'>是</label> 
+													<input type='radio' name='xyban' value="n"  class='anwz' checked/><label for='anwz2'>否</label>
+												</div>
+											</dd>
+										</dl>
+									</div>
+									<div class="anwzF">
+										<dl>
+											<dt>按钮位置:</dt>
+											<dd>
+												<div id="anwzF">
+													<input type='radio' name='anwz' value="y" class='anwz' checked/><label for='anwz1'>中间</label> 
+													<input type='radio' name='anwz' value="n"  class='anwz'/><label for='anwz2'>底部</label>
+												</div>
+											</dd>
+										</dl>
+									</div>
+									<div class='dbzsF'>
+										<dl>
+											<dt>底部展示:</dt>
+											<dd>
+												<div id="anwzF">
+													<input type='radio' name='dbzs' value="y" class='anwz' checked/><label for='anwz1'>固定</label> 
+													<input type='radio' name='dbzs' value="n"  class='anwz'/><label for='anwz2'>悬浮</label>
+												</div>
+											</dd>
+										</dl>
+									</div>
+								</td>
+								<td><a href="javascript:;" class="submitted saven">保存</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			 
+			<div class="cspzmain-content main-content1" id="htmlConCspz2" style="display:none">
+				<div class='cont_box'> 
+					 
+					<table class='ch_tips'>
+						<thead>
+							<tr>
+								<th><input type='checkbox' class='allCheckbox'></th>
+								<th>序号</th>
+								<th>策略配置</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody class='mytablebox'>
+							<tr class='clxqq'>
+								<td><input type='checkbox'></td>
+								<td>1</td>
+								<td> 
+									<div>
+										<dl>
+											<dt>图片:</dt>
+											<dd>
+												<div class='uploadImg normalData'>
+												<img src='images/images.png' alt='' class='imagesZw'>
+												<img src='' alt='' class='imgPerview'>
+												<p class='opacityP'>上传图片</p>
+												<input type='file' class='imgInput'>
+												</div>
+												
+												<span>注：请上传350*350像素，大小不超过100k，格式为jpg，png的图片。</span>
+											</dd>
+										</dl>
+									</div>
+									<div>
+										<dl>
+											<dt>图片:</dt>
+											<dd>
+												<input type='text' class='jhinp' placeholder='请输入跳转地址或选择跳转广告'>
+												<span class='jhsp'>选择广告/聚合页</span>
+											</dd>
+										</dl>
+									</div>
+									<div>
+										<dl>
+											<dt>展示权重:</dt>
+											<dd>
+												<input type='text' placeholder='请输入所占权重1~100，数值越小排位越靠前'>
+															
+											</dd>
+										</dl>
+									</div>
+									<div>
+										<dl>
+											<dt>有效时间:</dt>
+											<dd class='yxsjdd'>
+												<input id='startTime1' name='startTime1' readonly='readonly' class='Wdate w150'  onclick="WdatePicker({maxDate:'#F{$dp.$D(\'endTime1\')}',dateFmt:'yyyy-MM-dd'})" value='' /> ~ <input id='endTime1' name='endTime1' readonly='readonly' class='Wdate w150' onClick="WdatePicker({minDate:'#F{$dp.$D(\'startTime1\')}',dateFmt:'yyyy-MM-dd'})" value='' />
+											</dd>
+										</dl>
+									</div>
+									<div>
+										<dl>
+											<dt>是否显示下一步按钮:</dt>
+											<dd>
+												<div id="anwzF">
+													<input type='radio' name='xyban' value="y" class='anwz'/><label for='anwz1'>是</label> 
+													<input type='radio' name='xyban' value="n"  class='anwz' checked/><label for='anwz2'>否</label>
+												</div>
+											</dd>
+										</dl>
+									</div>
+									<div class="anwzF">
+										<dl>
+											<dt>按钮位置:</dt>
+											<dd>
+												<div id="anwzF">
+													<input type='radio' name='anwz' value="y" class='anwz' checked/><label for='anwz1'>中间</label> 
+													<input type='radio' name='anwz' value="n"  class='anwz'/><label for='anwz2'>底部</label>
+												</div>
+											</dd>
+										</dl>
+									</div>
+									<div class='dbzsF'>
+										<dl>
+											<dt>底部展示:</dt>
+											<dd>
+												<div id="anwzF">
+													<input type='radio' name='dbzs' value="y" class='anwz' checked/><label for='anwz1'>固定</label> 
+													<input type='radio' name='dbzs' value="n"  class='anwz'/><label for='anwz2'>悬浮</label>
+												</div>
+											</dd>
+										</dl>
+									</div>
+								</td>
+								<td><a href="javascript:;" class="submitted saven">保存</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="tab-content ioptab" style="display: block" >
+				<div class="pageY">
+					<a href="javascript:;">首页</a>
+					<a href="javascript:;">上一页</a>
+					<a href="javascript:;">下一页</a>
+					<a href="javascript:;">末页</a>
+					每页10条，共<span>1</span>页，跳转至<input type="tel" maxlength="2" onKeyUp="value=value.replace(/[^\d]/g,'')" onBlur="value=value.replace(/[^\d]/g,'')"/>页<a href="">GO</a>
+				</div>
+				<div class="tc iop-edit iop-edit1">
+					<input type="radio" id="jxtj1" class="jxtj" /><label for="jxtj1" class="jxadd" >继续添加1</label>
+					<!-- <button type="submit" name="submit" class="submitted">保存</button> -->
+					<button type="button" name="button" class="alldel">批量删除</button>
+				</div>
+			</div>
+			<div class="tab-content ioptab" style="display: none;">
+				<div class="tc iop-edit iop-editbw">
+					<input type="radio" id="jxtj2"  class="jxtj"/><label for="jxt2" class="jxadd" >继续添加2</label>
+					<!-- <button type="submit" name="submit" class="submitted">保存</button> -->
+					<button type="button" name="button" class="alldel">批量删除</button>
+				</div>
+			</div>
+			
+		
+		</div>
+	</div>
+
+	<div class="modals_cspz modals_cspzjhy"><!--选择广告聚合页 --> 
+		<div class="cspzedit-layer cspzedit-layerjh tabs" id="cspzedit-layer">
+			<a href="javascript:;" class="close close2">&times;</a>
+			<ul class="selectLiCspz">
+				<li class="cur" style="width: auto;"> 选择广告/聚合页</li> 
+			</ul> 
+			<div class="cspzmain-content" id="htmlConjh"  style="display:none">
+				<div class='cont_box'> 
+					<p>
+						<span class='zsp'>请选择推荐内容：</span> 
+						<span class='sf'> 
+							 <input type='radio' name='tjnr' id='tjnr1' class="tjnr" onClick="showggjh('ggtable')" checked/><label for='tjnr1'>广告</label>
+							 <input type='radio' name='tjnr' id='tjnr2' class="tjnr" onClick="showggjh('jhytable')"/><label for='tjnr2'>聚合页</label>
+						</span> 
+						 
+					</p>
+
+					
+					
+					<div class="ggtable" style="display: block">
+							<div class="cxdiv">
+								<table>
+									<tr>
+										<td><span>广告标题：</span><input type="text" ></td>
+										<td><span>商品名称：</span><input type="text"></td>
+										<td>
+											<span>广告类型：</span> 
+											<select  class="form-control form-control-select input-sm" >
+												<option value="0">全部</option>
+												<option value="1" hassubinfo="true">热销</option>
+												<option value="2" hassubinfo="true">流量</option>
+												<option value="3" hassubinfo="true">数字化</option>
+												<option value="单选" hassubinfo="true">校园</option> 
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2">
+											<span>有效时间：</span>	
+											<input id='startTime2' name='startTime2' readonly='readonly' class='Wdate w150'  onclick="WdatePicker({maxDate:'#F{$dp.$D(\'endTime2\')}',dateFmt:'yyyy-MM-dd'})" value='' /><span>&nbsp; ~ &nbsp;</span><input id='endTime2' name='endTime2' readonly='readonly' class='Wdate w150' onClick="WdatePicker({minDate:'#F{$dp.$D(\'startTime2\')}',dateFmt:'yyyy-MM-dd'})" value='' />
+										</td>
+										<td class="btna"><a href="javascript:;">重置</a><a href="javascript:;">查询</a></td>
+											
+									</tr>
+								</table>
+							</div>
+		
+							<table class='ch_tips '>
+								<thead>
+									<tr>
+										<th> </th>
+										<th>序号</th>
+										<th>聚合页名称</th>
+										<th>页面类型</th>
+										<th>所属系统</th>
+										<th>发布时间</th>
+										<th>最后操作类型</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tbody class='mytablebox'>
+									<tr class='clxqq tjjh'>
+										<td><input type='radio' name="jhr" class="jhr"></td>
+										<td>1</td>
+										<td>数字化</td>
+										<td>来电提醒一元购</td>
+										<td>来电提醒一元购</td>
+										<td>2018-10-10 00:00:00至2018-10-17 23:59:59</td>
+										<td>2018-10-09 13:30:05</td>
+										<td><a href="javascript:;" class="zka " id="zk1">展开</a></td>
+									</tr>
+									<tr class='zk zk1'  >
+										<td><input type='radio' name="jhr" class="jhr"></td>
+										<td> </td>
+										<td> </td>
+										<td> </td>
+										<td>来电提醒一元购</td>
+										<td> </td>
+										<td> </td>
+										<td> </td>
+									</tr>
+									<tr class='zk zk1'   >
+										<td><input type='radio' name="jhr" class="jhr"></td>
+										<td> </td>
+										<td> </td>
+										<td> </td>
+										<td>来电提醒一元购</td>
+										<td> </td>
+										<td> </td>
+										<td> </td>
+									</tr>
+									<tr class='clxqq tjjh'>
+										<td><input type='radio' name="jhr" class="jhr"></td>
+										<td>2</td>
+										<td>热销</td>
+										<td>跨年流量包</td>
+										<td>跨年流量包</td>
+										<td>2018-10-10 00:00:00至2018-10-17 23:59:59</td>
+										<td>2018-10-09 13:30:05</td>
+										<td><a href="javascript:;" class="zka" id="zk2">展开</a></td>
+									</tr>
+									<tr class='zk zk2'>
+										<td><input type='radio' name="jhr" class="jhr"></td>
+										<td> </td>
+										<td> </td>
+										<td> </td>
+										<td>来电提醒一元购</td>
+										<td> </td>
+										<td> </td>
+										<td> </td>
+									</tr>
+									<tr class='zk zk2'>
+										<td><input type='radio' name="jhr" class="jhr"></td>
+										<td> </td>
+										<td> </td>
+										<td> </td>
+										<td>来电提醒一元购</td>
+										<td> </td>
+										<td> </td>
+										<td> </td>
+									</tr>
+									<tr class='clxqq tjjh'>
+										<td><input type='radio' name="jhr" class="jhr"></td>
+										<td>3</td>
+										<td>流量</td>
+										<td>省内任我用流量包</td>
+										<td>省内任我用流量包</td>
+										<td>2018-10-10 00:00:00至2018-10-17 23:59:59</td>
+										<td>2018-10-09 13:30:05</td>
+										<td><a href="javascript:;" class="zka" id="zk3">展开</a></td>
+									</tr>
+									<tr class='zk zk3'>
+										<td><input type='radio' name="jhr" class="jhr"></td>
+										<td> </td>
+										<td> </td>
+										<td> </td>
+										<td>来电提醒一元购</td>
+										<td> </td>
+										<td> </td>
+										<td> </td>
+									</tr>
+									<tr class='zk zk3'>
+										<td><input type='radio' name="jhr" class="jhr"></td>
+										<td> </td>
+										<td> </td>
+										<td> </td>
+										<td>来电提醒一元购</td>
+										<td> </td>
+										<td> </td>
+										<td> </td>
+									</tr>
+								</tbody>
+							</table>
+					</div>
+					<div class="jhytable" style="display: none">
+						<div class="cxdiv">
+							<table>
+								<tr>
+									<td><span>广告标题：</span><input type="text" ></td>
+									<td><span>商品名称：</span><input type="text"></td>
+									<td>
+										<span>广告类型：</span> 
+										<select  class="form-control form-control-select input-sm" >
+											<option value="0">全部</option>
+											<option value="1" hassubinfo="true">热销</option>
+											<option value="2" hassubinfo="true">流量</option>
+											<option value="3" hassubinfo="true">数字化</option>
+											<option value="单选" hassubinfo="true">校园</option> 
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<span>有效时间：</span>	
+										<input id='startTime3' name='startTime3' readonly='readonly' class='Wdate w150'  onclick="WdatePicker({maxDate:'#F{$dp.$D(\'endTime3\')}',dateFmt:'yyyy-MM-dd'})" value='' /><span>&nbsp; ~ &nbsp;</span><input id='endTime3' name='endTime3' readonly='readonly' class='Wdate w150' onClick="WdatePicker({minDate:'#F{$dp.$D(\'startTime3\')}',dateFmt:'yyyy-MM-dd'})" value='' />
+									</td>
+									<td class="btna"><a href="javascript:;">重置</a><a href="javascript:;">查询</a></td>
+										
+								</tr>
+							</table>
+							</div>
+	
+						<table class='ch_tips '>
+							<thead>
+								<tr>
+									<th> </th>
+									<th>序号</th>
+									<th>聚合页名称</th>
+									<th>页面类型</th>
+									<th>所属系统</th>
+									<th>发布时间</th>
+									<th>最后操作类型</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody class='mytablebox'>
+								<tr class='clxqq tjjh'>
+									<td><input type='radio' name="jhr" class="jhr"></td>
+									<td>1</td>
+									<td>数字化</td>
+									<td>来电提醒一元购</td>
+									<td>来电提醒一元购</td>
+									<td>2018-10-10 00:00:00至2018-10-17 23:59:59</td>
+									<td>2018-10-09 13:30:05</td>
+									<td><a href="javascript:;" class="zka" id="jhzk1">展开</a></td>
+								</tr>
+								<tr class=' zk jhzk1'>
+									<td><input type='radio' name="jhr" class="jhr"></td>
+									<td> </td>
+									<td> </td>
+									<td> </td>
+									<td>来电提醒一元购</td>
+									<td> </td>
+									<td> </td>
+									<td> </td>
+								</tr>
+								<tr class='zk jhzk1'>
+									<td><input type='radio' name="jhr" class="jhr"></td>
+									<td> </td>
+									<td> </td>
+									<td> </td>
+									<td>来电提醒一元购</td>
+									<td> </td>
+									<td> </td>
+									<td> </td>
+								</tr>
+								<tr class='clxqq tjjh_2'>
+									<td><input type='radio' name="jhr" class="jhr"></td>
+									<td>2</td>
+									<td>热销</td>
+									<td>跨年流量包</td>
+									<td>跨年流量包</td>
+									<td>2018-10-10 00:00:00至2018-10-17 23:59:59</td>
+									<td>2018-10-09 13:30:05</td>
+									<td><a href="javascript:;" class="zka" id="jhzk2">展开</a></td>
+								</tr>
+								<tr class='zk jhzk2'>
+									<td><input type='radio' name="jhr" class="jhr"></td>
+									<td> </td>
+									<td> </td>
+									<td> </td>
+									<td>来电提醒一元购</td>
+									<td> </td>
+									<td> </td>
+									<td> </td>
+								</tr>
+								<tr class='zk jhzk2'>
+									<td><input type='radio' name="jhr" class="jhr"></td>
+									<td> </td>
+									<td> </td>
+									<td> </td>
+									<td>来电提醒一元购</td>
+									<td> </td>
+									<td> </td>
+									<td> </td>
+								</tr>
+								<tr class='clxqq tjjh_3'>
+									<td><input type='radio' name="jhr" class="jhr"></td>
+									<td>3</td>
+									<td>流量</td>
+									<td>省内任我用流量包</td>
+									<td>省内任我用流量包</td>
+									<td>2018-10-10 00:00:00至2018-10-17 23:59:59</td>
+									<td>2018-10-09 13:30:05</td>
+									<td><a href="javascript:;" class="zka" id="jhzk3">展开</a></td>
+								</tr>
+								<tr class='zk zk3'>
+									<td><input type='radio' name="jhr" class="jhr"></td>
+									<td> </td>
+									<td> </td>
+									<td> </td>
+									<td>来电提醒一元购</td>
+									<td> </td>
+									<td> </td>
+									<td> </td>
+								</tr>
+								<tr class='zk jhzk3'>
+									<td><input type='radio' name="jhr" class="jhr"></td>
+									<td> </td>
+									<td> </td>
+									<td> </td>
+									<td>来电提醒一元购</td>
+									<td> </td>
+									<td> </td>
+									<td> </td>
+								</tr>
+							</tbody>
+						</table>
+				</div>
+
+				</div>
+			</div>
+			 
+			<div class="tab-content  "   >
+				<div class="tc iop-edit">
+					<button type="button" name="button" class="qxjh">取消</button>
+					<button type="submit" name="submit" class="savejh">保存</button>
+					
+				</div>
+			</div>
+		 
+			
+		
+		</div>
+	</div>
+
+	<!-- 新底部导航弹窗 开始-->
+	<div class=" modalsCms modals_Cms  qyxqMo whyMo whydhMo"> 
+		<div class="cmsDiv cmsLayer qyxqly hyLayer whyedit-layer " id="whyedit-layer">
+			<a href="javascript:;" class="closeGB closeqyxq"  onclick="closeC('.whydhMo')">&times;</a>
+			<ul class="selectLiCspz">
+				<li class="cur">默认</li> 
+			</ul> 
+			<div class="cmdes whymain-content  " id="whytab"  >
+				
+			</div>  
+			<div class="tab-content"   >
+				<div class="tc why-edit">
+					<button type="button" name="button" class="whyjxxz">继续新增</button>
+					<button type="submit" name="submit" class="savewhy">保存并关闭</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 新底部导航弹窗 结束-->
+
+	<!-- 权益详情弹窗 开始-->
+	<div class=" modalsCms modals_Cms  qyxqMo modals_qyxq"> 
+		<div class="cmsDiv cmsLayer qyxqly qyxqedit-layer " id="qyxqedit-layer">
+			<a href="javascript:;" class="closeGB closeqyxq"  onclick="closeC('.modals_qyxq')">&times;</a>
+			<ul class="selectLiCspz">
+				<li class="cur">默认</li> 
+			</ul> 
+			<div class="cmdes qyxqmain-content  " id="qyxqtab"  >
+				
+			</div>  
+			<div class="tab-content"   >
+				<div class="tc qyxq-edit">
+					<button type="button" name="button" class="jxxz">继续新增</button>
+					<button type="submit" name="submit" class="saveqyxq">保存并关闭</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	 <!-- 权益详情弹窗 结束-->
+  
+
+	<div class="modals">
+		<div class="edit-layer modal tabs" id="edit-layer"><!-- 默认元素的编辑弹窗 -->
+			<a href="javascript:;" class="close">&times;</a>
+			<ul class="selectLi">
+				<li class="cur">默认</li>
+				<li>HTML</li>
+			</ul>
+			<div class="main-content" id="resultCon">
+				<p class="selectP">
+					<span>数据来源：</span>
+					<select name="" id="">
+						<option value="type1">国信大数据</option>
+						<option value="type2">流量</option>
+						<option value="type3">热销</option>
+						<option value="type4">校园</option>
+					</select>
+				</p>
+				<div id="htmlCon" style="display:none">
+					<table width="100%">
+
+						
+					</table>
+					<!-- 2023 -->
+
+				</div>
+			</div>
+			<div class="main-content" id="htmlCon2" style="display:none"></div>
+			<div class="tab-content">
+				<div class="tc css-edit">
+					<button type="submit" name="submit" class="submitted">保存</button>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+	<!-- 弹窗 图片房间 -->
+	<div class="modals2" >
+		<div class="edit-layer2 modal tabs" id="edit-layer2"><!-- 元素的编辑弹窗 没用到-->
+			<a href="javascript:;" class="close">&times;</a>
+			
+			<div class="main-content" id="htmlCon">
+				<table width="100%">
+					
+				</table>
+			</div>
+			<div class="tab-content">
+				<div class="tc css-edit2">
+					<button type="submit" name="submit" class="submitted">保存</button>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+
+	<!--新轮播图  开始-->
+	<div class=" modalsLbt nlbtTips" > 
+		<div class=" lbtDiv lbmodal " id="picedit-layer">
+			<a href="javascript:;" class="closeGB closeLb" onClick="closeC('.nlbtTips')">&times;</a>
+			<ul class="cmslectLi">
+				<li class="cur">默认</li>
+			</ul> 
+			<div id="lbthtmlCon" class="cmdes lbtdes" >
+				 
+			</div> 
+			<div class="tab-content">
+				<div class="tc lbt-edit">
+					<button type="submit" name="submit" class="submitted"  >保存</button>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+	<!--新轮播图 结束-->
+
+	<!-- 卖家信息组件编辑弹窗 开始-->
+	<div class="modalsCms  sellerPopYa" > 
+		<input type="hidden" id="pmdtc" value="sellerPopYa"/>
+		<div class=" cmsDiv pmdmo pmdmodal " id="pmdedit-layer">
+			<a href="javascript:;" class="closeGB closeLb" onClick="closeC('.sellerPopYa')">&times;</a>
+			<ul class="cmslectLi">
+				<li class="cur">默认</li>
+			</ul> 
+			<div id="sellerhtmlCon" class=" cmdes pmddes" style="height: 70%;">
+				
+			</div> 
+			<div class="tab-content">
+				<div class="tc addpmdbtn  adddivpmd ">
+					<a href="javascript:;" onClick="closeC('.sellerPopYa')">取消</a>
+				</div>
+				<div class="tc pmd-edit">
+					<button type="submit" name="submit" class="submitted savepmd"   >保存</button>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+	<!-- 跑马灯弹窗 开始-->
+	<div class=" modalsCms  pmdTips" > 
+		<input type="hidden" id="pmdtc" value="pmdTips"/>
+		<div class=" cmsDiv pmdmo pmdmodal " id="pmdedit-layer">
+			<a href="javascript:;" class="closeGB closeLb" onClick="closeC('.pmdTips')">&times;</a>
+			<ul class="cmslectLi">
+				<li class="cur">默认</li>
+			</ul> 
+			<div id="pmdhtmlCon" class=" cmdes pmddes" style="height: 70%;">
+				
+			</div> 
+			<div class="tab-content">
+				<div class="tc addpmdbtn  adddivpmd ">
+					<a href="javascript:;" onClick="addpmd(this)">+增加</a>
+				</div>
+				<div class="tc pmd-edit">
+					<button type="submit" name="submit" class="submitted savepmd"   >保存</button>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+	<!-- 跑马灯弹窗 结束--> 
+	<!--选择广告页 公共弹窗使用 这里开发可以和聚合广告页合并使用 这个可作废 -->
+	<div class="modals_cspz modals_Cms cmsModalTips "> 
+		<input type="hidden" id="tcname" value=""/><!-- 标识是哪个弹窗发起的 -->
+		<div class="cspzedit-layer cmsLayer cmszedit-layer  " id="cmsggedit-layer">
+			<a href="javascript:;" class="close closexz">&times;</a>
+			<ul class="selectLiCspz">
+				<li class="cur" style="width: auto;">选择广告</li> 
+			</ul> 
+			<div class="cspzmain-content" id="xzgghtml"  style="display:block">
+				<div class='cont_box'>   
+					<div class="cxdiv">
+						<table>
+							<tr>
+								<td><span>广告标题：</span><input type="text" ></td>
+								<td><span>商品名称：</span><input type="text"></td>
+								<td>
+									<span>广告类型：</span> 
+									<select  class="form-control form-control-select input-sm" >
+										<option value="0">全部</option>
+										<option value="1" hassubinfo="true">热销</option>
+										<option value="2" hassubinfo="true">流量</option>
+										<option value="3" hassubinfo="true">数字化</option>
+										<option value="单选" hassubinfo="true">校园</option> 
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<span>有效时间：</span>	
+									<input id='startTime4' name='startTime4' readonly='readonly' class='Wdate w150'  onclick="WdatePicker({maxDate:'#F{$dp.$D(\'endTime4\')}',dateFmt:'yyyy-MM-dd'})" value='' /><span>&nbsp; ~ &nbsp;</span><input id='endTime4' name='endTime4' readonly='readonly' class='Wdate w150' onClick="WdatePicker({minDate:'#F{$dp.$D(\'startTime4\')}',dateFmt:'yyyy-MM-dd'})" value='' />
+								</td>
+								<td class="btna"><a href="javascript:;">重置</a><a href="javascript:;">查询</a></td>
+									
+							</tr>
+						</table>
+					</div>
+
+					<table class='ch_tips cmsTable'>
+						<thead>
+							<tr>
+								<th> </th>
+								<th>序号</th>
+								<th>广告类型</th>
+								<th>广告标题</th>
+								<th>商品名称</th>
+								<th>有效时间</th>
+								<th>广告状态</th> 
+							</tr>
+						</thead>
+						<tbody class='mytablebox'>
+							<tr class=' '>
+								<td><input type='radio' name="xzggra" class="xzggIn" style="padding: 8px;" value="http://www.baidu.com"></td>
+								<td>1</td>
+								<td>数字化</td>
+								<td>来电提醒一元购</td>
+								<td>来电提醒一元购</td>
+								<td>2018-10-10 00:00:00至2018-10-17 23:59:59</td>
+								<td>已经生效</td>
+							</tr>
+							<tr class=' '>
+								<td><input type='radio' name="xzggra" class="xzggIn" style="padding: 8px;" value="http://www.baidu.com1"></td>
+								<td>2</td>
+								<td>热销</td>
+								<td>跨年流量包</td>
+								<td>跨年流量包</td>
+								<td>2018-10-10 00:00:00至2018-10-17 23:59:59</td>
+								<td>已经生效</td>
+							</tr>
+							<tr class=' '   >
+								<td><input type='radio' name="xzggra" class="xzggIn" style="padding: 8px;"  value="http://www.baidu.com2"></td>
+								<td>3</td>
+								<td>流量</td>
+								<td>省内任我用流量包</td>
+								<td>省内任我用流量包</td>
+								<td>2018-10-10 00:00:00至2018-10-17 23:59:59</td> 
+								<td>已经生效</td>
+							</tr> 
+						</tbody>
+					</table>
+					 
+				</div>
+			</div>
+			 
+			<div class="tab-content "   >
+				<div class="tc iop-edit">
+					<button type="button" name="button" class="cmsqxxz">取消</button>
+					<button type="submit" name="submit" class="cmssave">保存</button>
+					
+				</div>
+			</div> 
+		</div>
+	</div>
+
+	<!--选择消息 弹窗使用 -->
+	<div class="modals_cspz modals_Cms msgModalTips "> 
+		<input type="hidden" id="xxtcname" value=""/><!-- 标识是哪个弹窗发起的 -->
+		<div class="cspzedit-layer cmsLayer cmszedit-layer  " id="cmsggedit-layer">
+			<a href="javascript:;" class="close closexz">&times;</a>
+			<ul class="selectLiCspz">
+				<li class="cur" style="width: auto;"> 选择消息</li> 
+			</ul> 
+			<div class="cspzmain-content" id="xzgghtml"  style="display:block">
+				<div class='cont_box'>   
+					<div class="cxdiv">
+						<table>
+							<tr>
+								<td><span>消息标题：</span><input type="text" ></td> 
+								<td class="btna"><a href="javascript:;">重置</a><a href="javascript:;">查询</a></td>
+							</tr> 
+						</table>
+					</div>
+
+					<table class='ch_tips cmsTable'>
+						<thead>
+							<tr>
+								<th> </th>
+								<th>序号</th>
+								<th>消息标题</th>
+								<th>发布时间</th>
+								<th>下线时间</th>
+								<th>启用状态</th> 
+							</tr>
+						</thead>
+						<tbody class='mytablebox'>
+							<tr class='   '>
+								<td><input type='radio' name="xzggra" class="xzggIn" style="padding: 8px;" value="http://www.baidu.com"></td>
+								<td>1</td>
+								<td>测试1</td>
+								<td>2018-10-09 13:30:05</td>
+								<td>2018-10-09 13:30:05</td>
+								<td>启用</td> 
+							</tr>
+							<tr class=' '  >
+								<td><input type='radio' name="xzggra" class="xzggIn" style="padding: 8px;" value="http://www.baidu.com1"></td>
+								<td>2</td>
+								<td>测试2</td>
+								<td>2018-10-09 13:30:05</td>
+								<td>2018-10-09 13:30:05</td>
+								<td>启用</td> 
+							</tr>
+							<tr class=' '   >
+								<td><input type='radio' name="xzggra" class="xzggIn" style="padding: 8px;"  value="http://www.baidu.com2"></td>
+								<td>3</td>
+								<td>测试3</td>
+								<td>2018-10-09 13:30:05</td>
+								<td>2018-10-09 13:30:05</td>
+								<td>启用</td> 
+							</tr> 
+						</tbody>
+					</table>
+						
+				</div>
+			</div>
+				
+			<div class="tab-content "   >
+				<div class="tc iop-edit">
+					<button type="button" name="button" class="cmsqxxz">取消</button>
+					<button type="submit" name="submit" class="cmssave">保存</button>
+					
+				</div>
+			</div> 
+		</div>
+	</div>
+
+	
+	<!-- 滑动元素弹窗 开始-->
+	<div class=" modalsCms cnmenu modalshdys  hdysTips" > 
+		<input type="hidden" id="hdystc" value="hdysTips"/>
+		<div class=" cmsDiv hdysmo hdysmodal " id="hdysedit-layer">
+			<a href="javascript:;" class="closeGB closeLb" onClick="closeC('.hdysTips')">&times;</a>
+			<ul class="cmslectLi">
+				<li class="cur">默认</li>
+			</ul> 
+			<div id="hdyshtmlCon" class=" cmdes hdysdes"  >
+				
+			</div> 
+			<div class="tab-content">
+				<!-- <div class="tc addpmdbtn  adddivpmd ">
+					<a href="javascript:;" onclick="addpmd(this)">+增加</a>
+				</div> -->
+				<div class="tc hdys-edit">
+					<button type="submit" name="submit" class="submitted savehdys" style="margin-bottom: 10px;">保存</button>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+	<!-- 滑动元素弹窗 结束-->
+	
+	<!-- 搜索弹窗添加 开始 -->
+	<div class=" modalsCms cnmenu modalssearch  searchTips" > 
+		 
+		<div class=" cmsDiv cmsWh searchmo searchmodal " id="searchedit-layer">
+			<a href="javascript:;" class="closeGB closeLb" onClick="closeC('.searchTips')">&times;</a>
+			<ul class="cmslectLi">
+				<li class="cur">默认</li>
+			</ul> 
+			<div id="searchhtmlCon" class=" cmdes searchdes"  >
+				<dl>
+					<dd>搜索框默认提示：</dd>
+					<dt><input type="text" id="searTxt" placeholder="请输入搜索内容" value=""></dt>
+				</dl>
+				<dl>
+					<dd>选择跳转页面：</dd>
+					<dt>
+						<select class="form-control form-control-select input-sm"   id="searSel">
+							<option value="1" selected>首页</option>
+							<option value="2" hassubinfo="true">分类</option>
+							<option value="3" hassubinfo="true">为您推荐</option>
+						</select>
+					</dt>
+				</dl>
+			</div> 
+			<div class="tab-content">
+				 
+				<div class="tc search-edit">
+					<button type="submit" name="submit" class="submitted savesearch" style="margin-bottom: 10px;">保存</button>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+	<!-- 搜索弹窗添加 结束 -->
+
+	<div class="modalAddMenu" id="modalAddMenu"><!-- 增加元素的编辑弹窗 -->
+		<div class="modal tabs edit-layer3" >
+			<a href="javascript:;" class="close">&times;</a>
+			<div id="zdyHtmlCon"></div>
+			<div class="tab-content">
+				<div class="tc css-edit3">
+					<button type="submit" name="submit" class="submitted">保存</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	<!--end-->
+	
+	<!-- 预览图片弹窗 开始 -->
+	<div class="previewImg" id="ts_ljzs">
+		<a href="javascript:;" class="closeGB" onClick="hideid('ts_ljzs')">×</a>
+		<div class="pcont">
+			<img id="pImg" src="images/images.png" />
+		</div>
+	</div>
+	<!-- 预览图片弹窗 结束 -->
+	
+	<!-- 2020-11-6 新增 选择视频弹窗 开始 -->
+	<div class="modals_cspz modals_xzvideo">
+		<div class="cspzedit-layer cspzedit-layersp tabs">
+			<a href="javascript:;" class="close close3">&times;</a>
+			<ul class="selectLiCspz">
+				<li class="cur" style="width: auto;"> 选择视频</li> 
+			</ul> 
+			<div class="cspzmain-content">
+				<div class='cont_box'> 
+					
+					<div class="ggtable" style="display: block">
+						<div class="cxdiv">
+							<table>
+								<tr>
+									<td><span>视频名称：</span><input class="videoinput" type="text" ></td>
+									<td class="btna"><a href="javascript:;" onClick="videoText()">重置</a><a href="javascript:;">查询</a></td>
+								</tr>
+							</table>
+						</div>
+	
+						<table class='ch_tips '>
+							<thead>
+								<tr>
+									<th> </th>
+									<th>序号</th>
+									<th>视频名称</th>
+									<th>创建人</th>
+									<th>发布时间</th>
+								</tr>
+							</thead>
+							<tbody class='mytablebox'>
+								<tr>
+									<td><input type='radio' name="jhr" class="jhr"></td>
+									<td>1</td>
+									<td>数字化</td>
+									<td>admin</td>
+									<td>2018-10-10 00:00:00</td>
+								</tr>
+								<tr>
+									<td><input type='radio' name="jhr" class="jhr"></td>
+									<td>2</td>
+									<td>热销</td>
+									<td>admin</td>
+									<td>2018-10-09 13:30:05</td>
+								</tr>
+								<tr>
+									<td><input type='radio' name="jhr" class="jhr"></td>
+									<td>3</td>
+									<td>流量</td>
+									<td>admin</td>
+									<td>2018-10-09 13:30:05</td>
+								</tr>
+								<tr>
+									<td><input type='radio' name="jhr" class="jhr"></td>
+									<td>4</td>
+									<td>流量</td>
+									<td>admin</td>
+									<td>2018-10-09 13:30:05</td>
+								</tr>
+								<tr>
+									<td><input type='radio' name="jhr" class="jhr"></td>
+									<td>5</td>
+									<td>流量</td>
+									<td>admin</td>
+									<td>2018-10-09 13:30:05</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			 
+			<div class="tab-content">
+				<div class="tc iop-edit">
+					<button type="button" name="button" class="qxsp">取消</button>
+					<button type="submit" name="submit" class="savejh">保存</button>
+					
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- 2020-11-6 新增 选择视频弹窗 结束 -->
+	
+
+	<!-- 20211129add 便民功能模块编辑弹窗开始cnmenu上传图片样式使用-->
+	 
+	<div class="modalsCms  cnmenu modals_Cms modalsFee bmgnMo modals_bmgn"> 
+		<div class="cmsDiv feeLayer feedit-layer" id="feedit-layer">
+			<a href="javascript:;" class="closeGB closebmgn"  onclick="closeC('.bmgnMo')">&times;</a>
+			<ul class="selectLiCspz">
+				<li class="cur">便民功能模块</li> 
+			</ul> 
+			<div class="cmdes main-content bmgnmain-content bmgntip " id="bmgnTab">
+				<div class="top_bmdiv">
+					<div class="tjxz">
+						<div class="xxsty">
+							<div class="zsfs"><span class="cred">*</span><span>一屏展示：</span></div>
+							<div>
+								<select class="form-control form-control-select input-sm bmzs" id="bmzs">
+									<option value="2" >2</option>
+									<option value="3" >3</option>
+									<option value="3.5" selected>3.5</option>
+									<option value="4">4</option>
+								</select>
+							</div>
+						</div>
+						 
+					</div>
+					 <a href="javascript:;" class="c3c9be1bb bmaddbtn  " onclick="addbmgnmo(this)">配置便民模块</a> 
+				</div>
+				<ul class="bmmoul " id="bmmould">
+					
+				</ul>
+			</div>  
+			<div class="tab-content">
+				<div class="tc bmgn-edit">
+					<button type="submit" name="submit" class="c3c9be1bb savebmgn">保存</button>
+				</div>
+			</div>
+		</div>
+	</div> 
+	<!-- 20211129add 便民功能模块编辑弹窗结束 -->
+
+    <!-- 20211120 协议弹窗内容开始 -->
+	<div class="modalsCms modals_Cms modalsDbxy dbxyMo modals_dbxy"> 
+		<div class="cmsDiv dbxyLayer dbxy-layer" id="dbxy-layer">
+			<a href="javascript:;" class="closeGB closebmgn"  onclick="closeC('.dbxyMo')">&times;</a>
+			<ul class="selectLiCspz">
+				<li class="cur">底部协议元素</li> 
+			</ul> 
+			<div class="cmdes main-content xytbtip" id="dbxyTab">
+				<div class="top_bmdiv">
+					<div class="tjxz cred">提示：最多可添加4个协议</div>
+					 <a href="javascript:;" class="c3c9be1bb bmaddbtn" onclick="addxymo()">新增协议</a> 
+				</div>
+				<ul class="bmmoul " id="dbxyulId">
+				</ul>
+			</div>  
+			<div class="tab-content">
+				<div class="tc dbxy-edit">
+					<button type="submit" name="submit" class="cee4358bb savebmgn">保存</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 协议内容读取 -->
+	<div class="modalsCms modals_cspz modals_cspz_bmmo xymotab"> 
+		<div class="cmsDiv xymotab-layer"  id="xymotab-layer">
+			<a href="javascript:;" class="closeGB closebmgn"  onclick="closeCChild('.xymotab')">&times;</a>
+			<ul class="selectLiCspz">
+				<li class="cur">选择协议</li> 
+			</ul> 
+			<div class="cmdes main-content xytbtip" id="xymotabId">
+				<div class="cxdiv">
+					<table>
+						<tr>
+							<td><span>协议名称: </span><input type="text" id="xxname" value="" class="bminput"></td> 
+							<td class="btna"><a href="javascript:;" onclick="$('#xxname').val('')">重置</a><a href="javascript:;">查询</a></td>
+						</tr> 
+					</table>
+				</div>
+	
+				<table class='ch_tips cmsTable'>
+					<thead>
+						<tr>
+							<th style="width: 15px;"> </th>
+							<th style="width: 30px;">序号</th>
+							<th>协议名称</th>
+						</tr>
+					</thead>
+					<tbody class='mytablebox'>
+						<tr class=' '>
+							<td><input type='radio' name="xychecked" class="bmck" style="padding: 8px;" value="1"></td>
+							<td>1</td>
+							<td>服务协议<input type="hidden" value="www.baidu.com"/></td> 
+						</tr>
+						<tr class=' '>
+							<td><input type='radio' name="xychecked" class="bmck" style="padding: 8px;" value="2"></td>
+							<td>2</td>
+							<td>隐私保护政策<input type="hidden" value="www.baidu.com"/></td> 
+						</tr>
+						 
+					</tbody>
+				</table>
+				<!-- 分页 -->
+				<div class="tab-content " style="display: block; padding-top: 10px;" >
+					<div class="pageY">
+						<a href="javascript:;">首页</a>
+						<a href="javascript:;">上一页</a>
+						<a href="javascript:;">下一页</a>
+						<a href="javascript:;">末页</a>
+						每页10条，共<span>1</span>页，跳转至<input type="tel" maxlength="2" onKeyUp="value=value.replace(/[^\d]/g,'')" onBlur="value=value.replace(/[^\d]/g,'')"/>页<a href="">GO</a>
+					</div>
+				</div>
+			</div>
+			<div class="tab-content">
+				<div class="tc xypz-edit">
+					<button  type="button" onClick="closeCChild('.xymotab')" class="cmsqx">取消</button> <button type="submit" name="submit" class="savexyli">保存</button>
+				</div>
+			</div>
+			 
+		</div>
+	</div>
+    <!-- 20211120 协议弹窗内容结束 -->
+<script type="text/javascript">
+function assignment(){
+	document.getElementById('pImg').src = window.URL.createObjectURL(document.getElementById('file1').files[0]);
+}
+
+$('.uploadImg').on('click','.j-deleteImg',function(){
+	$("#pImg").attr("src","images/images.png");
+});
+</script>
+ 
+<script type="text/javascript" language="javascript">
+function videoText() {
+	$('.videoinput').val('');
+ }
+</script>
+
+<script>
+$(document).ready(function(){
+	$('body').on('click','.showTr_6 .nninput',function(){
+		$(this).parents(".showTr_6").find(".nninput").removeClass("zs_checked");
+	});
+});
+</script>
+
+<!-- 2023 -->
+<script>
+	var editor;
+	KindEditor.ready(function (K) {
+		editor = K.create('textarea[name="descriptiona"]', {
+			resizeType: 1,
+			allowPreviewEmoticons: false,
+			allowImageUpload: false, //上传图片框本地上传的功能，false为隐藏，默认为true
+			allowImageRemote: false, //上传图片框网络图片的功能，false为隐藏，默认为true
+			allowFileManager: false, //浏览图片空间
+			filterMode: false, //HTML特殊代码过滤
+			width: "100%",
+			height: "200px",
+			// readonlyMode : true,
+			items: [
+				'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor',
+				'bold', 'italic', 'underline',
+				'removeformat', '|', 'justifyleft', 'justifycenter',
+				'justifyright', 'insertorderedlist',
+				'insertunorderedlist'
+			]
+		});
+	});
+</script>
+
+</body>
+</html>

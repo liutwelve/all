@@ -1,0 +1,35 @@
+/*样式重置*/
+body,div,p,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,span,a,img{
+    margin: 0;
+    padding: 0;
+}
+
+.row:after{
+    content: '.';
+    visibility: hidden;
+    display: block;
+    clear: both;
+    height: 0;
+}
+.row{
+}
+.row .col{
+    float: left;
+    width: 100%;
+    min-height: 0.3rem;
+}
+.row .col-50{
+    width: 50%;
+}
+.row .col-50 .lyrow{
+    border-right: #cfcfcf 0.01rem solid;
+}
+.row .col-50 .box,.row .col-50 .wdg{
+    border-right: #eaeaea 0.01rem solid;
+}
+.row .col-33{
+    width: 33.3%;
+}
+.row .col-25{
+    width: 25%;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>广西移动和掌桂后台管理系统</title>
+    <meta name="keywords" content="广西移动和掌桂后台管理系统">
+    <meta name="description" content="广西移动和掌桂后台管理系统">
+
+    <link rel="stylesheet" href="css/jquery.minicolors.css" />
+</head>
+
+<body class="gray-bg">
+    <input type="text" class="form-control input-sm selectColor" data-control="hue" value="#333">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.minicolors.js"></script>
+    <script>
+        $(function () {
+            $('.selectColor').each(function () {
+                $(this).minicolors({
+                    control: $(this).attr('data-control') || 'hue',
+                    defaultValue: $(this).attr('data-defaultValue') || '',
+                    inline: $(this).attr('data-inline') === 'true',
+                    letterCase: $(this).attr('data-letterCase') || 'lowercase',
+                    opacity: $(this).attr('data-opacity'),
+                    position: $(this).attr('data-position') || 'bottom left',
+                    change: function (hex, opacity) {
+                        if (!hex)
+                            return;
+                        if (opacity)
+                            hex += ', ' + opacity;
+                        try {
+                            console.log(hex);
+                            $(this).parents('.querybtn').find('input').css('color', hex)
+                        } catch (e) {
+                        }
+                    },
+                    theme: 'bootstrap'
+                });
+
+            });
+        })
+    </script>
+</body>
+
+
+</html>

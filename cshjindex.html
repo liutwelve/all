@@ -1,0 +1,2428 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+  <meta http-equiv="Pragma" content="no-cache" /> 
+  <meta http-equiv="Cache-Control" content="no-cache" /> 
+  <meta http-equiv="Expires" content="0" /> 
+  <title>页面装修</title> 
+  <link rel="stylesheet" type="text/css" href="css/default.css" /> 
+  <link rel="stylesheet" type="text/css" href="css/layout.css?v=2" /> 
+  <link rel="stylesheet" type="text/css" href="css/jquery-gallery.css" /> 
+  <link rel="stylesheet" type="text/css" href="css/jquery.bigcolorpicker.css" /> 
+  <link rel="stylesheet" type="text/css" href="css/swiper.min.css" /> 
+  <link rel="stylesheet" type="text/css" href="css/index.css" /> 
+  <link rel="stylesheet" type="text/css" href="css/zx.css" /> 
+  <style type="text/css" id="css-wrap"></style> 
+  <script type="text/javascript" src="js/jquery-2.0.0.min.js"></script> 
+  <script type="text/javascript" src="js/jquery-ui.js"></script> 
+  <script type="text/javascript" src="js/jquery.bigcolorpicker.js"></script> 
+  <script type="text/javascript" src="js/widgets.js"></script> 
+  <script type="text/javascript" src="js/swiper.min.js"></script> 
+  <script type="text/javascript" src="js/flexible.js"></script> 
+  <script type="text/javascript" src="js/vue.min.js"></script> 
+  <script type="text/javascript" src="js/axios.min.js"></script> 
+  <script type="text/javascript" src="js/public.js?v=1"></script> 
+  <script type="text/javascript" src="js/ajaxfileupload.js"></script> 
+  <script language="javascript" type="text/javascript" src="js/My97DatePicker/WdatePicker.js"></script> 
+  <style>
+	.swiper-lnbusiness .swiper-wrapper{width: 100%;overflow-x: scroll;}
+	.swiper-lnbusiness .swiper-wrapper .swiper-slide{width: 20%;}
+	/* 预览后的css */
+	.previewCss .row .col{padding:0;}
+	.previewCss .demo .bigFloor .bigViewBox{border:0;}
+	.previewCss .demo .bigFloor{margin-top:-2px;}
+	.previewCss .demo .bigFloor .bigViewBox:hover{border:0;}
+	/* 分页样式 */
+.pageY{text-align: right;font-size: 12px;}
+.pageY a{border:1px solid #bfbfbf;padding:1px 3px; margin-right:5px;}
+.pageY a:last-child{margin-left:5px; background:#3c9be1; color:#ffffff;}
+.pageY span{ margin:0px 5px; background:#bfbfbf;display: inline-block;width: 18px;text-align: center;color: #ffffff;}
+.pageY input{margin:0px 5px; width:20px;border:1px solid #bfbfbf; text-align:center }
+.modals_cspz modals_cspzjhy select{padding: 0px;width: 50px;border: 1px solid #ddd;}
+.modals_cspz modals_cspzjhys select{padding: 0px;width: 50px;border: 1px solid #ddd;}
+.play_btb { width:60px; height:60px; cursor:pointer; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);}
+	.play_btb .pimg { width:100%; height:100%; background:url(../../images/ico_play.png) no-repeat center / 100% 100%;}
+	#htmlCon .ydicon { height:auto; line-height:normal; padding:5px;}
+	div.back_btn { width:30px; height:30px; cursor:pointer; position:absolute; top:5%; right:10px;	transition: opacity 0.4s ease-in-out;}
+	div:hover.back_btn { opacity:1;}
+	div.back_btn .bimg {width: 100%;height: 100%;background: url(../../images/close_a2b.png) no-repeat center / 100% 100%;}
+</style> 
+ </head> 
+ <body> 
+  <div id="vueDemos" v-cloak=""> 
+   <!--顶部按钮--> 
+   <div class="file-btns"> 
+    <div class="logo-sec">
+     <a href="javascript:void(0)">页面装修</a>
+    </div> 
+    <ul> 
+     <li><a href="javascript:;" id="edit" class="active">编辑</a></li> 
+     <li><a href="javascript:;" id="preview">预览</a></li> 
+     <li><a href="javascript:;" id="returnHistory" v-on:click="returnHistory()">返回</a></li> 
+     <li><a href="javascript:;" id="save" v-on:click="updateContent('0')">保存</a></li> 
+    </ul> 
+   </div> 
+   <!--end--> 
+   <!--拖拽元素--> 
+   <div class="side-bar"> 
+    <div class="logo"> 
+     <a href="javascript:void(0)">页面装修</a> 
+    </div> 
+    <div class="sidebar-nav"> 
+     <ul class="top-nav" id="compositionElement"> 
+
+		<div class="bigFloor ln-index-cont ui-draggable" bind="floorAttr_1" tabtype="" data-type="row" style="display: block;"> 
+			<span class="preview removeSpanClass">楼层</span> 
+			<div class="ctrl-btns ctrl-btns-floor"> 
+			 <span class="drag">拖拽楼层</span> 
+			 <span class="remove">删除楼层</span> 
+			 <span class="isHide" onclick="isHideClick(this);" surepublish="1">隐藏楼层</span> 
+			 <span class="spanBtn getfloorId">获取id</span> 
+			 <span class="editFloor">选择标签</span> 
+			</div> 
+			<div class="view bigViewBox"> 
+			 <div class="row floorDecorate resizable" id="bigFloor1591262737559"> 
+			  <div class="col ui-sortable">
+			   <div class="lyrow ui-draggable" data-type="row" style="display: block;"> 
+				<span class="preview removeSpanClass">一栏</span> 
+				<div class="ctrl-btns"> 
+				 <!-- <span class="edit">编辑整栏</span> --> 
+				 <span class="drag">拖拽整栏</span> 
+				 <span class="remove">删除整栏</span> 
+				</div> 
+				<div class="view"> 
+				 <div class="row rowDecorate resizable" id="lyrow1591262741353"> 
+				  <div class="col col-100 ui-sortable">
+				   <div class="box ui-draggable" data-type="image" style="display: block;"> 
+					<span class="preview">静态广告</span> 
+					<div class="ctrl-btns ctrl-btns-ele"> 
+					 <span class="edit">编辑</span> 
+					 <span class="drag">拖拽</span> 
+					 <span class="remove">删除</span> 
+					</div> 
+					<div class="view myview"> 
+					 <div class="goodsImage flex-content editing" id="box1591262745016"> 
+					  <!-- 音频图标展示 --> 
+					  <input type="hidden" class="ifsad" value="0" />
+					  <!-- 1展示音频图片 2不展示音频图片 --> 
+					  <input type="hidden" class="zysj" value="on" />
+					  <!-- 1左上角 2右上角 --> 
+					  <section class="audio_btn off" style="display: none; z-index: 999;"> 
+					   <div class="yinfu"></div> 
+					   <audio preload="auto" src="" mp3filename=""></audio> 
+					  </section> 
+					  <ul> 
+					   <li><a href="javascript:void(0)" class="bind" url="/rr/lnwd/myShop/promotShophtml_1577258400792.html?decorateId=2c90a7a87133b3a4017133c0af5d002b" bindturnhrefimage="bindturnhrefimage" goodcodeinput="5" goodcodeinputsign="goodcodeinputsign" onclick="javascript:addToProductStore.executeFvsStatcAdidForPhone('/rr/lnwd/myShop/promotShophtml_1577258400792.html?decorateId=2c90a7a87133b3a4017133c0af5d002b','1',this,'02','','1','')"><img class="bind" bind="img_id110_src" src="http://172.16.39.40:9909/lmH/images/upload/decorate1591262943377.jpg" alt="" /></a></li> 
+					  </ul> 
+					 </div> 
+					</div> 
+				   </div>
+				   <div class="box searchbox ui-draggable" data-type="search" style="display: block;"> 
+					<span class="preview">搜索</span> 
+					<div class="ctrl-btns ctrl-btns-ele"> 
+					 <span class="spanBtn searchEdit">编辑</span> 
+					 <span class="drag">拖拽</span> 
+					 <span class="remove">删除</span> 
+					</div> 
+					<div class="view search"> 
+					 <div class="searchdiv" id="box1591776508837"> 
+					  <img src="../../images/seach.png" alt="" onclick="searchHrefMethod(this);" /> 
+					  <input type="search" class="searInput" value="" placeholder="请输入搜索内容" /> 
+					  <input type="hidden" class="hidselect" value="/rr/lnwd/shoppingGuide/jcxx.html?pageFrom=lm&amp;searchMobile=" /> 
+					 </div> 
+					</div> 
+				   </div>
+				  </div> 
+				 </div> 
+				</div> 
+			   </div>
+			  </div> 
+			 </div> 
+			</div> 
+		   </div>
+		   <div class="bigFloor ln-index-cont ui-draggable" bind="floorAttr_1" tabtype="" data-type="row" style="display: block;"> 
+			<span class="preview removeSpanClass">楼层</span> 
+			<div class="ctrl-btns ctrl-btns-floor"> 
+			 <span class="drag">拖拽楼层</span> 
+			 <span class="remove">删除楼层</span> 
+			 <span class="isHide" onclick="isHideClick(this);" surepublish="1">隐藏楼层</span> 
+			 <span class="spanBtn getfloorId">获取id</span> 
+			 <span class="editFloor">选择标签</span> 
+			</div> 
+			<div class="view bigViewBox"> 
+			 <div class="row floorDecorate resizable" id="bigFloor1585623651767"> 
+			  <div class="col ui-sortable"> 
+			   <div class="lyrow ui-draggable" data-type="row" style="display: block;"> 
+				<span class="preview removeSpanClass">一栏</span> 
+				<div class="ctrl-btns"> 
+				 <!-- <span class="edit">编辑整栏</span> --> 
+				 <span class="drag">拖拽整栏</span> 
+				 <span class="remove">删除整栏</span> 
+				</div> 
+				<div class="view"> 
+				 <div class="row rowDecorate resizable" id="lyrow1585623655173"> 
+				  <div class="col col-100 ui-sortable"> 
+				   <div class="box ui-draggable" data-type="image" style="display: block;"> 
+					<span class="preview">静态广告</span> 
+					<div class="ctrl-btns ctrl-btns-ele"> 
+					 <span class="edit">编辑</span> 
+					 <span class="drag">拖拽</span> 
+					 <span class="remove">删除</span> 
+					</div> 
+					<div class="view myview"> 
+					 <div class="goodsImage flex-content editing" id="box1585623834025"> 
+					  <!-- 音频图标展示 --> 
+					  <input type="hidden" class="ifsad" value="0" /> 
+					  <!-- 1展示音频图片 2不展示音频图片 --> 
+					  <input type="hidden" class="zysj" value="on" /> 
+					  <!-- 1左上角 2右上角 --> 
+					  <section class="audio_btn off" style="display: none; z-index: 999;"> 
+					   <div class="yinfu"></div> 
+					   <audio preload="auto" src="" mp3filename=""></audio> 
+					  </section> 
+					  <ul> 
+					   <li><a href="javascript:void(0)" class="bind" url="adid=2c90a7a8727cf45d01727d4cd4a40515" goodcodeinput="1" goodcodeinputsign="goodcodeinputsign" onclick="javascript:addToProductStore.executeFvsStatcAdidForPhone('adid=2c90a7a8727cf45d01727d4cd4a40515','1',this,'02','','1','')" staticname=" 广告名称：流量安心包" staticadinfo="staticAdinfo" adinfo="adid=2c90a7a8727cf45d01727d4cd4a40515"><img class="bind" bind="img_id110_src" src="http://172.16.39.40:9909/lmH/images/upload/decorate1585623611992.jpg" alt="" /></a></li> 
+					  </ul> 
+					 </div> 
+					</div> 
+				   </div> 
+				   <div class="lyrow ui-draggable" data-type="row" style="display: block;"> 
+					<span class="preview removeSpanClass">一栏</span> 
+					<div class="ctrl-btns"> 
+					 <!-- <span class="edit">编辑整栏</span> --> 
+					 <span class="drag">拖拽整栏</span> 
+					 <span class="remove">删除整栏</span> 
+					</div> 
+					<div class="view"> 
+					 <div class="row rowDecorate resizable" id="lyrow1591262741354"> 
+					  <div class="col col-100 ui-sortable"></div> 
+					 </div> 
+					</div> 
+				   </div>
+				  </div> 
+				 </div> 
+				</div> 
+			   </div> 
+			  </div> 
+			 </div> 
+			</div> 
+		   </div> 
+		   <div class="bigFloor ln-index-cont ui-draggable" bind="floorAttr_1" tabtype="" data-type="row" style="display: block;"> 
+			<span class="preview removeSpanClass">楼层</span> 
+			<div class="ctrl-btns ctrl-btns-floor"> 
+			 <span class="drag">拖拽楼层</span> 
+			 <span class="remove">删除楼层</span> 
+			 <span class="isHide" onclick="isHideClick(this);" surepublish="1">隐藏楼层</span> 
+			 <span class="spanBtn getfloorId">获取id</span> 
+			 <span class="editFloor">选择标签</span> 
+			</div> 
+			<div class="view bigViewBox"> 
+			 <div class="row floorDecorate resizable" id="bigFloor1585623660003"> 
+			  <div class="col ui-sortable"> 
+			   <div class="lyrow ui-draggable" data-type="row" style="display: block;"> 
+				<span class="preview removeSpanClass">一栏</span> 
+				<div class="ctrl-btns"> 
+				 <!-- <span class="edit">编辑整栏</span> --> 
+				 <span class="drag">拖拽整栏</span> 
+				 <span class="remove">删除整栏</span> 
+				</div> 
+				<div class="view"> 
+				 <div class="row rowDecorate resizable" id="lyrow1585623663679"> 
+				  <div class="col col-100 ui-sortable"> 
+				   <div class="box ui-draggable" data-type="image" style="display: block;"> 
+					<span class="preview">静态广告</span> 
+					<div class="ctrl-btns ctrl-btns-ele"> 
+					 <span class="edit">编辑</span> 
+					 <span class="drag">拖拽</span> 
+					 <span class="remove">删除</span> 
+					</div> 
+					<div class="view myview"> 
+					 <div class="goodsImage flex-content editing" id="box1585623839484"> 
+					  <!-- 音频图标展示 --> 
+					  <input type="hidden" class="ifsad" value="0" /> 
+					  <!-- 1展示音频图片 2不展示音频图片 --> 
+					  <input type="hidden" class="zysj" value="on" /> 
+					  <!-- 1左上角 2右上角 --> 
+					  <section class="audio_btn off" style="display: none; z-index: 999;"> 
+					   <div class="yinfu"></div> 
+					   <audio preload="auto" src="" mp3filename=""></audio> 
+					  </section> 
+					  <ul> 
+					   <li><a href="javascript:void(0)" class="bind" url="/rr/lnwd/merchartEntry/StoreSettled.html" goodcodeinput="2" goodcodeinputsign="goodcodeinputsign" onclick="javascript:addToProductStore.executeFvsStatcAdidForPhone('/rr/lnwd/merchartEntry/StoreSettled.html','1',this,'02','','1','')"><img class="bind" bind="img_id110_src" src="http://172.16.39.40:9909/lmH/images/upload/decorate1585623630387.jpg" alt="" /></a></li> 
+					  </ul> 
+					 </div> 
+					</div> 
+				   </div> 
+				  </div> 
+				 </div> 
+				</div> 
+			   </div> 
+			  </div> 
+			 </div> 
+			</div> 
+		   </div> 
+		   <div class="bigFloor ln-index-cont ui-draggable" bind="floorAttr_1" tabtype="" data-type="row" style="display: block;"> 
+			<span class="preview removeSpanClass">楼层</span> 
+			<div class="ctrl-btns ctrl-btns-floor"> 
+			 <span class="drag">拖拽楼层</span> 
+			 <span class="remove">删除楼层</span> 
+			 <span class="isHide" onclick="isHideClick(this);" surepublish="1">隐藏楼层</span> 
+			 <span class="spanBtn getfloorId">获取id</span> 
+			 <span class="editFloor">选择标签</span> 
+			</div> 
+			<div class="view bigViewBox"> 
+			 <div class="row floorDecorate resizable" id="bigFloor1585639931740"> 
+			  <div class="col ui-sortable"> 
+			   <div class="lyrow ui-draggable" data-type="row" style="display: block;"> 
+				<span class="preview removeSpanClass">一栏</span> 
+				<div class="ctrl-btns"> 
+				 <!-- <span class="edit">编辑整栏</span> --> 
+				 <span class="drag">拖拽整栏</span> 
+				 <span class="remove">删除整栏</span> 
+				</div> 
+				<div class="view"> 
+				 <div class="row rowDecorate resizable" id="lyrow1585639934727"> 
+				  <div class="col col-100 ui-sortable"> 
+				   <div class="box ui-draggable" data-type="image" style="display: block;"> 
+					<span class="preview">静态广告</span> 
+					<div class="ctrl-btns ctrl-btns-ele"> 
+					 <span class="edit">编辑</span> 
+					 <span class="drag">拖拽</span> 
+					 <span class="remove">删除</span> 
+					</div> 
+					<div class="view myview"> 
+					 <div class="goodsImage flex-content editing" id="box1589186343327"> 
+					  <!-- 音频图标展示 --> 
+					  <input type="hidden" class="ifsad" value="0" />
+					  <!-- 1展示音频图片 2不展示音频图片 --> 
+					  <input type="hidden" class="zysj" value="on" />
+					  <!-- 1左上角 2右上角 --> 
+					  <section class="audio_btn off" style="display: none; z-index: 999;"> 
+					   <div class="yinfu"></div> 
+					   <audio preload="auto" src="" mp3filename=""></audio> 
+					  </section> 
+					  <ul> 
+					   <li><a href="javascript:void(0)" class="bind" url="https://rryx.sinovatech.com/rr/lnwd/hxdSsoJump.html?dwzCode=00d2rS" goodcodeinput="5" goodcodeinputsign="goodcodeinputsign" onclick="javascript:addToProductStore.executeFvsStatcAdid('https://rryx.sinovatech.com/rr/lnwd/hxdSsoJump.html?dwzCode=00d2rS','1',this,'02','','1')"><img class="bind" bind="img_id110_src" src="http://172.16.39.40:9909/lmH/images/upload/decorate1589186039910.jpg" alt="" /></a></li> 
+					  </ul> 
+					 </div> 
+					</div> 
+				   </div>
+				  </div> 
+				 </div> 
+				</div> 
+			   </div> 
+			  </div> 
+			 </div> 
+			</div> 
+		   </div> 
+		   <div class="bigFloor ln-index-cont ui-draggable" bind="floorAttr_1" tabtype="" data-type="row" style="display: block;"> 
+			<span class="preview removeSpanClass">楼层</span> 
+			<div class="ctrl-btns ctrl-btns-floor"> 
+			 <span class="drag">拖拽楼层</span> 
+			 <span class="remove">删除楼层</span> 
+			 <span class="isHide" onclick="isHideClick(this);" surepublish="1">隐藏楼层</span> 
+			 <span class="spanBtn getfloorId">获取id</span> 
+			 <span class="editFloor">选择标签</span> 
+			</div> 
+			<div class="view bigViewBox"> 
+			 <div class="row floorDecorate resizable" id="bigFloor1585623661404"> 
+			  <div class="col ui-sortable"> 
+			   <div class="lyrow ui-draggable" data-type="row" style="display: block;"> 
+				<span class="preview removeSpanClass">一栏</span> 
+				<div class="ctrl-btns"> 
+				 <!-- <span class="edit">编辑整栏</span> --> 
+				 <span class="drag">拖拽整栏</span> 
+				 <span class="remove">删除整栏</span> 
+				</div> 
+				<div class="view"> 
+				 <div class="row rowDecorate resizable" id="lyrow1585623665374"> 
+				  <div class="col col-100 ui-sortable"> 
+				   <div class="box ui-draggable" data-type="image" style="display: block;"> 
+					<span class="preview">静态广告</span> 
+					<div class="ctrl-btns ctrl-btns-ele"> 
+					 <span class="edit">编辑</span> 
+					 <span class="drag">拖拽</span> 
+					 <span class="remove">删除</span> 
+					</div> 
+					<div class="view myview"> 
+					 <div class="goodsImage flex-content editing" id="box1585623842765"> 
+					  <!-- 音频图标展示 --> 
+					  <input type="hidden" class="ifsad" value="0" /> 
+					  <!-- 1展示音频图片 2不展示音频图片 --> 
+					  <input type="hidden" class="zysj" value="on" /> 
+					  <!-- 1左上角 2右上角 --> 
+					  <section class="audio_btn off" style="display: none; z-index: 999; right: 2%; left: auto;"> 
+					   <div class="yinfu"></div> 
+					   <audio preload="auto" src="https://rryx.sinovatech.com/rr/lm/uploadMp4/decorate1585624512363be487144-fe9f-4a07-b699-81653eae753c.mp3" mp3filename="张茜 - 桥边姑娘"></audio> 
+					  </section> 
+					  <ul> 
+					   <li><a href="javascript:void(0)" class="bind" url="https://rryx.sinovatech.com/rr/lnwd/hxdSsoJump.html?dwzCode=00d2rT" goodcodeinput="3" goodcodeinputsign="goodcodeinputsign" onclick="javascript:addToProductStore.executeFvsStatcAdid('https://rryx.sinovatech.com/rr/lnwd/hxdSsoJump.html?dwzCode=00d2rT','1',this,'02','','1')"><img class="bind" bind="img_id110_src" src="http://172.16.39.40:9909/lmH/images/upload/decorate1585623647621.png" alt="" /></a></li> 
+					  </ul> 
+					 </div> 
+					</div> 
+				   </div> 
+				  </div> 
+				 </div> 
+				</div> 
+			   </div> 
+			  </div> 
+			 </div> 
+			</div> 
+		   </div> 
+		   <div class="bigFloor ln-index-cont ui-draggable" bind="floorAttr_2" tabtype="" data-type="row" style="display: block;"> 
+			<span class="preview removeSpanClass">IOP轮播楼层</span> 
+			<div class="ctrl-btns ctrl-btns-floor"> 
+			 <span class="drag">拖拽IOP轮播楼层</span> 
+			 <span class="remove">删除IOP轮播楼层</span> 
+			 <span class="cspzLB">参数配置</span> 
+			</div> 
+			<div class="view bigViewBox"> 
+			 <div class="row policyIOPLB resizable" id="bigFloor1585623673103"> 
+			  <div class="col ui-sortable"> 
+			   <div class="lyrow ui-draggable" data-type="row" style="display: block;"> 
+				<span class="preview removeSpanClass">一栏</span> 
+				<div class="ctrl-btns"> 
+				 <!-- <span class="edit">编辑整栏</span> --> 
+				 <span class="drag">拖拽整栏</span> 
+				 <span class="remove">删除整栏</span> 
+				</div> 
+				<div class="view"> 
+				 <div class="row rowDecorate resizable" id="lyrow1585623696877"> 
+				  <div class="col col-100 ui-sortable">
+				   <div class="box ui-draggable bottomSign" data-type="bottomNav" style="display: block;"> 
+					<span class="preview">底部导航</span> 
+					<div class="ctrl-btns ctrl-btns-ele"> 
+					 <span class="edit">编辑</span> 
+					 <span class="drag">拖拽</span> 
+					 <span class="remove">删除</span> 
+					</div> 
+					<div class="view myview"> 
+					 <section class="sectionHeight" id="box1591667962688"></section> 
+					 <section class="navbottom-box" id="box1591667962688"> 
+					  <ul> 
+					   <li class="active sy"><a href="javascript:void(0);" bind="indexBottom">首页</a></li> 
+					   <li class="fjdd"><a href="javascript:void(0);" bind="nearbyBottom">附近的店</a></li> 
+					   <li class="fl"><a href="javascript:void(0);" bind="flBottom">分类</a></li> 
+					   <li class="wd"><a href="javascript:void(0);" bind="myBottom">我的</a></li> 
+					  </ul> 
+					 </section> 
+					</div> 
+				   </div>
+				  </div> 
+				 </div> 
+				</div> 
+			   </div> 
+			  </div> 
+			 </div> 
+			</div> 
+		   </div> 
+		   <input type="hidden" class="htmlNameHidden" id="htmlNameHidden" value="331未" />
+		   <input type="hidden" id="advertSpaceContainerId" value="2" />
+		   <input type="hidden" id="pageTypeSpace" value="0" />
+		   <input type="hidden" id="decoraterIdpage" value="2c90a7a87133b3a4017133c0af5d002b" />
+		  </div>
+     </ul> 
+    </div> 
+   </div> 
+   <!--end--> 
+   <div id="vuedemo"> 
+    <!--预览区域--> 
+    <!-- <div class="doc-wrap"  id="doc-wrap" v-on:mouseover="updateContent('1')" > --> 
+    <div class="doc-wrap" id="doc-wrap"> 
+     <div class="demo">
+     </div> 
+    </div> 
+    <!--end--> 
+   </div> 
+   <!-- coMmodals 截止1122后公共蒙版使用 --> 
+   <div class="coMmodals" style="display: none;"></div> 
+   <div id="copyHtml" style="display:none;"> 
+    <input type="hidden" value="" /> 
+    <p></p> 
+   </div> 
+   <!-- 获取楼层id弹窗 开始 --> 
+   <div class="csFloormodals"> 
+    <div class="csFloorId"> 
+     <a href="javascript:;" class="closeGB" onclick="closeC('.csFloormodals')">&times;</a> 
+     <p>当前楼层id：<input id="floorId" type="text" readonly="" /> </p> 
+     <button class="coopybtn" type="button" onclick="copy()">复制</button> 
+    </div> 
+   </div> 
+   <input type="hidden" id="decorateid" /> 
+   <!-- tab楼层添加弹窗 开始--> 
+   <div class="modalsCms tabModals"> 
+    <div class=" cmsDiv tabsDiv tabsDiv1 tablcDiv"> 
+     <ul class="cmslectLi"> 
+      <li class="cur">默认</li> 
+     </ul> 
+     <a href="javascript:;" class="closeGB" onclick="closeC('.tabModals')">&times;</a> 
+     <div class="mxdiv"> 
+      <p>标题栏背景：<input type="text" id="btlbj" placeholder="请输入色号如#666666" /></p> 
+     </div> 
+     <div class="mxdiv"> 
+      <p style="float: left;">选择需要的展示的图标数：</p> 
+      <select style="margin-top: 16px;" id="tabtupian"> 
+       <!-- <option >请选择</option> --> <option value="2">2</option> <option value="2.5">2.5</option> <option value="3">3</option> <option value="3.5">3.5</option> <option value="4"> 4</option> <option value="4.5">4.5</option> <option value="5">5</option> <option value="5.5">5.5</option> </select> 
+     </div> 
+     <div class="tbbtn_div"> 
+      <button type="button" onclick="closeC('.tabModals')" class="cmsqx">取消</button>
+      <button type="button" class="saveTablc">保存</button> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- tab楼层编添加辑弹窗 结束--> 
+   <!-- tab楼层添加tabs标题 开始--> 
+   <div class="modalsCms cnmenu tabBTModals"> 
+    <div class="cmsDiv  tabsDiv tabsDiv2 tabBtdiv"> 
+     <ul class="cmslectLi"> 
+      <li class="cur">默认</li> 
+     </ul> 
+     <a href="javascript:;" class="closeGB" onclick="closeC('.tabBTModals')">&times;</a> 
+     <div class="wxzdiv"> 
+      <p>&nbsp;&nbsp;&nbsp;广告位编码：<input class="tab_ggwbm" /></p> 
+      <div class="nmxdiv wxpic"> 
+       <p> &nbsp;未选中图片：</p> 
+       <div class="uploadImg normalData" style="float:left;"> 
+        <img src="../../images/images.png" alt="" class="wxziconimagesZw imagesZw" /> 
+        <img src="" alt="" class="wxziconimgPerview imgPerview" /> 
+        <p class="opacityP" id="wxziconopacityP">上传图片</p> 
+        <input type="file" class="imgInput" name="UploadBtn" id="wxzicon" onchange="upLoadImgChannel(this,0,0,2)" /> 
+       </div> 
+       <span class="redzs">注：建议圆形图片大小200*120px，文字图片大小150*55px </span> 
+      </div> 
+      <div class="nmxdiv xzpic"> 
+       <p> &nbsp;&nbsp;&nbsp;&nbsp;选中图片：</p> 
+       <div class="uploadImg normalData" style="float:left;"> 
+        <img src="../../images/images.png" alt="" class="xziconimagesZw imagesZw" /> 
+        <img src="" alt="" class="xziconimgPerview imgPerview" /> 
+        <p class="opacityP" id="xziconopacityP">上传图片</p> 
+        <input type="file" class="imgInput" name="UploadBtn" id="xzicon" onchange="upLoadImgChannel(this,0,0,2)" /> 
+       </div> 
+       <span class="redzs">注：建议圆形图片大小200*120px，文字图片大小150*55px </span> 
+      </div> 
+     </div> 
+     <div class="tbbtn_div"> 
+      <button type="button" onclick="closeC('.tabBTModals')" class="cmsqx">取消</button>
+      <button type="button" class="saveTAbs">保存</button> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- tab楼层添加tabs标题 结束--> 
+   <!-- tab楼层编辑tabs标题 开始--> 
+   <div class="modalsCms cnmenu tabBTModals1"> 
+    <div class="cmsDiv tabsDiv tabsDiv2 tabBtdiv1"> 
+     <ul class="cmslectLi"> 
+      <li class="cur">默认</li> 
+     </ul> 
+     <a href="javascript:;" class="closeGB" onclick="closeC('.tabBTModals1')">&times;</a> 
+     <div class="wxzdiv ewxzdiv"> 
+      <p>&nbsp;&nbsp;&nbsp;广告位编码：<input class="tab_ggwbm" /></p> 
+      <div class="nmxdiv ewxpic"> 
+       <p> &nbsp;未选中图片：</p> 
+       <div class="uploadImg normalData" style="float:left;"> 
+        <img src="../../images/images.png" alt="" class="bjwxziconimagesZw imagesZw" style="display: none;" /> 
+        <img src="" alt="" class="bjwxziconimgPerview  imgPerview" /> 
+        <p class="opacityP" id="bjwxziconopacityP">上传图片</p> 
+        <input type="file" class="imgInput" name="UploadBtn" id="bjwxzicon" onchange="upLoadImgChannel(this,0,0,2)" /> 
+       </div> 
+       <span class="redzs">注：建议圆形图片大小200*120px，文字图片大小150*55px </span> 
+      </div> 
+      <div class="nmxdiv exzpic"> 
+       <p>&nbsp;&nbsp;&nbsp;&nbsp;选中图片：</p> 
+       <div class="uploadImg normalData" style="float:left;"> 
+        <img src="../../images/images.png" alt="" class="imgPerviewimagesZw imagesZw" style="display: none;" /> 
+        <img src="" alt="" class="bjxziconimgPerview imgPerview" /> 
+        <p class="opacityP" id="bjxziconopacityP">上传图片</p> 
+        <input type="file" class="imgInput" name="UploadBtn" id="bjxzicon" onchange="upLoadImgChannel(this,0,0,2)" /> 
+       </div> 
+       <span class="redzs">注：建议圆形图片大小200*120px，文字图片大小150*55px </span> 
+      </div> 
+     </div> 
+     <div class="tbbtn_div"> 
+      <button type="button" onclick="closeC('.tabBTModals1')" class="cmsqx">取消</button>
+      <button type="button" class="editTAbs">保存</button> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- tab楼层编辑tabs标题 结束--> 
+   <!-- 权益详情弹窗 开始--> 
+   <div class=" modalsCms modals_Cms  qyxqMo modals_qyxq"> 
+    <div class="cmsDiv cmsLayer qyxqly qyxqedit-layer " id="qyxqedit-layer"> 
+     <a href="javascript:;" class="closeGB closeqyxq" onclick="closeC('.modals_qyxq')">&times;</a> 
+     <ul class="selectLiCspz"> 
+      <li class="cur">默认</li> 
+     </ul> 
+     <div class="cmdes qyxqmain-content  " id="qyxqtab"> 
+     </div> 
+     <div class="tab-content"> 
+      <div class="tc qyxq-edit"> 
+       <button type="button" name="button" class="jxxz">继续新增</button> 
+       <button type="submit" name="submit" class="saveqyxq">保存并关闭</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- 权益详情弹窗 结束--> 
+   <!-- 新底部导航弹窗 开始--> 
+   <div class=" modalsCms modals_Cms  qyxqMo whyMo whydhMo"> 
+    <div class="cmsDiv cmsLayer qyxqly hyLayer whyedit-layer " id="whyedit-layer"> 
+     <a href="javascript:;" class="closeGB closeqyxq" onclick="closeC('.whydhMo')">&times;</a> 
+     <ul class="selectLiCspz"> 
+      <li class="cur">默认</li> 
+     </ul> 
+     <div class="cmdes whymain-content  " id="whytab"> 
+     </div> 
+     <div class="tab-content"> 
+      <div class="tc why-edit"> 
+       <button type="button" name="button" class="whyjxxz">继续新增</button> 
+       <button type="submit" name="submit" class="savewhy">保存并关闭</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- 新底部导航弹窗 结束--> 
+   <!-- 跑马灯弹窗 开始--> 
+   <div class=" modalsCms  pmdTips"> 
+    <input type="hidden" id="pmdtc" value="pmdTips" /> 
+    <div class=" cmsDiv pmdmo pmdmodal " id="pmdedit-layer"> 
+     <a href="javascript:;" class="closeGB closeLb" onclick="closeC('.pmdTips')">&times;</a> 
+     <ul class="cmslectLi"> 
+      <li class="cur">默认</li> 
+     </ul> 
+     <div id="pmdhtmlCon" class=" cmdes pmddes" style="height: 70%;"> 
+     </div> 
+     <div class="tab-content"> 
+      <div class="tc addpmdbtn  adddivpmd "> 
+       <a href="javascript:;" onclick="addpmd(this)">+增加</a> 
+      </div> 
+      <div class="tc pmd-edit"> 
+       <button type="submit" name="submit" class="submitted savepmd">保存</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- 跑马灯弹窗 结束--> 
+   <!-- 跑马灯选择消息弹窗start --> 
+   <div class="modals_cspz modals_Cms cmsModalTips "> 
+    <div class="cspzedit-layer cmsLayer cmszedit-layer  " id="cmsggedit-layer"> 
+     <a href="javascript:;" class="close closexz">&times;</a> 
+     <ul class="selectLiCspz"> 
+      <li class="cur" style="width: auto;">选择消息</li> 
+     </ul> 
+     <div class="cspzmain-content" id="xzgghtml" style="display:block"> 
+      <div class="cont_box"> 
+       <div class="cxdiv"> 
+        <form action="/tWlmDecorate/queryNotice.do" method="post" id="queryXX"> 
+         <table> 
+          <tbody>
+           <tr> 
+            <td><span>消息标题：</span><input type="text" id="title11" name="title11" /></td> 
+            <td colspan="2"> <span>发布时间：</span> <input id="pubStartTime" name="pubStartTime" readonly="readonly" class="Wdate w150" onclick="WdatePicker({maxDate:'#F{$dp.$D(\'pubEndTime\')}',dateFmt:'yyyy-MM-dd'})" value="" /><span>&nbsp; ~ &nbsp;</span> <input id="pubEndTime" name="pubEndTime" readonly="readonly" class="Wdate w150" onclick="WdatePicker({minDate:'#F{$dp.$D(\'pubStartTime\')}',dateFmt:'yyyy-MM-dd'})" value="" /> </td> 
+           </tr> 
+           <tr> 
+            <td colspan="2"> <span>下线时间：</span> <input id="fBeginDate" name="fBeginDate" readonly="readonly" class="Wdate w150" onclick="WdatePicker({maxDate:'#F{$dp.$D(\'fEndDate\')}',dateFmt:'yyyy-MM-dd'})" value="" /><span>&nbsp; ~ &nbsp;</span> <input id="fEndDate" name="fEndDate" readonly="readonly" class="Wdate w150" onclick="WdatePicker({minDate:'#F{$dp.$D(\'fBeginDate\')}',dateFmt:'yyyy-MM-dd'})" value="" /> </td> 
+           </tr> 
+           <tr> 
+            <td></td> 
+            <td class="btna"><a href="javascript:void(0);" onclick="resetValueXX();">重置</a><a href="javascript:void(0);" onclick="queryNotice();">查询</a></td> 
+           </tr> 
+          </tbody>
+         </table> 
+         <input type="hidden" name="pageNumber11" id="pageNumber11" :value="pageNumber11" /> 
+        </form> 
+       </div> 
+       <p v-if="noticeList == null">暂无数据</p>
+       <table class="ch_tips cmsTable"> 
+        <thead> 
+         <tr> 
+          <th> </th> 
+          <th>序号</th> 
+          <th>消息标题</th> 
+          <th>发布时间</th> 
+          <th>下线时间</th> 
+          <!-- <th>操作时间</th> --> 
+         </tr> 
+        </thead> 
+        <tbody class="mytablebox"> 
+         <tr class="clxqq tjjh" v-for="(item,index) in noticeList"> 
+          <td><input type="radio" name="xxggra" class="jhr" :value="item.noticeId" /></td> 
+          <td>{{index+1}}</td> 
+          <td>{{item.noticeTitle}}</td> 
+          <td>{{item.publishDate }}</td> 
+          <td>{{item.finishDate }}</td> 
+          <!-- <td>{{item.updateDate }}</td> --> 
+         </tr>  
+        </tbody> 
+       </table> 
+       <div class="pageY"> 
+        <div class="pagingNew" style="float: right;"> 
+         <label> <a href="#this" title="首页" v-if="pageObject11.currentPage==1"> 首页 </a> <a href="#this" class="prevPage prevEnd" v-if="pageObject11.currentPage==1 &amp;&amp; pageObject11.totalPage!=0">上一页</a> <a href="javascript:void(0);" v-on:click="querySumPrizexx('1');" title="首页" v-if="pageObject11.currentPage&gt;1">首页</a> <a href="javascript:void(0);" v-on:click="querySumPrizexx('-');" class="prevPage prev" title="上一页" v-if="pageObject11.currentPage&gt;1">上一页</a> <a href="#this" class="nextPage nextEnd" title="下一页" v-if="pageObject11.currentPage==pageObject11.totalPage">下一页</a> <a href="#this" title="尾页" v-if="pageObject11.currentPage==pageObject11.totalPage &amp;&amp; pageObject11.totalPage!=0"> 尾页 </a> <a href="#this" title="尾页" v-if="pageObject11.totalPage==0"> 尾页 </a> <a href="javascript:void(0);" v-on:click="querySumPrizexx('+');" class="nextPage" v-if="pageObject11.currentPage&lt;pageObject11.totalPage">下一页</a> <a href="javascript:void(0);" v-on:click="querySumPrizexx('0');" title="尾页" v-if="pageObject11.currentPage&lt;pageObject11.totalPage">尾页</a> </label> 
+         <label class="marginTop2px">共{{pageObject11.totalPage}}页</label> 
+         <label class="marginTop2px">跳转至</label> 
+         <input id="gopage" class="inputW20H18" type="text" onafterpaste="this.value=this.value.replace(/\D/g,'')" onkeyup="this.value=this.value.replace(/\D/g,'')" /> 
+         <label class="marginTop2px">页</label> 
+         <a class="determineBtn" title="" href="javascript:void(0);" onclick="goToPagexx('pageObject11.totalPage');" id="goToPageButton">跳 转</a> 
+         <label class="totalRecord"> 共<font class="font">{{pageObject11.totalRows}}</font>条&nbsp;&nbsp;每页 <select name="RowDisplayed_crd" onchange="javascript:querySumPrize(1)" id="paginationRowDisplayed_crd" sytle="padding:0px; width:50px;"> <option v-model="rowsPerPage11">10</option> <option v-model="rowsPerPage11">15</option> <option v-model="rowsPerPage11">20</option> <option v-model="rowsPerPage11">100</option> </select>条 </label> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tab-content "> 
+      <div class="tc iop-edit"> 
+       <button type="button" name="button" class="cmsqxxz">取消</button> 
+       <button type="submit" name="submit" class="cmssave pmdxxsave">保存</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- 跑马灯选择消息弹窗end --> 
+   <!--弹窗区域 商品房间--> 
+   <div class="modals" id="doc-wrap"> 
+    <div class="edit-layer modal tabs" id="edit-layer"> 
+     <a href="javascript:;" class="close">&times;</a> 
+     <ul class="selectLi"> 
+      <li class="cur">默认</li> 
+      <li>HTML</li> 
+     </ul> 
+     <div style="font-size:18px" id="" class="jtgg_modals">
+      <table style="margin-top: 0rem;">
+       <tbody>
+        <tr>
+         <td align="right" colspan="2" class="jtggtd"><i class="floorLocation"></i></td>
+        </tr>
+       </tbody>
+      </table>
+     </div> 
+     <div class="main-content" id="resultCon"> 
+      <p class="selectP"> <span>广告位编码：</span><span><input id="goodCodeInput" type="text" value="" goodcodeinputsign="goodcodeinputsign" class="goodcodeinputsigngg" style="padding-top: 10px;padding-bottom: 10px;width: 200px;border: 1px solid #ddd;margin-bottom: 0.05rem;" /></span> <br /> <span>数据来源&nbsp;&nbsp;：</span> <select name="" id=""> <option v-for="(t,index) in typeList" v-if="typeList != null" :value="'type'+t.code">{{t.name}}</option> </select> </p> 
+      <p class="selectP1"> <span>广告位编码&nbsp;：</span><span><input id="goodCodeInput" type="text" value="" goodcodeinputsign="goodcodeinputsign" class="goodcodeinputsigngg" style="padding: 10px;width: 200px;border: 1px solid #ddd;margin-bottom: 0.05rem;" /></span> <br /> <span>标签数据来源：</span> <select name="" id=""> <option v-for="(t,index) in bqTypeList" v-if="bqTypeList != null" :value="t.lableCode">{{t.lableName}}</option> </select> </p>
+      <p class="selectP1" style="color:red">请选中点击保存生效！</p> 
+      <p></p> 
+      <div id="htmlCon" style="display:none"> 
+       <table width="100%" style="margin-top: 0rem;margin-bottom: 0.5rem;"></table> 
+      </div> 
+     </div> 
+     <div class="main-content" id="htmlCon2" style="display:none"></div> 
+     <div class="tab-content"> 
+      <div class="tc css-edit"> 
+       <button type="submit" name="submit" class="submitted saveButton">保存</button> 
+       <button type="submit" name="submit" class="submitted cancelButton">取消</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- 弹窗 图片房间 --> 
+   <!-- <div class="modals2" id="doc-wrap2">
+		<div class="edit-layer2 modal tabs" id="edit-layer2">
+			<a href="javascript:;" class="close">&times;</a>
+			
+			<div class="main-content" id="htmlCon">
+				<table width="100%"></table>
+			</div>
+			<div class="tab-content">
+				<div class="tc css-edit2">
+					<button type="submit" name="submit" class="submitted">保存</button>
+				</div>
+			</div>
+		
+		</div>
+	</div> --> 
+   <!-- 弹窗 新增栏布局 --> 
+   <div class="modals2" id="modalAddLan"> 
+    <div class="edit-layer2 modal tabs" id="edit-layer2"> 
+     <a href="javascript:;" class="close">&times;</a> 
+     <div class="main-content" id="htmlConLan"> 
+     </div> 
+     <div class="tab-content"> 
+      <div class="tc css-edit2"> 
+       <button type="submit" name="submit" class="submitted btnSave2">保存</button> 
+       <button type="submit" name="submit" class="btnCancel">取消</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!--新轮播图  开始--> 
+   <div class=" modalsLbt nlbtTips"> 
+    <div class=" lbtDiv lbmodal " id="picedit-layer" style="z-index: 500;"> 
+     <a href="javascript:;" class="closeGB closeLb" onclick="closeC('.nlbtTips')">&times;</a> 
+     <ul class="cmslectLi"> 
+      <li class="cur">默认</li> 
+     </ul> 
+     <div id="lbthtmlCon" class="lbtdes"> 
+     </div> 
+     <div class="tab-content"> 
+      <div class="tc lbt-edit"> 
+       <button type="submit" name="submit" class="submitted">保存</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!--新轮播图 结束--> 
+   <div class="modalAddMenu" id="modalAddMenu"> 
+    <div class="modal tabs edit-layer3"> 
+     <a href="javascript:;" class="close">&times;</a> 
+     <div id="zdyHtmlCon"></div> 
+     <div class="tab-content" style="margin-top: -0.9rem;"> 
+      <div class="tc css-edit3"> 
+       <button type="submit" name="submit" class="btnSave">保存</button> 
+       <button type="submit" name="submit" class=" cancelButton">取消</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- 楼层选择标签弹窗开始 --> 
+   <div class="popModal" id="floorSelectPop"> 
+    <a href="javascript:;" class="close" onclick="hideid('floorSelectPop')">&times;</a> 
+    <div class="floorSelectCon">
+      选择标签： 
+     <label v-for="(t,index) in bqTypeList" v-if="bqTypeList != null" :value="t.lableCode" class="laberBqList"> <input type="checkbox" name="tab" /><span>{{t.lableName}}</span> </label> 
+    </div> 
+    <div class="floorSelect"> 
+     <button type="submit" name="submit" class="yes">确定</button> 
+     <button type="submit" name="submit" onclick="hideid('floorSelectPop')">取消</button> 
+    </div> 
+   </div> 
+   <!-- 楼层选择标签弹窗结束 --> 
+   <div class="modalAddMenu2" id="modalAddMenu2"> 
+    <div class="modal tabs edit-layer4"> 
+     <a href="javascript:;" class="close2">&times;</a> 
+     <div id="zdyHtmlCon" style="width:810px;height:400px;overflow:scroll;"></div> 
+     <div class="tab-content"> 
+      <div class="tc css-edit3" style="font-size: 0.26rem;text-align:center;"> 
+       <button type="submit" name="submit" id="radioAdinfo" onclick="radioAdinfo();">保存</button> 
+       <button type="submit" name="submit" class="cancelButton2">取消</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="modalAddMenu3" id="modalAddMenu3"> 
+    <div class="modal tabs edit-layer5"> 
+     <a href="javascript:;" class="close3">&times;</a> 
+     <div id="zdyHtmlCon" style="width:810px;height:400px;"></div> 
+     <div class="tab-content"> 
+      <div class="tc css-edit3" style="font-size: 0.26rem;text-align:center;"> 
+       <button type="submit" name="submit" id="radioAlertinfo" onclick="radioAlertinfo();">保存</button> 
+       <button type="submit" name="submit" class="cancelButton3">取消</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <input type="hidden" name="policyType" id="policyType" /> 
+   <input type="hidden" name="checktextstr" id="checktextstr" value="0" /> 
+   <input type="hidden" name="checktexttar" id="checktexttar" value="0" /> 
+   <input type="hidden" name="decorater_roomid" id="decorater_roomid" /> 
+   <input type="hidden" name="floorType" id="floorType" /> 
+   <div class="modals_cspz modals_cspz1">
+    <!--楼层参数配置弹窗 --> 
+    <div class="cspzedit-layer cspzedit-layeriop tabs" id="cspzedit-layer"> 
+     <a href="javascript:;" class="close close1" onclick="resetSizeFloor(this,'Y');">&times;</a> 
+     <a href="javascript:;" onclick="resetSizeFloor(this);"> <img src="../../images/iopexpand.png" class="expand_or_shrink" /> </a> 
+     <ul class="selectLiCspz iopcspz"> 
+      <li class="cur">IOP推荐</li> 
+      <li>补位广告</li> 
+     </ul> 
+     <div class="main-content main-content1" id="htmlConCspz" style="display:none"> 
+      <form action="" method="post" id="lblc" class="lblc"> 
+       <input type="hidden" name="policyType" id="policyTypelb" /> 
+       <input type="hidden" name="decorater_roomid" id="decorater_roomidlb" /> 
+       <input type="hidden" name="floorType" id="floorTypelb" /> 
+       <input type="hidden" name="decorateIdlb" id="decorateIdlb" /> 
+       <div class="cont_box"> 
+        <p> <span class="zsp">无任何推荐信息时，是否隐藏楼层：</span> <span class="sf"> <input type="radio" name="isHide" id="ifyc1" value="0" v-model="isHide" /><label for="ifyc1">是</label> <input type="radio" name="isHide" id="ifyc2" value="1" v-model="isHide" /><label for="ifyc2">否</label> </span> <span class="lsp">注：推荐策略信息最多可配100条。</span> </p> 
+        <table class="ch_tips"> 
+        </table> 
+       </div> 
+      </form> 
+     </div> 
+     <div class="main-content main-content1" id="htmlConCspz2" style="display:none"> 
+      <form action="" method="post" id="lblc2" class="lblc2"> 
+       <input type="hidden" name="policyType2" id="policyType2" /> 
+       <input type="hidden" name="decorater_roomid2" id="decorater_roomid2" /> 
+       <input type="hidden" name="floorType2" id="floorType2" /> 
+       <input type="hidden" name="decorateId2" id="decorateId2" /> 
+       <div class="cont_box"> 
+        <table class="ch_tips"> 
+        </table> 
+       </div> 
+      </form> 
+     </div> 
+     <div class="tab-content ioptab" style="display: block"> 
+      <div class="tc iop-edit iop-edit1"> 
+       <button type="button" onclick="jixuaddlp('0')">继续添加</button> 
+       <button type="buttone" name="butt_sub" class="butt_sub" onclick="saveBathch('0')">全部保存</button> 
+       <button type="button" name="button" class="alldel">批量删除</button> 
+      </div> 
+     </div> 
+     <div class="tab-content ioptab" style="display: none;"> 
+      <div class="tc iop-edit iop-editbw"> 
+       <button type="button" onclick="jixuaddlp('1')">继续添加</button> 
+       <button type="buttone" name="butt_sub" class="butt_sub" onclick="saveBathch('1')">全部保存</button> 
+       <button type="button" name="button" class="alldel">批量删除</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="modals_cspz modals_cspz1pp">
+    <!--平铺楼层参数配置弹窗 --> 
+    <div class="cspzedit-layer cspzedit-layeriop tabs" id="cspzedit-layer"> 
+     <a href="javascript:;" class="close close1pp" onclick="resetSize(this,'Y');">&times;</a> 
+     <a href="javascript:;" onclick="resetSize(this);"> <img src="../../images/iopexpand.png" class="expand_or_shrink" /> </a> 
+     <ul class="selectLiCspzpp"> 
+      <li class="cur">IOP推荐</li> 
+      <li>补位广告</li> 
+     </ul> 
+     <div class="main-content main-content2" id="htmlConCspzpp" style="display:none"> 
+      <form action="" method="post" id="pplc" class="pplc"> 
+       <input type="hidden" name="roomType" id="roomType" /> 
+       <input type="hidden" name="policyTypepp" id="policyTypepp" /> 
+       <input type="hidden" name="decorater_roomidpp" id="decorater_roomidpp" /> 
+       <input type="hidden" name="floorTypepp" id="floorTypepp" /> 
+       <input type="hidden" name="decorateIdpp" id="decorateIdpp" /> 
+       <div class="cont_box"> 
+        <p style="margin-bottom: 2px;"> <span class="sf cspz"> <input type="radio" name="tjiop" id="ioptj" checked="" value="1" /><label for="ioptj">&nbsp;&nbsp;iop推荐</label> <input type="radio" name="tjiop" id="jtiop" value="2" /><label for="jtiop">&nbsp;&nbsp;集团iop推荐</label> </span> </p> 
+        <p class="iopFloor"> <span class="zsp">无任何推荐信息时，是否隐藏楼层：</span> <span class="sf"> <input type="radio" name="isHidepp" id="ifyc1pp" value="0" v-model="isHide" /><label for="ifyc1">是</label> <input type="radio" name="isHidepp" id="ifyc2pp" value="1" v-model="isHide" /><label for="ifyc2">否</label> </span> <span class="lsp">注：推荐策略信息最多可配100条。</span> </p> 
+        <p class="iopRoom"><span class="lsp">注：推荐策略信息最多可配100条。</span></p> 
+        <table class="ch_tips"> 
+        </table> 
+       </div> 
+      </form> 
+     </div> 
+     <div class="main-content main-content2" id="htmlConCspz2pp" style="display:none"> 
+      <form action="" method="post" id="pplc2" class="pplc"> 
+       <input type="hidden" name="policyTypepp2" id="policyTypepp2" /> 
+       <input type="hidden" name="decorater_roomidpp2" id="decorater_roomidpp2" /> 
+       <input type="hidden" name="floorTypepp2" id="floorTypepp2" /> 
+       <input type="hidden" name="decorateIdpp2" id="decorateIdpp2" /> 
+       <div class="cont_box"> 
+        <table class="ch_tips"> 
+        </table> 
+       </div> 
+      </form> 
+     </div> 
+     <div class="tab-content ioptabs" style="display: block"> 
+      <div class="tc iop-edit iop-edit1pp"> 
+       <button type="button" onclick="jixuaddpp('0')">继续添加</button> 
+       <button type="buttone" name="butt_sub" class="butt_sub" onclick="saveBathchpp('0')">全部保存</button> 
+       <button type="button" name="button" class="alldel">批量删除</button> 
+      </div> 
+     </div> 
+     <div class="tab-content ioptabs" style="display: none;"> 
+      <div class="tc iop-edit iop-editbwpp"> 
+       <button type="button" onclick="jixuaddpp('1')">继续添加</button> 
+       <button type="buttone" name="butt_sub" class="butt_sub" onclick="saveBathchpp('1')">全部保存</button> 
+       <button type="button" name="button" class="alldel">批量删除</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div id="htmlConCspz2CanClone" style="display:none"> 
+    <div class="cont_box"> 
+     <table class="ch_tips"> 
+      <thead> 
+       <tr> 
+        <th><input type="checkbox" class="allCheckbox" /></th> 
+        <th>序号</th> 
+        <th>策略配置</th> 
+        <th>操作</th> 
+       </tr> 
+       <tr class="clxqq" id="policybuwei-1" style="display:none"> 
+        <td><input type="checkbox" name="buwei" /></td> 
+        <td>1</td> 
+        <td> 
+         <div> 
+          <dl> 
+           <dt>
+            广告编码:
+           </dt> 
+           <dd> 
+            <input type="text" class="policyGgwbm" name="policyGgwbm" />
+           </dd>
+          </dl>
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            配置类型:
+           </dt> 
+           <dd> 
+            <select id="ConfigType" name="ConfigType" onchange="changeTiaoZhuan(-1)"> <option value="1">广告</option> <option value="2">商品</option> </select> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            图片:
+           </dt> 
+           <dd> 
+            <div style="overflow:hidden;"> 
+             <div class="uploadImg normalData"> 
+              <img src="../../images/images.png" alt="" class="buweiiconList-1imagesZw" /> 
+              <img src="" alt="" class="buweiiconList-1imgPerview" /> 
+              <p class="opacityP" id="buweiiconList-1opacityP">上传图片</p> 
+              <input type="hidden" name="buweipolicyId" id="buweipolicyId" /> 
+              <input type="file" class="imgInput" onchange="upLoadImgChannel(this,0,0,2)" name="UploadBtn" id="buweiiconList-1" /> 
+              <input type="hidden" name="buweiiconListimageName" id="buweiiconList-1imageName" /> 
+             </div> 
+             <a class="llbtn c3c9be1bb fl" style="margin-top:-28px; margin-left:150px;" onclick="assignment('buweiiconList-1');showid('ts_ljzs')" id="buweiiconListfl-1" title="图片">预览</a> 
+            </div> 
+            <span>注：建议上传350*350像素，大小不超过100k，格式为jpg，png的图片。</span> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            档位介绍图片:
+           </dt> 
+           <dd> 
+            <div style="overflow:hidden;"> 
+             <div class="uploadImg normalData"> 
+              <img src="../../images/images.png" alt="" class="buweiintroductionList-1imagesZw" /> 
+              <img src="" alt="" class="buweiintroductionList-1imgPerview" /> 
+              <p class="opacityP" id="buweiintroductionList-1opacityP">上传图片</p> 
+              <input type="hidden" name="buweiintroductionListimageName" id="buweiintroductionList-1imageName" /> 
+              <input type="file" class="imgInput" onchange="upLoadImgChannel(this,0,0,2)" name="UploadBtn" id="buweiintroductionList-1" /> 
+             </div> 
+             <a class="llbtn c3c9be1bb fl" style="margin-top:-28px; margin-left:150px;" onclick="assignment('buweiintroductionList-1');showid('ts_ljzs')" id="buweiintroductionListfl-1" title="图片">预览</a> 
+            </div> 
+            <span>注：建议上传350*350像素，大小不超过100k，格式为jpg，png的图片。</span> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            跳转地址:
+           </dt> 
+           <dd> 
+            <input type="hidden" name="jumpType" id="peizhijumpType" /> 
+            <input type="text" class="jhinp" placeholder="请输入跳转地址或选择跳转广告" name="jumpAddress" id="jumpAddress" /> 
+            <span class="jhsp ad" id="jhsp-1">选择广告/聚合页</span>
+            <input type="text" readonly="readonly" name="jumpAddressStr" class="jumpAddressStrReadOnly" style="margin-left: 5px; width: 80px; float: right;border: none;" /> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            展示权重:
+           </dt> 
+           <dd> 
+            <input type="text" placeholder="请输入所占权重1~100，数值越大排位越靠前" name="displayWeights" id="displayWeights" /> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            有效时间:
+           </dt> 
+           <dd class="yxsjdd"> 
+            <input id="startTime1" name="startTime1" readonly="readonly" class="Wdate w150" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" value="" /> ~ 
+            <input id="endTime1" name="endTime1" readonly="readonly" class="Wdate w150" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" value="" /> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            是否显示下一步按钮:
+           </dt> 
+           <dd> 
+            <input type="radio" name="isShowButtonbuwei-1" class="rin" value="0" /> 
+            <label for="ifyc1" class="rlb">是</label> 
+            <input type="radio" name="isShowButtonbuwei-1" class="rin" checked="" value="1" />
+            <label for="ifyc1" class="rlb">否</label> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div class="anwzF"> 
+          <dl> 
+           <dt>
+            按钮位置:
+           </dt> 
+           <dd> 
+            <div id="anwzF"> 
+             <input type="radio" name="anwz-1" value="y" class="anwz" />
+             <label for="anwz1">中间</label> 
+             <input type="radio" name="anwz-1" value="n" class="anwz" checked="" />
+             <label for="anwz2">底部</label> 
+            </div> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div class="dbzsF"> 
+          <dl> 
+           <dt>
+            底部展示:
+           </dt> 
+           <dd> 
+            <div id="anwzF"> 
+             <input type="radio" name="dbzs-1" value="y" class="anwz" checked="" />
+             <label for="anwz1">固定</label> 
+             <input type="radio" name="dbzs-1" value="n" class="anwz" />
+             <label for="anwz2">悬浮（仅按钮位置底部可用）</label> 
+            </div> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            下一步按钮跳转:
+           </dt> 
+           <dd class="yxsjdd"> 
+            <div style="overflow:hidden;"> 
+             <div class="uploadImg normalData"> 
+              <img src="../../images/images.png" alt="" class="buweiNextList-1imagesZw" /> 
+              <img src="" alt="" class="buweiNextList-1imgPerview" /> 
+              <p class="opacityP" id="buweiNextList-1opacityP">上传图片</p> 
+              <input type="hidden" name="buweiNextListimageName" id="buweiNextList-1imageName" /> 
+              <input type="file" class="imgInput" onchange="upLoadImgChannel(this,0,0,2)" name="UploadBtn" id="buweiNextList-1" /> 
+             </div> 
+             <a class="llbtn c3c9be1bb fl" style="margin-top:-28px; margin-left:150px;" onclick="assignment('buweiNextList-1');showid('ts_ljzs')" id="buweiNextListfl-1" title="图片">预览</a> 
+            </div> 
+            <span>注：建议上传宽度750xp像素，大小不超过100k，格式为jpg，png的图片。</span> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            下一步按钮跳转:
+           </dt> 
+           <dd class="yxsjdd"> 
+            <input type="radio" name="NextButtonbuwei-1" class="rin" value="0" />
+            <label for="ifyc1" class="rlb">二次确认页</label> 
+            <input type="radio" name="NextButtonbuwei-1" class="rin" checked="" value="1" />
+            <label for="ifyc2" class="rlb">原二次确认页</label> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            页面展示:
+           </dt> 
+           <dd class="yxsjdd"> 
+            <input type="radio" name="popUpButtonLbiopbuwei-1" class="rin" value="0" /> 
+            <label for="ifyc1" class="rlb">父页面</label> 
+            <input type="radio" name="popUpButtonLbiopbuwei-1" class="rin" checked="" value="1" /> 
+            <label for="ifyc2" class="rlb">新页面</label> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            二次确认页图片:
+           </dt> 
+           <dd class="yxsjdd"> 
+            <div style="overflow:hidden;"> 
+             <div class="uploadImg normalData"> 
+              <img src="../../images/images.png" alt="" class="buweiSecondaryList-1imagesZw" /> 
+              <img src="" alt="" class="buweiSecondaryList-1imgPerview" /> 
+              <p class="opacityP" id="buweiSecondaryList-1opacityP">上传图片</p> 
+              <input type="hidden" name="buweiSecondaryListimageName" id="buweiSecondaryList-1imageName" /> 
+              <input type="file" class="imgInput" onchange="upLoadImgChannel(this,0,0,2)" name="UploadBtn" id="buweiSecondaryList-1" /> 
+             </div> 
+             <a class="llbtn c3c9be1bb fl" style="margin-top:-28px; margin-left:150px;" onclick="assignment('buweiSecondaryList-1');showid('ts_ljzs')" id="buweiSecondaryListfl-1" title="图片">预览</a> 
+            </div> 
+            <span>注：建议上传宽度750xp像素，大小不超过100k，格式为jpg，png的图片。</span> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            二次确认办理按钮:
+           </dt> 
+           <dd class="yxsjdd"> 
+            <div style="overflow:hidden;"> 
+             <div class="uploadImg normalData"> 
+              <img src="../../images/images.png" alt="" class="buweihandleList-1imagesZw" /> 
+              <img src="" alt="" class="buweihandleList-1imgPerview" /> 
+              <p class="opacityP" id="buweihandleList-1opacityP">上传图片</p> 
+              <input type="hidden" name="buweihandleListimageName" id="buweihandleList-1imageName" /> 
+              <input type="file" class="imgInput" onchange="upLoadImgChannel(this,0,0,2)" name="UploadBtn" id="buweihandleList-1" /> 
+             </div> 
+             <a class="llbtn c3c9be1bb fl" style="margin-top:-28px; margin-left:150px;" onclick="assignment('buweihandleList-1');showid('ts_ljzs')" id="buweihandleListfl-1" title="图片">预览</a> 
+            </div> 
+            <span>注：建议上传宽度750xp像素，大小不超过100k，格式为jpg，png的图片。</span> 
+           </dd> 
+          </dl> 
+         </div> </td> 
+        <td><a href="javascript:;" class="submitted saven1" onclick="savePolicyFunbuwei(0)">保存</a></td> 
+       </tr> 
+      </thead> 
+     </table> 
+    </div> 
+   </div> 
+   <div id="htmlConCspzCanClone" style="display:none"> 
+    <div class="cont_box"> 
+     <table class="ch_tips"> 
+      <thead> 
+       <tr> 
+        <th><input type="checkbox" class="allCheckbox" /></th> 
+        <th>序号</th> 
+        <th>策略配置</th> 
+        <th>操作</th> 
+       </tr> 
+       <tr class="clxqq" id="policy-1" style="display:none"> 
+        <td><input type="checkbox" name="iop" /></td> 
+        <td id="xuhaoCount">1</td> 
+        <td> 
+         <div> 
+          <dl> 
+           <dt>
+            广告编码:
+           </dt> 
+           <dd> 
+            <input type="text" class="policyGgwbm" name="policyGgwbm" />
+           </dd>
+          </dl>
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            配置类型:
+           </dt> 
+           <dd> 
+            <select id="ConfigType" name="ConfigType" onchange="changeTiaoZhuan(-1)"> <option value="1">广告</option> <option value="2">商品</option> </select> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            策划ID:
+           </dt> 
+           <dd> 
+            <input type="hidden" name="policyId" id="policyId" /> 
+            <input type="text" placeholder="请输入策划ID" name="planId" id="planId" autocomplete="off" οnkeyup="this.value=this.value.replace(/[^\d\,]/g,'')" /> 
+            <span style="display: inline-block; text-align:left;width:100%;">注：输入ID请用英文,分隔 </span> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            图片:
+           </dt> 
+           <dd> 
+            <div style="overflow:hidden;"> 
+             <div class="uploadImg normalData"> 
+              <img src="../../images/images.png" alt="" class="iconList-1imagesZw" /> 
+              <img src="" alt="" class="iconList-1imgPerview" /> 
+              <p class="opacityP" id="iconList-1opacityP">上传图片</p> 
+              <input type="hidden" name="iconListimageName" id="iconList-1imageName" /> 
+              <input type="file" class="imgInput" onchange="upLoadImgChannel(this,0,0,2)" name="UploadBtn" id="iconList-1" /> 
+             </div> 
+             <a class="llbtn c3c9be1bb fl" style="margin-top:-28px; margin-left:150px;" onclick="assignment('iconList-1');showid('ts_ljzs')" id="iconListfl-1" title="图片">预览</a> 
+            </div> 
+            <span>注：建议上传350*350像素，大小不超过100k，格式为jpg，png的图片。</span> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            档位介绍图片:
+           </dt> 
+           <dd> 
+            <div style="overflow:hidden;"> 
+             <div class="uploadImg normalData"> 
+              <img src="../../images/images.png" alt="" class="introductioniconList-1imagesZw" /> 
+              <img src="" alt="" class="introductioniconList-1imgPerview" /> 
+              <p class="opacityP" id="introductioniconList-1opacityP">上传图片</p> 
+              <input type="hidden" name="introductioniconListimageName" id="introductioniconList-1imageName" /> 
+              <input type="file" class="imgInput" onchange="upLoadImgChannel(this,0,0,2)" name="UploadBtn" id="introductioniconList-1" /> 
+             </div> 
+             <a class="llbtn c3c9be1bb fl" style="margin-top:-28px; margin-left:150px;" onclick="assignment('introductioniconList-1');showid('ts_ljzs')" id="introductfl-1" title="图片">预览</a> 
+            </div> 
+            <span>注：建议上传350*350像素，大小不超过100k，格式为jpg，png的图片。</span> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            跳转地址:
+           </dt> 
+           <dd> 
+            <input type="hidden" name="jumpType" id="peizhijumpType" /> 
+            <input type="text" class="jhinp" placeholder="请输入跳转地址或选择跳转广告" name="jumpAddress" id="jumpAddress" autocomplete="off" /> 
+            <span class="jhsp ad" id="jhsp-1">选择广告/聚合页</span>
+            <input type="text" readonly="readonly" name="jumpAddressStr" class="jumpAddressStrReadOnly" style="margin-left: 5px; width: 80px; float: right;border: none;" /> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            展示权重:
+           </dt> 
+           <dd> 
+            <input type="text" placeholder="请输入所占权重1~100，数值越大排位越靠前" name="displayWeights" id="displayWeights" autocomplete="off" /> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            有效时间:
+           </dt> 
+           <dd class="yxsjdd"> 
+            <input id="startTime" name="startTime" readonly="readonly" class="Wdate w150" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" autocomplete="off" /> ~ 
+            <input id="endTime" name="endTime" readonly="readonly" class="Wdate w150" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" /> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            是否显示下一步按钮:
+           </dt> 
+           <dd class=""> 
+            <input type="radio" name="isShowButtoniop-1" class="rin" value="0" />
+            <label for="ifyc1" class="rlb">是</label> 
+            <input type="radio" name="isShowButtoniop-1" class="rin" checked="" value="1" />
+            <label for="ifyc2" class="rlb">否</label> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div class="anwzF"> 
+          <dl> 
+           <dt>
+            按钮位置:
+           </dt> 
+           <dd> 
+            <div id="anwzF"> 
+             <input type="radio" name="anwz-1" value="y" class="anwz" />
+             <label for="anwz1">中间</label> 
+             <input type="radio" name="anwz-1" value="n" class="anwz" checked="" />
+             <label for="anwz2">底部</label> 
+            </div> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div class="dbzsF"> 
+          <dl> 
+           <dt>
+            底部展示:
+           </dt> 
+           <dd> 
+            <div id="anwzF"> 
+             <input type="radio" name="dbzs-1" value="y" class="anwz" checked="" />
+             <label for="anwz1">固定</label> 
+             <input type="radio" name="dbzs-1" value="n" class="anwz" />
+             <label for="anwz2">悬浮（仅按钮位置底部可用）</label> 
+            </div> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            下一步按钮跳转:
+           </dt> 
+           <dd class="yxsjdd"> 
+            <div style="overflow:hidden;"> 
+             <div class="uploadImg normalData"> 
+              <img src="../../images/images.png" alt="" class="NextList-1imagesZw" /> 
+              <img src="" alt="" class="NextList-1imgPerview" /> 
+              <p class="opacityP" id="NextList-1opacityP">上传图片</p> 
+              <input type="hidden" name="NextListimageName" id="NextList-1imageName" /> 
+              <input type="file" class="imgInput" onchange="upLoadImgChannel(this,0,0,2)" name="UploadBtn" id="NextList-1" /> 
+             </div> 
+             <a class="llbtn c3c9be1bb fl" style="margin-top:-28px; margin-left:150px;" onclick="assignment('NextList-1');showid('ts_ljzs')" id="NextListfl-1" title="图片">预览</a> 
+            </div> 
+            <span>注：建议上传宽度750xp像素，大小不超过100k，格式为jpg，png的图片。</span> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            下一步按钮跳转:
+           </dt> 
+           <dd class="yxsjdd"> 
+            <input type="radio" name="NextButtoniop-1" class="rin" value="0" />
+            <label for="ifyc1" class="rlb">二次确认页</label> 
+            <input type="radio" name="NextButtoniop-1" class="rin" checked="" value="1" />
+            <label for="ifyc2" class="rlb">原二次确认页</label> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            页面展示:
+           </dt> 
+           <dd class="yxsjdd"> 
+            <input type="radio" name="popUpButtonLbiop-1" class="rin" value="0" /> 
+            <label for="ifyc1" class="rlb">父页面</label> 
+            <input type="radio" name="popUpButtonLbiop-1" class="rin" checked="" value="1" /> 
+            <label for="ifyc2" class="rlb">新页面</label> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            二次确认页图片:
+           </dt> 
+           <dd class="yxsjdd"> 
+            <div style="overflow:hidden;"> 
+             <div class="uploadImg normalData"> 
+              <img src="../../images/images.png" alt="" class="SecondaryList-1imagesZw" /> 
+              <img src="" alt="" class="SecondaryList-1imgPerview" /> 
+              <p class="opacityP" id="SecondaryList-1opacityP">上传图片</p> 
+              <input type="hidden" name="SecondaryListimageName" id="SecondaryList-1imageName" /> 
+              <input type="file" class="imgInput" onchange="upLoadImgChannel(this,0,0,2)" name="UploadBtn" id="SecondaryList-1" /> 
+             </div> 
+             <a class="llbtn c3c9be1bb fl" style="margin-top:-28px; margin-left:150px;" onclick="assignment('SecondaryList-1');showid('ts_ljzs')" id="SecondaryListfl-1" title="图片">预览</a> 
+            </div> 
+            <span>注：建议上传宽度750xp像素，大小不超过100k，格式为jpg，png的图片。</span> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            二次确认办理按钮:
+           </dt> 
+           <dd class="yxsjdd"> 
+            <div style="overflow:hidden;"> 
+             <div class="uploadImg normalData"> 
+              <img src="../../images/images.png" alt="" class="handleList-1imagesZw" /> 
+              <img src="" alt="" class="handleList-1imgPerview" /> 
+              <p class="opacityP" id="handleList-1opacityP">上传图片</p> 
+              <input type="hidden" name="handleListimageName" id="handleList-1imageName" /> 
+              <input type="file" class="imgInput" onchange="upLoadImgChannel(this,0,0,2)" name="UploadBtn" id="handleList-1" /> 
+             </div> 
+             <a class="llbtn c3c9be1bb fl" style="margin-top:-28px; margin-left:150px;" onclick="assignment('handleList-1');showid('ts_ljzs')" id="handleListfl-1" title="图片">预览</a> 
+            </div> 
+            <span>注：建议上传宽度750xp像素，大小不超过100k，格式为jpg，png的图片。</span> 
+           </dd> 
+          </dl> 
+         </div> </td> 
+        <td><a href="javascript:;" class="submitted saven" onclick="savePolicyFun(0)">保存</a></td> 
+       </tr> 
+      </thead> 
+     </table> 
+    </div> 
+   </div> 
+   <div id="htmlConCspzppCanCloneIop" style="display:none"> 
+    <div class="cont_box"> 
+     <table class="ch_tips"> 
+      <thead> 
+       <tr> 
+        <th><input type="checkbox" class="allCheckbox" /></th> 
+        <th>序号</th> 
+        <th>策略配置</th> 
+        <th>状态</th> 
+        <th>操作</th> 
+       </tr> 
+       <tr class="clxqq" id="policyIop-1"> 
+        <td><input type="checkbox" name="jTiop" /></td> 
+        <td id="xuhaoCount2">1</td> 
+        <td> 
+         <div> 
+          <dl> 
+           <dt>
+            广告编码:
+           </dt> 
+           <dd> 
+            <input type="text" class="policyGgwbm" id="policyGgwbm" name="policyGgwbm" />
+           </dd>
+          </dl>
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            策划ID:
+           </dt> 
+           <dd style="display:flex"> 
+            <input type="hidden" name="policyId" id="policyId" /> 
+            <input type="text" name="planId" id="planId-1" autocomplete="off" readonly="readonly" class="selectLiCspzpp" /> 
+            <span class="jhsp jtIop" id="jhIop-1">选择</span> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            图片:
+           </dt> 
+           <dd> 
+            <div class="uploadImg normalData"> 
+             <img src="" alt="" name="iconListppimageName" class="iconListpp-1imgPerview" id="iopPath-1" /> 
+             <input type="hidden" name="iconListppimageName" id="iopPathImg" /> 
+            </div> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            跳转地址:
+           </dt> 
+           <dd> 
+            <input type="text" class="selectLiCspzpp" readonly="readonly" name="jumpAddress" id="jumpAddressIop-1" autocomplete="off" /> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            页面展示:
+           </dt> 
+           <dd class="yxsjdd"> 
+            <input type="radio" name="popUpButtoniop-2" class="rin" value="0" /> 
+            <label for="ifyc1" class="rlb">父页面</label> 
+            <input type="radio" name="popUpButtoniop-2" class="rin" checked="" value="1" /> 
+            <label for="ifyc2" class="rlb">新页面</label> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            展示权重:
+           </dt> 
+           <dd> 
+            <input type="text" placeholder="请输入所占权重1~100，数值越大排位越靠前" name="displayWeights" id="displayWeightsIop" /> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            有效时间:
+           </dt> 
+           <dd class="yxsjdd"> 
+            <input id="startTimepp-iop" name="startTimepp" readonly="readonly" class="Wdate w150" autocomplete="off" /> ~ 
+            <input id="endTimepp-iop" name="endTimepp" readonly="readonly" class="Wdate w150" /> 
+           </dd> 
+          </dl> 
+         </div> </td> 
+        <td>无</td> 
+        <td><a href="javascript:;" class="submitted saven" onclick="savePolicyFunpp(-2)">保存</a></td> 
+       </tr> 
+      </thead> 
+     </table> 
+    </div> 
+   </div> 
+   <div id="htmlConCspzppCanClone" style="display:none"> 
+    <div class="cont_box"> 
+     <table class="ch_tips"> 
+      <thead> 
+       <tr> 
+        <th><input type="checkbox" class="allCheckbox" /></th> 
+        <th>序号</th> 
+        <th>策略配置</th> 
+        <th>操作</th> 
+       </tr> 
+       <tr class="clxqq" id="policypp-1" style="display:none"> 
+        <td><input type="checkbox" name="ioppp" /></td> 
+        <td id="xuhaoCount">1</td> 
+        <td> 
+         <div> 
+          <dl> 
+           <dt>
+            广告编码:
+           </dt> 
+           <dd> 
+            <input type="text" class="policyGgwbm" name="policyGgwbm" />
+           </dd>
+          </dl>
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            策划ID:
+           </dt> 
+           <dd> 
+            <input type="hidden" name="policyId" id="policyId" /> 
+            <input type="text" placeholder="请输入策划ID" name="planId" id="planId" autocomplete="off" οnkeyup="this.value=this.value.replace(/[^\d\,]/g,'')" /> 
+            <span style="display: inline-block; text-align:left;width:100%;">注：输入ID请用英文,分隔 </span> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            图片:
+           </dt> 
+           <dd> 
+            <div class="uploadImg normalData"> 
+             <img src="../../images/images.png" alt="" class="iconListpp-1imagesZw" /> 
+             <img src="" alt="" class="iconListpp-1imgPerview" /> 
+             <p class="opacityP" id="iconListpp-1opacityP">上传图片</p> 
+             <input type="hidden" name="iconListppimageName" id="iconListpp-1imageName" /> 
+             <input type="file" class="imgInput" onchange="upLoadImgChannel(this,0,0,2)" name="UploadBtn" id="iconListpp-1" /> 
+            </div> 
+            <span>注：建议上传350*350像素，大小不超过100k，格式为jpg，png的图片。</span> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            跳转地址:
+           </dt> 
+           <dd> 
+            <input type="hidden" name="jumpType" id="peizhijumpType" /> 
+            <input type="text" class="jhinp" placeholder="请输入跳转地址或选择跳转广告" name="jumpAddress" id="jumpAddress" autocomplete="off" /> 
+            <span class="jhsp ad" id="jhsp-1">选择广告/聚合页</span>
+            <input type="text" readonly="readonly" name="jumpAddressStr" class="jumpAddressStrReadOnly" style="margin-left: 5px; width: 80px; float: right;border: none;" /> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            页面展示:
+           </dt> 
+           <dd class="yxsjdd"> 
+            <input type="radio" name="popUpButtoniop-1" class="rin" value="0" /> 
+            <label for="ifyc1" class="rlb">父页面</label> 
+            <input type="radio" name="popUpButtoniop-1" class="rin" checked="" value="1" /> 
+            <label for="ifyc2" class="rlb">新页面</label> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            展示权重:
+           </dt> 
+           <dd> 
+            <input type="text" placeholder="请输入所占权重1~100，数值越大排位越靠前" name="displayWeights" id="displayWeights" /> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            有效时间:
+           </dt> 
+           <dd class="yxsjdd"> 
+            <input id="startTimepp" name="startTimepp" readonly="readonly" class="Wdate w150" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" autocomplete="off" /> ~ 
+            <input id="endTimepp" name="endTimepp" readonly="readonly" class="Wdate w150" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" /> 
+           </dd> 
+          </dl> 
+         </div> </td> 
+        <td><a href="javascript:;" class="submitted saven" onclick="savePolicyFunpp(-1)">保存</a></td> 
+       </tr> 
+      </thead> 
+     </table> 
+    </div> 
+   </div> 
+   <div id="htmlConCspz2ppCanClone" style="display:none"> 
+    <div class="cont_box"> 
+     <table class="ch_tips"> 
+      <thead> 
+       <tr> 
+        <th><input type="checkbox" class="allCheckbox" /></th> 
+        <th>序号</th> 
+        <th>策略配置</th> 
+        <th>操作</th> 
+       </tr> 
+       <tr class="clxqq" id="policybuweipp-1" style="display:none"> 
+        <td><input type="checkbox" name="buweipp" /></td> 
+        <td>1</td> 
+        <td> 
+         <div> 
+          <dl> 
+           <dt>
+            广告编码:
+           </dt> 
+           <dd> 
+            <input type="text" class="policyGgwbm" name="policyGgwbm" />
+           </dd>
+          </dl>
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            图片:
+           </dt> 
+           <dd> 
+            <div class="uploadImg normalData"> 
+             <img src="../../images/images.png" alt="" class="buweiiconListpp-1imagesZw" /> 
+             <img src="" alt="" class="buweiiconListpp-1imgPerview" /> 
+             <p class="opacityP" id="buweiiconListpp-1opacityP">上传图片</p> 
+             <input type="hidden" name="policyId" id="policyId" /> 
+             <input type="file" class="imgInput" onchange="upLoadImgChannel(this,0,0,2)" name="UploadBtn" id="buweiiconListpp-1" /> 
+             <input type="hidden" name="buweiiconListppimageName" id="buweiiconListpp-1imageName" /> 
+            </div> 
+            <span>注：建议上传350*350像素，大小不超过100k，格式为jpg，png的图片。</span> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            跳转地址:
+           </dt> 
+           <dd> 
+            <input type="hidden" name="jumpType" id="peizhijumpType" /> 
+            <input type="text" class="jhinp" placeholder="请输入跳转地址或选择跳转广告" name="jumpAddress" id="jumpAddress" /> 
+            <span class="jhsp ad" id="jhsp-1">选择广告/聚合页</span>
+            <input type="text" readonly="readonly" name="jumpAddressStr" class="jumpAddressStrReadOnly" style="margin-left: 5px; width: 80px; float: right;border: none;" /> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            页面展示:
+           </dt> 
+           <dd class="yxsjdd"> 
+            <input type="radio" name="popUpButtoniopbuwei-1" class="rin" value="0" /> 
+            <label for="ifyc1" class="rlb">父页面</label> 
+            <input type="radio" name="popUpButtoniopbuwei-1" class="rin" checked="" value="1" /> 
+            <label for="ifyc2" class="rlb">新页面</label> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            展示权重:
+           </dt> 
+           <dd> 
+            <input type="text" placeholder="请输入所占权重1~100，数值越大排位越靠前" name="displayWeights" id="displayWeights" /> 
+           </dd> 
+          </dl> 
+         </div> 
+         <div> 
+          <dl> 
+           <dt>
+            有效时间:
+           </dt> 
+           <dd class="yxsjdd"> 
+            <input id="startTime1pp" name="startTime1pp" readonly="readonly" class="Wdate w150" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" value="" /> ~ 
+            <input id="endTime1pp" name="endTime1pp" readonly="readonly" class="Wdate w150" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" value="" /> 
+           </dd> 
+          </dl> 
+         </div> </td> 
+        <td><a href="javascript:;" class="submitted saven1" onclick="savePolicyFunbuweipp(-1)">保存</a></td> 
+       </tr> 
+      </thead> 
+     </table> 
+    </div> 
+   </div> 
+   <div class="modals_cspz modals_cspzjhy  modals_cspzjhyss">
+    <!--选择广告聚合页 --> 
+    <div class="cspzedit-layer cspzedit-layerjh tabs" id="cspzedit-layer"> 
+     <a href="javascript:;" class="close close2">&times;</a> 
+     <ul class="selectLiCspz"> 
+      <li class="cur tiaoType " style="width: auto;" id="tiaoType">选择广告/聚合页</li> 
+     </ul> 
+     <div class="main-content" id="htmlConjh" style="display:none"> 
+      <input type="hidden" name="jhspId" id="jhspId" /> 
+      <div class="cont_box"> 
+       <p> <span class="zsp">请选择推荐内容：</span> <span class="sf showiop"> <span id="tjnr1ad"><input type="radio" name="tjnr" id="tjnr1" onclick="showggjh('ggtable')" class="tjnr ggad" checked="" value="1" />广告</span> <span id="tjnr2jh"><input type="radio" name="tjnr" id="tjnr2" onclick="showggjh('jhytable')" class="tjnr jhym" value="0" />聚合页</span> <span id="tjnr2yy" style="display: none"><input type="radio" name="tjnr" id="tjnr3" onclick="showggjh('yyxztable')" class="tjnr yyym" value="2" />应用下载</span> </span> <span class="sf showpmd"> <span class="pmdtext"></span> </span> </p> 
+       <div class="ggtable" style="display: block"> 
+        <div class="cxdiv"> 
+         <form action="" method="post" id="queryadid1"> 
+          <table> 
+           <tbody>
+            <tr> 
+             <td><span>广告标题：</span><input type="text" name="title" id="title" /></td> 
+             <td> <span>广告类型：</span> <select class="form-control form-control-select input-sm" name="type" id="type" :v-model="type"> <option value="">全部</option> <option value="110000" hassubinfo="true" v-model="type">热销</option> <option value="130000" hassubinfo="true" v-model="type">流量</option> <option value="140000" hassubinfo="true" v-model="type">数字化</option> <option value="120000" hassubinfo="true" v-model="type">校园</option> <option value="150000" hassubinfo="true" v-model="type">聚合广告</option> <option value="180000" hassubinfo="true" v-model="type">终端</option> <option value="160000" hassubinfo="true" v-model="type">复合广告</option> <option value="170000" hassubinfo="true" v-model="type">外部广告</option> </select> </td> 
+            </tr> 
+            <tr> 
+             <td colspan="2"> <span>有效时间：</span> <input id="startTime3" name="startTime3" readonly="readonly" class="Wdate w150" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" value="" /><span>&nbsp; ~ &nbsp;</span><input id="endTime3" name="endTime3" readonly="readonly" class="Wdate w150" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" value="" /> </td> 
+             <td class="btna"><a href="javascript:;" onclick="resetValuead()">重置</a><a href="javascript:;" onclick="queryPolicyAd()">查询</a></td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <input type="hidden" name="pageNumber" id="pageNumber" :value="pageNumber" /> 
+          <input type="hidden" name="rowinit" id="rowinit" :value="rowinit" /> 
+         </form> 
+        </div> 
+        <p v-if="adList == null">暂无数据</p>
+        <table class="ch_tips "> 
+         <thead> 
+          <tr> 
+           <th> </th> 
+           <th>序号</th> 
+           <th>广告类型</th> 
+           <th>广告标题</th> 
+           <th>有效时间</th> 
+           <th>创建时间</th> 
+          </tr> 
+         </thead> 
+         <tbody class="mytablebox"> 
+          <tr class="clxqq tjjh" v-for="(item,index) in adList"> 
+           <td><input type="radio" name="jhrjhAd" class="jhr" :value="item[0]" /></td> 
+           <td>{{index+1}}</td> 
+           <td>{{item[2]}}</td> 
+           <td>{{item[1]}}</td> 
+           <td>{{item[7]}}{{item[8]}}</td> 
+           <td>{{item[15]}}</td> 
+          </tr>  
+         </tbody> 
+        </table> 
+        <div class="pageY"> 
+         <div class="pagingNew" style="float:right;"> 
+          <label> <a href="#this" title="首页" v-if="pageObject.currentPage==1"> 首页 </a> <a href="#this" class="prevPage prevEnd" v-if="pageObject.currentPage==1 &amp;&amp; pageObject.totalPage!=0">上一页</a> <a href="javascript:void(0);" v-on:click="querySumPrize('1');" title="首页" v-if="pageObject.currentPage&gt;1">首页</a> <a href="javascript:void(0);" v-on:click="querySumPrize('-');" class="prevPage prev" title="上一页" v-if="pageObject.currentPage&gt;1">上一页</a>{{pageObject.currentPage}} <a href="#this" class="nextPage nextEnd" title="下一页" v-if="pageObject.currentPage==pageObject.totalPage">下一页</a> <a href="#this" title="尾页" v-if="pageObject.currentPage==pageObject.totalPage &amp;&amp; pageObject.totalPage!=0"> 尾页 </a> <a href="#this" title="尾页" v-if="pageObject.totalPage==0"> 尾页 </a> <a href="javascript:void(0);" v-on:click="querySumPrize('+');" class="nextPage" v-if="pageObject.currentPage&lt;pageObject.totalPage">下一页</a> <a href="javascript:void(0);" v-on:click="querySumPrize('0');" title="尾页" v-if="pageObject.currentPage&lt;pageObject.totalPage">尾页</a> </label> 
+          <label class="marginTop2px">共{{pageObject.totalPage}}页</label> 
+          <label class="marginTop2px">跳转至</label> 
+          <input id="gopageAd" class="inputW20H18" type="text" onafterpaste="this.value=this.value.replace(/\D/g,'')" onkeyup="this.value=this.value.replace(/\D/g,'')" /> 
+          <label class="marginTop2px">页</label> 
+          <a class="determineBtn" title="" href="javascript:void(0);" v-on:click="goToPageAD();" id="goToPageButton">跳 转</a> 
+          <label class="totalRecord"> 共<font class="font">{{pageObject.totalRows}}</font>条&nbsp;&nbsp;每页 <select name="RowDisplayed_crd" v-on:change="javascript:querySumPrizeAdTiao()" id="paginationRowDisplayed_crdad" sytle="padding:0px; width:50px;"> <option v-model="rowinit">10</option> <option v-model="rowinit">15</option> <option v-model="rowinit">20</option> <option v-model="rowinit">100</option> </select>条 </label> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="jhytable" style="display: none"> 
+        <div class="cxdiv"> 
+         <form action="/tWlmDecorate/queryPolicyJh.do" method="post" id="queryJH"> 
+          <input type="hidden" name="id1" id="id1" /> 
+          <table> 
+           <tbody>
+            <tr> 
+             <td><span>聚合页名称：</span><input type="text" id="jhname" name="jhname" /></td> 
+             <td><span>聚合页类型：</span> <select class="form-control form-control-select input-sm" id="pagetype" name="pagetype"> <option value="">全部</option> <option value="0" hassubinfo="true" v-model="pagetype">卖家</option> <option value="1" hassubinfo="true" v-model="pagetype">买家</option> <option value="2" hassubinfo="true" v-model="pagetype">未登录</option> </select> </td> 
+             <!-- <td>
+										<span>所属系统：</span> 
+										<select  class="form-control form-control-select input-sm" id="sysName" name="sysName" >
+											<option value="">全部</option>
+											<option value="miniprogram" hassubinfo="true" v-model="sysname">小程序</option>
+											<option value="mobile" hassubinfo="true" v-model="sysname">公众号</option>
+											<option value="hxdapp" hassubinfo="true" v-model="sysname">和小店app</option>
+										</select>
+									</td> --> 
+             <td class="btna"><a href="javascript:;" onclick="resetValuejh()">重置</a><a href="javascript:;" onclick="queryPolicyJh()">查询</a></td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <input type="hidden" name="pageNumber1" id="pageNumber1" :value="pageNumber1" /> 
+          <input type="hidden" name="rowinit1" id="rowinit1" :value="rowinit1" /> 
+         </form> 
+        </div> 
+        <p v-if="aggregationList2 == null">暂无数据</p>
+        <table class="ch_tips "> 
+         <thead> 
+          <tr> 
+           <th> </th> 
+           <th>序号</th> 
+           <th>聚合页名称</th> 
+           <th>是否首页</th> 
+           <th>页面类型</th> 
+           <th>所属系统</th> 
+           <th>发布时间</th> 
+           <th>最后操作类型</th> 
+          </tr> 
+         </thead> 
+         <tbody class="mytablebox"> 
+          <tr class="clxqq tjjh" v-for="(item,index) in aggregationList2"> 
+           <td><input type="radio" name="jhr" class="jhr" :value="item[2]" /></td> 
+           <td>{{index+1}}</td> 
+           <td>{{item[1]}}</td> 
+           <td v-if="item[7]==0">首页</td> 
+           <td v-if="item[7]==1">聚合页</td> 
+           <td v-if="item[7]==2">销售达成页</td> 
+           <td v-if="item[7]==3">我的</td> 
+           <td v-if="item[5]==0">卖家</td> 
+           <td v-if="item[5]==1">买家</td> 
+           <td v-if="item[5]==2">未登录</td> 
+           <td>{{item[3]}}</td> 
+           <td>{{item[4]}}</td> 
+           <td v-if="item[6]==1">添加</td> 
+           <td v-if="item[6]==2">修改</td> 
+           <td v-if="item[6]==3">发布</td> 
+           <td v-if="item[6]==4">装修编辑</td> 
+           <td v-if="item[6]==5">共享</td> 
+          </tr> 
+         </tbody>  
+        </table> 
+        <div class="pageY"> 
+         <div class="pagingNew" style="float:right;"> 
+          <label> <a href="#this" title="首页" v-if="pageObject1.currentPage==1"> 首页 </a> <a href="#this" class="prevPage prevEnd" v-if="pageObject1.currentPage==1 &amp;&amp; pageObject1.totalPage!=0">上一页</a> <a href="javascript:void(0);" v-on:click="querySumPrizejh('1');" title="首页" v-if="pageObject1.currentPage&gt;1">首页</a> <a href="javascript:void(0);" v-on:click="querySumPrizejh('-');" class="prevPage prev" v-if="pageObject1.currentPage&gt;1">上一页</a>{{pageObject1.currentPage}} <a href="#this" class="nextPage nextEnd" v-if="pageObject1.currentPage==pageObject1.totalPage">下一页</a> <a href="#this" title="尾页" v-if="pageObject1.currentPage==pageObject1.totalPage &amp;&amp; pageObject1.totalPage!=0"> 尾页 </a> <a href="#this" title="尾页" v-if="pageObject1.totalPage==0"> 尾页 </a> <a href="javascript:void(0);" v-on:click="querySumPrizejh('+');" class="nextPage" v-if="pageObject1.currentPage&lt;pageObject1.totalPage">下一页</a> <a href="javascript:void(0);" v-on:click="querySumPrizejh('0');" title="尾页" v-if="pageObject1.currentPage&lt;pageObject1.totalPage">尾页</a> </label> 
+          <label class="marginTop2px">共{{pageObject1.totalPage}}页</label> 
+          <label class="marginTop2px">跳转至</label> 
+          <input id="gopageJh" class="inputW20H18" type="text" onafterpaste="this.value=this.value.replace(/\D/g,'')" onkeyup="this.value=this.value.replace(/\D/g,'')" /> 
+          <label class="marginTop2px">页</label> 
+          <a class="determineBtn" title="" href="javascript:void(0);" v-on:click="goToPageJh();" id="goToPageButton">跳 转</a> 
+          <label class="totalRecord"> 共<font class="font">{{pageObject1.totalRows}}</font>条&nbsp;&nbsp;每页 <select name="RowDisplayed_crd" v-on:change="javascript:querySumPrizeJhTiao()" id="paginationRowDisplayed_crdjh" sytle="padding:0px; width:50px;"> <option v-model="rowinit1">10</option> <option v-model="rowinit1">15</option> <option v-model="rowinit1">20</option> <option v-model="rowinit1">100</option> </select>条 </label> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="yyxztable" style="display: none"> 
+        <div class="cxdiv"> 
+         <form action="/tWlmDecorate/queryPolicyAppInfo.do" method="post" id="queryYy"> 
+          <input type="hidden" name="pkid" id="pkid" /> 
+          <table> 
+           <tbody>
+            <tr> 
+             <td><span>应用名称：</span><input type="text" id="yyname" name="yyname" /></td> 
+            </tr> 
+            <tr> 
+             <td class="btna"><a href="javascript:;" onclick="resetValueYy()">重置</a><a href="javascript:;" onclick="queryPolicyYy()">查询</a></td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <input type="hidden" name="pageNumber3" id="pageNumber3" :value="pageNumber3" /> 
+          <input type="hidden" name="rowinit3" id="rowinit3" :value="rowinit3" /> 
+         </form> 
+        </div> 
+        <p v-if="appInfoList == null">暂无数据</p>
+        <table class="ch_tips "> 
+         <thead> 
+          <tr> 
+           <th> </th> 
+           <th>序号</th> 
+           <th>应用名称</th> 
+           <th>创建时间</th> 
+          </tr> 
+         </thead> 
+         <tbody class="mytablebox"> 
+          <tr class="clxqq tjjh" v-for="(item,index) in appInfoList"> 
+           <td><input type="radio" name="yyxzy" class="jhr" :value="'?pkid='+item.pkid+'&amp;appType='+item.appType" /></td> 
+           <td>{{index+1}}</td> 
+           <td>{{item.appName}}</td> 
+           <td>{{item.createDate}}</td> 
+          </tr> 
+         </tbody>  
+        </table> 
+        <div class="pageY"> 
+         <div class="pagingNew" style="float:right;"> 
+          <label> <a href="#this" title="首页" v-if="pageObject3.currentPage==1"> 首页 </a> <a href="#this" class="prevPage prevEnd" v-if="pageObject3.currentPage==1 &amp;&amp; pageObject3.totalPage!=0">上一页</a> <a href="javascript:void(0);" v-on:click="querySumPrizeyy('1');" title="首页" v-if="pageObject3.currentPage&gt;1">首页</a> <a href="javascript:void(0);" v-on:click="querySumPrizeyy('-');" class="prevPage prev" v-if="pageObject3.currentPage&gt;1">上一页</a> <a href="#this" class="nextPage nextEnd" v-if="pageObject3.currentPage==pageObject3.totalPage">下一页</a> <a href="#this" title="尾页" v-if="pageObject3.currentPage==pageObject3.totalPage &amp;&amp; pageObject3.totalPage!=0"> 尾页 </a> <a href="#this" title="尾页" v-if="pageObject3.totalPage==0"> 尾页 </a> <a href="javascript:void(0);" v-on:click="querySumPrizeyy('+');" class="nextPage" v-if="pageObject3.currentPage&lt;pageObject3.totalPage">下一页</a> <a href="javascript:void(0);" v-on:click="querySumPrizeyy('0');" title="尾页" v-if="pageObject3.currentPage&lt;pageObject3.totalPage">尾页</a> </label> 
+          <label class="marginTop2px">共{{pageObject3.totalPage}}页</label> 
+          <label class="marginTop2px">跳转至</label> 
+          <input id="gopageApp" class="inputW20H18" type="text" onafterpaste="this.value=this.value.replace(/\D/g,'')" onkeyup="this.value=this.value.replace(/\D/g,'')" /> 
+          <label class="marginTop2px">页</label> 
+          <a class="determineBtn" title="" href="javascript:void(0);" v-on:click="goToPageApp();" id="goToPageButton">跳 转</a> 
+          <label class="totalRecord"> 共<font class="font">{{pageObject3.totalRows}}</font>条&nbsp;&nbsp;每页 <select name="RowDisplayed_crd" v-on:change="javascript:querySumPrizeAppTiao()" id="paginationRowDisplayed_crdapp" sytle="padding:0px; width:50px;"> <option v-model="rowinit3">10</option> <option v-model="rowinit3">15</option> <option v-model="rowinit3">20</option> <option v-model="rowinit3">100</option> </select>条 </label> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tab-content  "> 
+      <div class="tc iop-edit"> 
+       <button type="button" name="button" class="qxjh">取消</button> 
+       <button type="submit" name="submit" class="savejh">保存</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="modals_cspz modals_cspzagree  modals_cspzjhyss">
+    <!--选择协议 --> 
+    <div class="cspzedit-layer cspzedit-layeragree tabs"> 
+     <a href="javascript:;" class="close close2">&times;</a> 
+     <ul class="selectLiCspz"> 
+      <li class="cur tiaoType " style="width: auto;">选择协议</li> 
+     </ul> 
+     <div class="main-content" id="htmlConAgree"> 
+      <input type="hidden" name="agreeId" id="agreeId" /> 
+      <div class="cont_box"> 
+       <div class="ggtable" style="display: block"> 
+        <div class="cxdiv"> 
+         <form action="" method="post" id="queryAgree"> 
+          <table> 
+           <tbody>
+            <tr> 
+             <td><span>协议标题：</span><input type="text" name="agreeTitle" id="agreeTitle" /></td> 
+             <td class="btna"><a href="javascript:;" onclick="queryAgreement()">查询</a><a href="javascript:;" onclick="restAgreement()">重置</a></td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <input type="hidden" name="pageNumberAgree" id="pageNumberAgree" :value="pageNumberAgree" /> 
+          <input type="hidden" name="rowinitAgree" id="rowinitAgree" :value="rowinitAgree" /> 
+         </form> 
+        </div> 
+        <p v-if="adList == null">暂无数据</p>
+        <table class="ch_tips "> 
+         <thead> 
+          <tr> 
+           <th> </th> 
+           <th>序号</th> 
+           <th>协议名称</th> 
+          </tr> 
+         </thead> 
+         <tbody class="mytablebox"> 
+          <tr class="clxqq tjjh" v-for="(item,index) in agreeList"> 
+           <td><input type="radio" name="agreeId" :agreename="item[1]" class="jhr" :value="item[0]" /></td> 
+           <td>{{index+1}}</td> 
+           <td>{{item[1]}}</td> 
+          </tr>  
+         </tbody> 
+        </table> 
+        <div class="pageY"> 
+         <div class="pagingNew" style="float:right;"> 
+          <label> <a href="#this" title="首页" v-if="pageObjectAgree.currentPage==1"> 首页 </a> <a href="#this" class="prevPage prevEnd" v-if="pageObjectAgree.currentPage==1 &amp;&amp; pageObjectAgree.totalPage!=0">上一页</a> <a href="javascript:void(0);" v-on:click="querySumPrizeAgree('1');" title="首页" v-if="pageObjectAgree.currentPage&gt;1">首页</a> <a href="javascript:void(0);" v-on:click="querySumPrizeAgree('-');" class="prevPage prev" title="上一页" v-if="pageObjectAgree.currentPage&gt;1">上一页</a>{{pageObjectAgree.currentPage}} <a href="#this" class="nextPage nextEnd" title="下一页" v-if="pageObjectAgree.currentPage==pageObjectAgree.totalPage">下一页</a> <a href="#this" title="尾页" v-if="pageObjectAgree.currentPage==pageObjectAgree.totalPage &amp;&amp; pageObjectAgree.totalPage!=0"> 尾页 </a> <a href="#this" title="尾页" v-if="pageObjectAgree.totalPage==0"> 尾页 </a> <a href="javascript:void(0);" v-on:click="querySumPrizeAgree('+');" class="nextPage" v-if="pageObjectAgree.currentPage&lt;pageObjectAgree.totalPage">下一页</a> <a href="javascript:void(0);" v-on:click="querySumPrizeAgree('0');" title="尾页" v-if="pageObjectAgree.currentPage&lt;pageObjectAgree.totalPage">尾页</a> </label> 
+          <label class="marginTop2px">共{{pageObjectAgree.totalPage}}页</label> 
+          <label class="marginTop2px">跳转至</label> 
+          <input id="gopageAgreement" class="inputW20H18" type="text" onafterpaste="this.value=this.value.replace(/\D/g,'')" onkeyup="this.value=this.value.replace(/\D/g,'')" /> 
+          <label class="marginTop2px">页</label> 
+          <a class="determineBtn" title="" href="javascript:void(0);" v-on:click="goToPageAgreement();">跳 转</a> 
+          <label class="totalRecord"> 共<font class="font">{{pageObjectAgree.totalRows}}</font>条&nbsp;&nbsp;每页 <select name="RowDisplayed_crd" v-on:change="javascript:querySumPrizeAgreementTiao()" id="paginationRowDisplayed_crdagree" sytle="padding:0px; width:50px;"> <option v-model="rowinit">10</option> <option v-model="rowinit">15</option> <option v-model="rowinit">20</option> <option v-model="rowinit">100</option> </select>条 </label> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tab-content  "> 
+      <div class="tc iop-edit"> 
+       <button type="button" name="button" class="qxjh hideAgree">取消</button> 
+       <button type="submit" name="submit" class="saveAgree">保存</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="modals_cspz modals_cspzjhys modals_cspzjhyIop"> 
+    <div class="cspzedit-layer cspzedit-layerjh tabs" id="cspzedit-layer"> 
+     <a href="javascript:;" class="close close1Iop">&times;</a> 
+     <ul class="selectLiCspz"> 
+      <li class="cur tiaoType " style="width: auto;" id="tiaoType">选择集团IOP推荐</li> 
+     </ul> 
+     <div class="main-content" id="htmlConjhIop" style="display:none"> 
+      <input type="hidden" name="jhspId" id="jhspId" /> 
+      <div class="cont_box"> 
+       <div class="ggtable" style="display: block"> 
+        <div class="cxdiv"> 
+         <form action="" method="post" id="queryIop"> 
+          <table> 
+           <tbody>
+            <tr> 
+             <td colspan="2"> <span>有效时间：</span> <input id="startTime4" name="startTime4" readonly="readonly" class="Wdate w150" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" value="" /><span>&nbsp; ~ &nbsp;</span><input id="endTime4" name="endTime4" readonly="readonly" class="Wdate w150" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" value="" /> </td> 
+             <td><span>策划ID：</span><input type="text" name="productIopId" id="productIopId" /></td> 
+            </tr>  
+            <tr>
+             <td><span>策略ID：</span><input type="text" name="policyIopId" id="policyIopId" /></td> 
+             <td class="btna"><a href="javascript:;" onclick="resetValueIop()">重置</a><a href="javascript:;" onclick="queryPolicyIops()">查询</a></td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <input type="hidden" name="pageNumber" id="pageNumberIop" :value="pageNumberIop" /> 
+          <input type="hidden" name="rowinitIop" id="rowinitIop" :value="rowinitIop" /> 
+         </form> 
+        </div> 
+        <p v-if="list == null">暂无数据</p>
+        <table class="ch_tips "> 
+         <thead> 
+          <tr> 
+           <th>序号</th> 
+           <th>策略ID</th> 
+           <th>策划ID</th> 
+           <th>图片</th> 
+           <th>跳转地址</th> 
+           <th>有效时间</th> 
+           <th>操作</th> 
+          </tr> 
+         </thead> 
+         <tbody class="mytablebox"> 
+          <tr class="clxqq tjjh" v-for="(item,index) in list"> 
+           <td>{{index+1}}</td> 
+           <td>{{item[0]}}</td> 
+           <td>{{item[2]}}</td> 
+           <td> <img :src="returnSrc('/lmH/tWlmDecorate/findBlocIopImgById.do?policyId=',item[0])" /> </td> 
+           <td>{{item[7]}}</td> 
+           <td>{{item[3]}}-{{item[4]}}</td> 
+           <td><a href="javascript:;" @click="chooseIop(item)">选择</a></td> 
+          </tr>  
+         </tbody> 
+        </table> 
+        <div class="pageY"> 
+         <div class="pagingNew" style="float:right;"> 
+          <label> <a href="#this" title="首页" v-if="pageObjectIop.currentPage==1"> 首页 </a> <a href="#this" class="prevPage prevEnd" v-if="pageObjectIop.currentPage==1 &amp;&amp; pageObjectIop.totalPage!=0">上一页</a> <a href="javascript:void(0);" v-on:click="querySumPrizejtIop('1');" title="首页" v-if="pageObjectIop.currentPage&gt;1">首页</a> <a href="javascript:void(0);" v-on:click="querySumPrizejtIop('-');" class="prevPage prev" title="上一页" v-if="pageObjectIop.currentPage&gt;1">上一页</a>{{pageObjectIop.currentPage}} <a href="#this" class="nextPage nextEnd" title="下一页" v-if="pageObjectIop.currentPage==pageObjectIop.totalPage">下一页</a> <a href="#this" title="尾页" v-if="pageObjectIop.currentPage==pageObjectIop.totalPage &amp;&amp; pageObjectIop.totalPage!=0"> 尾页 </a> <a href="#this" title="尾页" v-if="pageObjectIop.totalPage==0"> 尾页 </a> <a href="javascript:void(0);" v-on:click="querySumPrizejtIop('+');" class="nextPage" v-if="pageObjectIop.currentPage&lt;pageObjectIop.totalPage">下一页</a> <a href="javascript:void(0);" v-on:click="querySumPrizejtIop('0');" title="尾页" v-if="pageObjectIop.currentPage&lt;pageObjectIop.totalPage">尾页</a> </label> 
+          <label class="marginTop2px">共{{pageObjectIop.totalPage}}页</label> 
+          <label class="marginTop2px">跳转至</label> 
+          <input id="gopageIop" class="inputW20H18" type="text" onafterpaste="this.value=this.value.replace(/\D/g,'')" onkeyup="this.value=this.value.replace(/\D/g,'')" /> 
+          <label class="marginTop2px">页</label> 
+          <a class="determineBtn" title="" href="javascript:void(0);" v-on:click="goToPageIop();" id="goToPageButton">跳 转</a> 
+          <label class="totalRecord"> 共<font class="font">{{pageObjectIop.totalRows}}</font>条&nbsp;&nbsp;每页 <select name="RowDisplayed_crd" v-on:change="javascript:querySumPrizeIopTiao()" id="paginationRowDisplayed_crdIop" sytle="padding:0px; width:50px;"> <option v-model="rowinitIop">10</option> <option v-model="rowinitIop">15</option> <option v-model="rowinitIop">20</option> <option v-model="rowinitIop">100</option> </select>条 </label> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="modals_cspz modals_csp_video">
+    <!--选择视频 --> 
+    <div class="cspzedit-layer cspzedit-layerjh tabs" id="cspzedit-layer"> 
+     <a href="javascript:;" class="close close2 qxVideo">&times;</a> 
+     <ul class="selectLiCspz"> 
+      <li class="cur tiaoType " style="width: auto;" id="tiaoType">选择视频</li> 
+     </ul> 
+     <div class="main-content" id="htmlConVideo" style="display:none"> 
+      <input type="hidden" name="jhspId" id="jhspId" /> 
+      <div class="cont_box"> 
+       <div class="ggtable" style="display: block"> 
+        <div class="cxdiv"> 
+         <form action="" method="post" id="queryVideo1"> 
+          <table> 
+           <tbody>
+            <tr> 
+             <td><span>视频标题：</span><input type="text" name="titleVideo" id="titleVideo" /></td> 
+             <td class="btna"><a href="javascript:;" onclick="resetValuead()">重置</a><a href="javascript:;" onclick="queryVideo()">查询</a></td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <input type="hidden" name="pageNumberVideo" id="pageNumberVideo" :value="pageNumberVideo" /> 
+          <input type="hidden" name="rowinit4" id="rowinit4" :value="rowinit4" /> 
+         </form> 
+        </div> 
+        <p v-if="videoList == null">暂无数据</p>
+        <table class="ch_tips "> 
+         <thead> 
+          <tr> 
+           <th> </th> 
+           <th>序号</th> 
+           <th>视频名称</th> 
+           <th>创建人</th> 
+           <th>创建时间</th> 
+          </tr> 
+         </thead> 
+         <tbody class="mytablebox"> 
+          <tr class="clxqq tjjh" v-for="(item,index) in videoList"> 
+           <td><input type="radio" name="chooseVideoId" class="jhr" :value="item[2]" /></td> 
+           <td>{{index+1}}</td> 
+           <td>{{item[1]}}</td> 
+           <td>{{item[4]}}</td> 
+           <td>{{item[3]}}</td> 
+          </tr>  
+         </tbody> 
+        </table> 
+        <div v-if="videoList != null" class="pageY"> 
+         <div class="pagingNew" style="float:right;"> 
+          <label> <a href="#this" title="首页" v-if="pageObject4.currentPage==1"> 首页 </a> <a href="#this" class="prevPage prevEnd" v-if="pageObject4.currentPage==1 &amp;&amp; pageObject4.totalPage!=0">上一页</a> <a href="javascript:void(0);" v-on:click="querySumPrizeVideo('1');" title="首页" v-if="pageObject4.currentPage&gt;1">首页</a> <a href="javascript:void(0);" v-on:click="querySumPrizeVideo('-');" class="prevPage prev" title="上一页" v-if="pageObject4.currentPage&gt;1">上一页</a>{{pageObject4.currentPage}} <a href="#this" class="nextPage nextEnd" title="下一页" v-if="pageObject4.currentPage==pageObject.totalPage">下一页</a> <a href="#this" title="尾页" v-if="pageObject4.currentPage==pageObject4.totalPage &amp;&amp; pageObject4.totalPage!=0"> 尾页 </a> <a href="#this" title="尾页" v-if="pageObject4.totalPage==0"> 尾页 </a> <a href="javascript:void(0);" v-on:click="querySumPrizeVideo('+');" class="nextPage" v-if="pageObject4.currentPage&lt;pageObject4.totalPage">下一页</a> <a href="javascript:void(0);" v-on:click="querySumPrizeVideo('0');" title="尾页" v-if="pageObject4.currentPage&lt;pageObject4.totalPage">尾页</a> </label> 
+          <label class="marginTop2px">共{{pageObject4.totalPage}}页</label> 
+          <label class="marginTop2px">跳转至</label> 
+          <input id="gopageVideo" class="inputW20H18" type="text" onafterpaste="this.value=this.value.replace(/\D/g,'')" onkeyup="this.value=this.value.replace(/\D/g,'')" /> 
+          <label class="marginTop2px">页</label> 
+          <a class="determineBtn" title="" href="javascript:void(0);" v-on:click="goToPageVideo();" id="goToPageButton">跳 转</a> 
+          <label class="totalRecord"> 共<font class="font">{{pageObject4.totalRows}}</font>条&nbsp;&nbsp;每页 <select name="RowDisplayed_crd_video" v-on:change="javascript:querySumPrizeVideoTiao()" id="RowDisplayed_crd_video" sytle="padding:0px; width:50px;"> <option v-model="rowinit4">10</option> <option v-model="rowinit4">15</option> <option v-model="rowinit4">20</option> <option v-model="rowinit4">100</option> </select>条 </label> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tab-content  "> 
+      <div class="tc iop-edit"> 
+       <button type="button" name="button" class="qxVideo">取消</button> 
+       <button type="submit" name="submit" class="saveVideo">保存</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="modals_cspz modals_cspzsp">
+    <!-- 选择商品  --> 
+    <div class="cspzedit-layer cspzedit-layersp tabs" id="cspzedit-layer"> 
+     <a href="javascript:;" class="close close2">&times;</a> 
+     <ul class="selectLiCspz"> 
+      <li class="cur" style="width: auto;" id="tiaoType"> 选择商品</li> 
+     </ul> 
+     <div class="main-content" id="htmlConsp" style="display:none"> 
+      <input type="hidden" name="jhspId" id="jhspId" /> 
+      <div class="cont_box"> 
+       <div class="ggtables" style="display: block"> 
+        <div class="cxdiv"> 
+         <form action="" method="post" id="queryadid"> 
+          <table> 
+           <tbody>
+            <tr> 
+             <td><span>广告标题：</span><input type="text" name="title" id="title1" /></td> 
+             <td> <span>广告类型：</span> <select class="form-control form-control-select input-sm" name="type" id="type1" :v-model="type"> <option value="">全部</option> <option value="110000" hassubinfo="true" v-model="type">热销</option> <option value="130000" hassubinfo="true" v-model="type">流量</option> <option value="140000" hassubinfo="true" v-model="type">数字化</option> <option value="120000" hassubinfo="true" v-model="type">校园</option> <option value="150000" hassubinfo="true" v-model="type">聚合广告</option> <option value="180000" hassubinfo="true" v-model="type">终端</option> <option value="160000" hassubinfo="true" v-model="type">复合广告</option> <option value="170000" hassubinfo="true" v-model="type">外部广告</option> </select> </td> 
+            </tr> 
+            <tr> 
+             <td colspan="2"> <span>有效时间：</span> <input id="startTime5" name="startTime3" readonly="readonly" class="Wdate w150" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" value="" /><span>&nbsp; ~ &nbsp;</span><input id="endTime5" name="endTime3" readonly="readonly" class="Wdate w150" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" value="" /> </td> 
+             <td class="btna"><a href="javascript:;" onclick="resetValuesp()">重置</a><a href="javascript:;" onclick="queryPolicysp()">查询</a></td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <input type="hidden" name="pageNumber" id="pageNumbersp" :value="pageNumbersp" /> 
+         </form> 
+        </div> 
+        <p v-if="adList == null">暂无数据</p>
+        <table class="ch_tips "> 
+         <thead> 
+          <tr> 
+           <th> </th> 
+           <th>序号</th> 
+           <th>广告类型</th> 
+           <th>广告标题</th> 
+           <th>商品档位</th> 
+           <th>有效时间</th> 
+           <th>创建时间</th> 
+          </tr> 
+         </thead> 
+         <tbody class="mytablebox"> 
+          <tr class="clxqq tjjh" v-for="(item,index) in goodsList"> 
+           <td><input type="radio" name="jhrad" class="jhr" :value="item[0]+','+item[3]" /></td> 
+           <td>{{index+1}}</td> 
+           <td>{{item[4]}}</td> 
+           <td>{{item[1]}}</td> 
+           <td>{{item[9]}}</td> 
+           <td>{{item[6]}}至{{item[7]}}</td> 
+           <td>{{item[8]}}</td> 
+          </tr>  
+         </tbody> 
+        </table> 
+        <div class="pageY"> 
+         <div class="pagingNew" style="float:right;"> 
+          <label> <a href="#this" title="首页" v-if="pageObjectsp.currentPage==1"> 首页 </a> <a href="#this" class="prevPage prevEnd" v-if="pageObjectsp.currentPage==1 &amp;&amp; pageObjectsp.totalPage!=0">上一页</a> <a href="javascript:void(0);" v-on:click="querySumPrizesp('1');" title="首页" v-if="pageObjectsp.currentPage&gt;1">首页</a> <a href="javascript:void(0);" v-on:click="querySumPrizesp('-');" class="prevPage prev" title="上一页" v-if="pageObjectsp.currentPage&gt;1">上一页</a> <a href="#this" class="nextPage nextEnd" title="下一页" v-if="pageObjectsp.currentPage==pageObjectsp.totalPage">下一页</a> <a href="#this" title="尾页" v-if="pageObjectsp.currentPage==pageObjectsp.totalPage &amp;&amp; pageObjectsp.totalPage!=0"> 尾页 </a> <a href="#this" title="尾页" v-if="pageObjectsp.totalPage==0"> 尾页 </a> <a href="javascript:void(0);" v-on:click="querySumPrizesp('+');" class="nextPage" v-if="pageObjectsp.currentPage&lt;pageObjectsp.totalPage">下一页</a> <a href="javascript:void(0);" v-on:click="querySumPrizesp('0');" title="尾页" v-if="pageObjectsp.currentPage&lt;pageObjectsp.totalPage">尾页</a> </label> 
+          <label class="marginTop2px">共{{pageObjectsp.totalPage}}页</label> 
+          <label class="marginTop2px">跳转至</label> 
+          <input id="gopagesp" class="inputW20H18" type="text" onafterpaste="this.value=this.value.replace(/\D/g,'')" onkeyup="this.value=this.value.replace(/\D/g,'')" /> 
+          <label class="marginTop2px">页</label> 
+          <a class="determineBtn" title="" href="javascript:void(0);" v-on:click="goToPageSP();" id="goToPageButton">跳 转</a> 
+          <label class="totalRecord"> 共<font class="font">{{pageObjectsp.totalRows}}</font>条&nbsp;&nbsp;每页 <select name="RowDisplayed_crd" onchange="javascript:querySumPrize(1)" id="paginationRowDisplayed_crd" sytle="padding:0px; width:50px;"> <option v-model="rowsPerPage">10</option> <option v-model="rowsPerPage">15</option> <option v-model="rowsPerPage">20</option> <option v-model="rowsPerPage">100</option> </select>条 </label> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tab-content  "> 
+      <div class="tc iop-edit"> 
+       <button type="button" name="button" class="qxjh">取消</button> 
+       <button type="submit" name="submit" class="savesp">保存</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="modals_cspz modals_cspzTemplateId">
+    <!-- 选择模版  --> 
+    <div class="cspzedit-layer cspzedit-layerTemplateId tabs" id="cspzedit-layer"> 
+     <a href="javascript:;" class="close closeTemplateId">&times;</a> 
+     <ul class="selectLiCspz"> 
+      <li class="cur" style="width: auto;" id="tiaoTemplateId"> 选择模版</li> 
+     </ul> 
+     <div class="main-content" id="htmlConTemplateId" style="display:none"> 
+      <div class="cont_box"> 
+       <form action="" method="post" id="queryTemplateId"> 
+        <div class="ggtables" style="display: block"> 
+         <div class="cxdiv"> 
+          <table> 
+           <tbody>
+            <tr> 
+             <td class="btna"><span>模版名称：</span><input type="text" name="templateName" id="templateName" /><a href="javascript:;" onclick="resetValueTemplateId()">重置</a><a href="javascript:;" onclick="queryPolicyTemplateId()">查询</a></td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <input type="hidden" name="pageNumberTemplateId" id="pageNumberTemplateId" :value="pageNumberTemplateId" /> 
+         </div> 
+         <p v-if="templatesList == null">暂无数据</p>
+         <table class="ch_tips "> 
+          <thead> 
+           <tr> 
+            <th> </th> 
+            <th>序号</th> 
+            <th>模版名称</th> 
+            <th>问题数</th> 
+            <th>创建人</th> 
+            <th>创建时间</th> 
+           </tr> 
+          </thead> 
+          <tbody class="mytablebox"> 
+           <tr class="clxqq tjjh" v-for="(item,index) in templatesList"> 
+            <td><input type="radio" name="templateId" class="jhr" :value="item[0]" /></td> 
+            <td>{{index+1}}</td> 
+            <td>{{item[1]}}</td> 
+            <td>{{item[2]}}</td> 
+            <td>{{item[3]}}</td> 
+            <td>{{item[4]}}</td> 
+           </tr>  
+          </tbody> 
+         </table> 
+         <div class="pageY"> 
+          <div class="pagingNew" style="float:right;"> 
+           <label> <a href="#this" title="首页" v-if="pageObjecttemplateId.currentPage==1"> 首页 </a> <a href="#this" class="prevPage prevEnd" v-if="pageObjecttemplateId.currentPage==1 &amp;&amp; pageObjecttemplateId.totalPage!=0">上一页</a> <a href="javascript:void(0);" v-on:click="querySumPrizeemplateId('1');" title="首页" v-if="pageObjecttemplateId.currentPage&gt;1">首页</a> <a href="javascript:void(0);" v-on:click="querySumPrizeemplateId('-');" class="prevPage prev" title="上一页" v-if="pageObjecttemplateId.currentPage&gt;1">上一页</a> <a href="#this" class="nextPage nextEnd" title="下一页" v-if="pageObjecttemplateId.currentPage==pageObjecttemplateId.totalPage">下一页</a> <a href="#this" title="尾页" v-if="pageObjecttemplateId.currentPage==pageObjecttemplateId.totalPage &amp;&amp; pageObjecttemplateId.totalPage!=0"> 尾页 </a> <a href="#this" title="尾页" v-if="pageObjecttemplateId.totalPage==0"> 尾页 </a> <a href="javascript:void(0);" v-on:click="querySumPrizeemplateId('+');" class="nextPage" v-if="pageObjecttemplateId.currentPage&lt;pageObjecttemplateId.totalPage">下一页</a> <a href="javascript:void(0);" v-on:click="querySumPrizeemplateId('0');" title="尾页" v-if="pageObjecttemplateId.currentPage&lt;pageObjecttemplateId.totalPage">尾页</a> </label> 
+           <label class="marginTop2px">共{{pageObjecttemplateId.totalPage}}页</label> 
+           <label class="marginTop2px">跳转至</label> 
+           <input id="gopageTemplateId" class="inputW20H18" type="text" onafterpaste="this.value=this.value.replace(/\D/g,'')" onkeyup="this.value=this.value.replace(/\D/g,'')" /> 
+           <label class="marginTop2px">页</label> 
+           <a class="determineBtn" title="" href="javascript:void(0);" v-on:click="goToPageTemplateId();" id="goToPageButton">跳 转</a> 
+           <label class="totalRecord"> 共<font class="font">{{pageObjecttemplateId.totalRows}}</font>条&nbsp;&nbsp;每页 <select name="RowDisplayed_crd" v-on:change="querySumPrizeemplateId(1)" id="paginationRowDisplayed_crd" sytle="padding:0px; width:50px;"> <option v-model="rowsPerPage">10</option> <option v-model="rowsPerPage">15</option> <option v-model="rowsPerPage">20</option> <option v-model="rowsPerPage">100</option> </select>条 </label> 
+          </div> 
+         </div> 
+        </div> 
+       </form> 
+      </div> 
+     </div> 
+     <div class="tab-content  "> 
+      <div class="tc iop-edit"> 
+       <button type="button" name="button" class="qxjhtemplateId">取消</button> 
+       <button type="submit" name="submit" class="savetemplateId">保存</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- 会员等级弹窗 开始--> 
+   <div class="modalsCms hyModals"> 
+    <div class=" cmsDiv tabsDiv tabsDiv1 hylcDiv"> 
+     <ul class="cmslectLi"> 
+      <li class="cur">默认</li> 
+     </ul> 
+     <a href="javascript:;" class="closeGB" onclick="closeC('.hyModals')">&times;</a> 
+     <div class="mxdiv"> 
+      <p id="linkePlusLevelListId"> </p> 
+     </div> 
+     <div class="tbbtn_div"> 
+      <button type="button" onclick="closeC('.hyModals')" class="cmsqx">取消</button>
+      <button type="button" class="saveTabhy">保存</button> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- 会员等级弹窗 结束--> 
+   <!-- 滑动元素弹窗 开始--> 
+   <div class=" modalsCms cnmenu modalshdys  hdysTips" style="top:70px;"> 
+    <input type="hidden" id="hdystc" value="hdysTips" /> 
+    <div class=" cmsDiv hdysmo hdysmodal " id="hdysedit-layer"> 
+     <a href="javascript:;" class="closeGB closeLb" onclick="closeC('.hdysTips')">&times;</a> 
+     <ul class="cmslectLi"> 
+      <li class="cur">默认</li> 
+     </ul> 
+     <div id="hdyshtmlCon" class=" cmdes hdysdes"> 
+     </div> 
+     <div class="tab-content"> 
+      <!-- <div class="tc addpmdbtn  adddivpmd ">
+                    <a href="javascript:;" onclick="addpmd(this)">+增加</a>
+                </div> --> 
+      <div class="tc hdys-edit"> 
+       <button type="submit" name="submit" class="submitted savehdys" style="margin-bottom: 10px;">保存</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- 滑动元素弹窗 结束--> 
+   <!-- 搜索弹窗添加 开始 --> 
+   <div class=" modalsCms cnmenu modalssearch  searchTips"> 
+    <div class=" cmsDiv cmsWh searchmo searchmodal " id="searchedit-layer"> 
+     <a href="javascript:;" class="closeGB closeLb" onclick="closeC('.searchTips')">&times;</a> 
+     <ul class="cmslectLi"> 
+      <li class="cur">默认</li> 
+     </ul> 
+     <div id="searchhtmlCon" class=" cmdes searchdes"> 
+      <dl> 
+       <dd>
+        广告位编码：
+       </dd> 
+       <dt>
+        <input type="text" id="searpolicyGgwbm" name="searpolicyGgwbm" class="searpolicyGgwbm" placeholder="" value="" />
+       </dt> 
+      </dl> 
+      <dl> 
+       <dd>
+        搜索框：
+       </dd> 
+       <dt>
+        <input type="text" id="searTxt" placeholder="请输入搜索内容" value="" />
+       </dt> 
+      </dl> 
+      <dl> 
+       <dd>
+        选择跳转页面：
+       </dd> 
+       <dt> 
+        <select class="form-control form-control-select input-sm" id="searSel"> </select> 
+       </dt> 
+      </dl> 
+     </div> 
+     <div class="tab-content"> 
+      <div class="tc search-edit"> 
+       <button type="submit" name="submit" class="submitted savesearch" style="margin-bottom: 10px;">保存</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- 搜索弹窗添加 结束 --> 
+  </div> 
+  <!--弹窗区域 商品房间--> 
+  <div class="cspz"> 
+  </div> 
+  <!--end--> 
+  <!-- 预览图片弹窗 开始 --> 
+  <div class="previewImg" id="ts_ljzs"> 
+   <a href="javascript:;" class="closeGB" onclick="hideid('ts_ljzs')">&times;</a> 
+   <div class="pcont"> 
+    <img id="pImg" src="../../images/images.png" /> 
+   </div> 
+  </div> 
+  <!-- 预览图片弹窗 结束 --> 
+  <!-- 20211120 协议弹窗内容开始 --> 
+  <div class="modalsCms modals_Cms modalsDbxy dbxyMo modals_dbxy"> 
+   <div class="cmsDiv dbxyLayer dbxy-layer" id="dbxy-layer"> 
+    <a href="javascript:;" class="closeGB closebmgn" onclick="closeC('.dbxyMo')">&times;</a> 
+    <ul class="selectLiCspz"> 
+     <li class="cur">底部协议元素</li> 
+    </ul> 
+    <div class="cmdes main-content xytbtip" id="dbxyTab"> 
+     <div class="top_bmdiv"> 
+      <div class="tjxz cred">
+       提示：最多可添加4个协议
+      </div> 
+      <a href="javascript:;" class="c3c9be1bb bmaddbtn" onclick="addxymo()">新增协议</a> 
+     </div> 
+     <ul class="bmmoul " id="dbxyulId"> 
+     </ul> 
+    </div> 
+    <div class="tab-content"> 
+     <div class="tc dbxy-edit"> 
+      <button type="submit" name="submit" class="cee4358bb savebmgn">保存</button> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- 20211129add 便民功能模块编辑弹窗开始cnmenu上传图片样式使用--> 
+  <div class="modalsCms cnmenu modals_Cms modalsFee bmgnMo modals_bmgn"> 
+   <div class="cmsDiv feeLayer feedit-layer" id="feedit-layer"> 
+    <a href="javascript:;" class="closeGB closebmgn" onclick="closeC('.bmgnMo')">&times;</a> 
+    <ul class="selectLiCspz"> 
+     <li class="cur">便民功能模块</li> 
+    </ul> 
+    <div class="cmdes main-content bmgnmain-content bmgntip " id="bmgnTab"> 
+     <div class="top_bmdiv"> 
+      <div class="tjxz"> 
+       <div class="xxsty"> 
+        <div class="zsfs">
+         <span class="cred">*</span>
+         <span>一屏展示：</span>
+        </div> 
+        <div> 
+         <select class="form-control form-control-select input-sm bmzs" id="bmzs"> <option value="3">3</option> <option value="3.5" selected="">3.5</option> <option value="4">4</option> </select> 
+        </div> 
+       </div> 
+      </div> 
+      <a href="javascript:;" class="c3c9be1bb bmaddbtn " onclick="addbmgnmo()">配置便民模块</a> 
+     </div> 
+     <ul class="bmmoul " id="bmmould"> 
+     </ul> 
+    </div> 
+    <div class="tab-content"> 
+     <div class="tc bmgn-edit"> 
+      <button type="submit" name="submit" class="c3c9be1bb savebmgn">保存</button> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- 20211129add 便民功能模块编辑弹窗结束 --> 
+  <script type="text/javascript" src="js/base.js?v=2.1126"></script> 
+  <!-- 2019 12 18 会员楼层引入 --> 
+  <script type="text/javascript" src="js/baseForPlus.js?v=2.216"></script> 
+  <!-- 2019 12 24 滑动元素引入 --> 
+  <script type="text/javascript" src="js/baseForHdys.js?v=2.2125"></script> 
+  <!-- 2020 1 9 搜索引入 --> 
+  <script type="text/javascript" src="js/baseForSearch.js?v=22.15"></script> 
+  <!-- 2020 1 14 搜索引入 --> 
+  <script type="text/javascript" src="js/baseForMusic.js?v=21.25"></script> 
+  <!-- 2020 2 6 iop --> 
+  <script type="text/javascript" src="js/baseForIOP.js?v=22.27"></script> 
+  <!-- 2020 2 11 iop策略广告位 --> 
+  <script type="text/javascript" src="js/baseForIOPCeLue.js?v=221.5"></script> 
+  <!-- 2020 3 23 静态广告添加海报 --> 
+  <script type="text/javascript" src="js/baseForPoster.js?v=2.215"></script> 
+  <!-- 2020 11 3 静态广告添加视频 --> 
+  <script type="text/javascript" src="js/video.js?v=2"></script> 
+ </body>
+</html>
