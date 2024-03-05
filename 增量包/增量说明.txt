@@ -1,0 +1,9 @@
+index.html
+	1、339~362（li标签）
+index.css
+	1、2752~2823（2572~2604为上传图片样式）
+bases.js
+	1、4497~4712
+	2、5857~5892
+
+直接引入jquery.image-maps5.0.js、imageHotAreaStyle.css

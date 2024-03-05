@@ -4494,6 +4494,222 @@
 							
 						})
 					})
+				}else if(type == "packageCoupon"){ //20240304-套餐权益券
+					$('.selectP').hide();
+					$('#htmlCon').show();
+					function getImgUrl(className) { //获取图片背景图片地址
+						var msgBk = p.find("."+className+" ").css("background-image");//元素编码
+						var reg = new RegExp('"','g');
+						msgBk = msgBk == undefined||msgBk == "none"?'':msgBk.split("(")[1].split(")")[0].replace(reg,'');
+						console.log(msgBk,'msgBk')
+						return msgBk
+					}
+					function rgb2hex(rgb) {
+						rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+						function hex(x) {
+						   return ("0" + parseInt(x).toString(16)).slice(-2);
+						}
+						return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+					}
+					let str = `<tbody class="zpcjEditBox pcTableMsg">
+								<tr>
+									<td>
+										<div class="flexbox align-c mt15">
+											<div class="w10 wFit">
+												<p class="cred">*</p>
+												<p>背景图：</p>
+											</div>
+											<div class="flex1 uploadImgBox flex">
+												<div class="uploadImgNewStyle">
+													<div class="uploadImgFa">
+														<img class="pcBackImg" src="${getImgUrl('packageCouponPart')}" alt="">
+													</div>
+													<div class="uploadText hziDeleteImg">删除</div>
+													<input type="file" value="" class="file upNewFile none">
+												</div>
+												<p class="ml20 color999">建议上传图片尺寸为750*125px，大小不超过100KB</p>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="flexbox align-c mt15">
+											<div class="w10 wFit">
+												<p class="cred">*</p>
+												<p>标题：</p>
+											</div>
+											<div class="flex1 flex">
+												<input type="text" class="pctitle" value="${p.find('.leftPcPart>span:nth-child(2)').html()}" class="myinput" maxlength="10" placeholder="请输入标题">
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="flexbox align-c mt15">
+											<div class="w10 wFit">
+												<p>标题颜色：</p>
+											</div>
+											<div class="flex1 flexbox align-c">
+												<input type="color" class="wh40 pcTitleColor" value="${rgb2hex(p.find('.leftPcPart>span:nth-child(2)').css('color'))}" oninput="$('#pcTitleColor').val(this.value)">
+												<input type="text" class="w259" value="${rgb2hex(p.find('.leftPcPart>span:nth-child(2)').css('color'))}" id="pcTitleColor" readonly>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="flexbox align-c mt15">
+											<div class="w10 wFit">
+												<p>参数颜色：</p>
+											</div>
+											<div class="flex1 flexbox align-c">
+												<input type="color" class="wh40 pcParamColor" value="${rgb2hex(p.find('.leftPcPart>span:nth-child(1)').css('color'))}" oninput="$('#pcParamColor').val(this.value)">
+												<input type="text" class="w259" value="${rgb2hex(p.find('.leftPcPart>span:nth-child(1)').css('color'))}" id="pcParamColor" readonly>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="flexbox align-c mt15">
+											<div class="w10 wFit">
+												<p>说明图：</p>
+											</div>
+											<div class="flex1 uploadImgBox flex">
+												<div class="uploadImgNewStyle">
+													<div class="uploadImgFa">
+														<img class="pcIllustrateImg" src="${p.find('.leftPcPart>img').attr("src")?p.find('.leftPcPart>img').attr("src"):'./images/u16.png'}" alt="">
+													</div>
+													<div class="uploadText hziDeleteImg">删除</div>
+													<input type="file" value="" class="file upNewFile none">
+												</div>
+												<p class="ml20 color999">建议上传图片尺寸为150*54px，大小不超过60KB</p>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="flexbox align-c mt15">
+											<div class="w10 wFit">
+												<p>说明图链接：</p>
+											</div>
+											<div class="flex1 flex">
+												<input type="text" class="myinput w194 pcIllustrateHref" value="${p.find('.packageCouponPart').attr("lHref")}" maxlength="100" placeholder="请输入链接地址或选择">
+												<button type="button">选择聚合页/广告</button>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="flexbox align-c mt15">
+											<div class="w10 wFit">
+												<p class="cred">*</p>
+												<p>按钮图：</p>
+											</div>
+											<div class="flex1 uploadImgBox flex">
+												<div class="uploadImgNewStyle">
+													<div class="uploadImgFa">
+														<img class="pcBtnImg" src="${p.find('.rightPcPart>img').attr("src")}" alt="">
+													</div>
+													<div class="uploadText hziDeleteImg">删除</div>
+													<input type="file" value="" class="file upNewFile none">
+												</div>
+												<p class="ml20 color999">建议上传图片尺寸为156*54px，大小不超过60KB</p>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="flexbox align-c mt15">
+											<div class="w10 wFit">
+												<p class="cred">*</p>
+												<p>按钮图链接：</p>
+											</div>
+											<div class="flex1 flex">
+												<input type="text" class="myinput w194 pcBtnHref" value="${p.find('.packageCouponPart').attr("rHref")}" maxlength="100" placeholder="请输入链接地址或选择">
+												<button type="button">选择聚合页/广告</button>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="flexbox align-c">
+											<div class="w10 wFit">
+												<p>推荐类型：</p>
+											</div>
+											<div class="flex1 flexbox align-c">
+												<div class='ljcd pcTYpe' style="margin-left:0;font-weight: 400;">
+													<label class="color383c42"><input type='radio' name='tjTypePc' value='0' class='nninput'/>iop策划</label>
+													<label class="color383c42" style="margin-left:5px"><input type='radio' name='tjTypePc' value='1' class='nninput'/>iop策略</label> 
+													<label class="color383c42" style="margin-left:5px"><input type='radio' name='tjTypePc' value='2' class='nninput'/>已订业务</label> 
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr class="pcCodeTr">
+									<td>
+										<div class="flexbox">
+											<div class="w10 wFit">
+												<p class="cred">*</p>
+												<p>策划编码：</p>
+											</div>
+											<div class="flex1">
+												<input type="text" class="myinput pcCode" value="${p.find('.packageCouponPart').attr("code")}" placeholder="请输入策划编码" onkeyup="this.value=this.value.replace(/[^a-zA-Z0-9,]/g,'');">
+												<span class="yellowTips">仅支持字母+数字组合，多个请用英文逗号分割，即","</span>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>`
+					$('.modals #htmlCon table').css({'margin-top':'0'}).html('').append(str); 
+					$('input[name="tjTypePc"][value='+p.find('.packageCouponPart').attr("type")+']').prop("checked",true)
+					if(p.find('.packageCouponPart').attr("type") == '1'){
+						$('.pcCodeTr').addClass('none')
+					}
+					if(!p.find('.leftPcPart>img').attr("src")){ 
+						$('.pcIllustrateImg').attr("src","./images/u16.png").addClass('noUploadImg')
+						$('.pcIllustrateImg').parent().next().next().val("")
+						$('.pcIllustrateImg').parent().next().removeClass('hziDeleteImg').addClass('upImgFile').text('上传图片')
+					}
+					$(document).off('change',"input[name=tjTypePc]").on('change','input[name=tjTypePc]',function(){
+						console.log($(this).val(),'制止和')
+						if($(this).val() == '1'){
+							$('.pcCodeTr').addClass('none')
+						}else{
+							$('.pcCodeTr').removeClass('none')
+						}
+					})
+					$(document).off('click',".hziDeleteImg").on('click','.hziDeleteImg',function() { //删除上传图片
+						$(this).prev().find('img').attr("src","./images/u16.png").addClass('noUploadImg')
+						$(this).next().val("")
+						$(this).removeClass('hziDeleteImg').addClass('upImgFile').text('上传图片')
+					})
+					$(document).off('click',".upImgFile").on('click','.upImgFile',function() { //图片上传
+						$(this).next().click()
+					})
+					$(document).off('click',".upNewFile").on('change','.upNewFile',function() { //图片上传input
+						console.log('上传')
+						var file = this.files[0]; // 获取第一个被选中的文件对象
+						if (file) {
+							var img = new Image();
+							img.onload = function () {
+								console.log('图片尺寸：', img.width + ' x ' + img.height);
+								// 进行更多操作...
+							};
+							img.src = URL.createObjectURL(file); // 创建一个临时的URL地址来显示图片
+							$(this).prev().prev().find('img').attr('src',URL.createObjectURL(file)).removeClass('noUploadImg')
+							$(this).prev().removeClass('upImgFile').addClass('hziDeleteImg').text('删除')
+						} else {
+							console.log("未选择任何文件");
+						}
+					});
 				}else if(type=="operationalRecommend"){//20231116-推荐广告
 					$('.selectP').hide();
 					$('#htmlCon').show();
@@ -5638,6 +5854,42 @@
 							observeParents: true, //监测Swiper 的祖/父元素 
 							autoplayDisableOnInteraction: false,
 						});
+					}else if(type == "packageCoupon"){ //20240304-套餐权益券
+						if($(".pcTableMsg .pcBackImg").hasClass("noUploadImg")){
+							alert('请上传背景图')
+							return
+						}
+						if(!$(".pcTableMsg .pctitle").val()){
+							alert('请填写标题')
+							return
+						}
+						if($(".pcTableMsg .pcBtnImg").hasClass("noUploadImg")){
+							alert('请上传按钮图')
+							return
+						}
+						if(!$(".pcTableMsg .pcBtnHref").val()){
+							alert('请输入按钮图链接地址或选择')
+							return
+						}
+						if(!$(".pcTableMsg .pcCode").val() && $('input[name=tjTypePc]:checked').val() != '1'){
+							alert('请填写策划编码')
+							return
+						}
+						$('.demo .packageCouponPart').attr({
+							"lHref": $('.pcIllustrateHref').val(),
+							"rHref": $('.pcBtnHref').val(),
+							"code": $('input[name=tjTypePc]:checked').val()!='1'?$(".pcTableMsg .pcCode").val():'',
+							"type": $('input[name=tjTypePc]:checked').val(),
+						}).css("background-image","url("+$('.pcBackImg').attr("src")+")")
+						$('.demo .leftPcPart>span:nth-child(2)').html($('.pctitle').val())
+						$('.leftPcPart>span:nth-child(2)').css('color',$('.pcTitleColor').val())
+						$('.leftPcPart>span:nth-child(1)').css('color',$('.pcParamColor').val())
+						if(!$('.pcIllustrateImg').hasClass("noUploadImg")){
+							$('.leftPcPart>img').attr("src",$('.pcIllustrateImg').attr("src")).removeClass('none')
+						}else{
+							$('.leftPcPart>img').attr("src","").addClass('none')
+						}
+						$('.rightPcPart>img').attr("src",$('.pcBtnImg').attr("src"))
 					}else if(type=="operationalRecommend"){
 						if($('input[name=newTitleFlag]:checked').val() == '1'){
 							$('.demo .containerwxRec .flsxe .tjzqSty').html($('.backTyptitleValue').val())
